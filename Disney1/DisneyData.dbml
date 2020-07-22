@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ShanghaiDisneyland01" Class="DisneyDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=ShanghaiDisneyland01;Integrated Security=True" SettingsObjectName="Disney1.Properties.Settings" SettingsPropertyName="ShanghaiDisneyland01ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Account" Member="Account">
+    <Type Name="Account">
+      <Column Name="AccountId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Birthday" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Citizenship" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GroupNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HotelNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastTimeChangePwd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Account_LogRecord" Member="LogRecord" ThisKey="AccountId" OtherKey="AccountId" Type="LogRecord" />
+      <Association Name="Account_Order" Member="Order" ThisKey="AccountId" OtherKey="AccountId" Type="Order" />
+      <Association Name="Group_Account" Member="Group" ThisKey="GroupNo" OtherKey="GroupNo" Type="Group" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Weather" Member="Weather">
+    <Type Name="Weather">
+      <Column Name="WeatherNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Temperature" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Weather" Member="Weather1" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProbabilityOfRain" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HighTemp" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LowTemp" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Humidity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AdProvider" Member="AdProvider">
+    <Type Name="AdProvider">
+      <Column Name="AdProviderId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AdproviderName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="AdProvider_Advertise" Member="Advertise" ThisKey="AdProviderId" OtherKey="AdProviderId" Type="Advertise" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Advertise" Member="Advertise">
+    <Type Name="Advertise">
+      <Column Name="AdvertiseNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AdProviderId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeViewed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Video" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="AdProvider_Advertise" Member="AdProvider" ThisKey="AdProviderId" OtherKey="AdProviderId" Type="AdProvider" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Attractions" Member="Attractions">
+    <Type Name="Attractions">
+      <Column Name="AttractionsNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThemeParkNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AttractionsName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="MainAttractionsNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TimeSpenSeconds" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BatchConsumption" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Features" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SuitableFor" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="isFastPassage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isParentChild" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isStageDrama" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Attractions_BusinessSchedule" Member="BusinessSchedule" ThisKey="AttractionsNo" OtherKey="AttractionsNo" Type="BusinessSchedule" />
+      <Association Name="Attractions_DramaSchedule" Member="DramaSchedule" ThisKey="AttractionsNo" OtherKey="AttractionsNo" Type="DramaSchedule" />
+      <Association Name="Attractions_MaintenanceSchedule" Member="MaintenanceSchedule" ThisKey="AttractionsNo" OtherKey="AttractionsNo" Type="MaintenanceSchedule" />
+      <Association Name="Attractions_QueueRecord" Member="QueueRecord" ThisKey="AttractionsNo" OtherKey="AttractionsNo" Type="QueueRecord" />
+      <Association Name="ThemePark_Attractions" Member="ThemePark" ThisKey="ThemeParkNo" OtherKey="ThemeParkNo" Type="ThemePark" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BusinessSchedule" Member="BusinessSchedule">
+    <Type Name="BusinessSchedule">
+      <Column Name="BusinessScheduleNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BusinessDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="AttractionsNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Association Name="Attractions_BusinessSchedule" Member="Attractions" ThisKey="AttractionsNo" OtherKey="AttractionsNo" Type="Attractions" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CheckInRecord" Member="CheckInRecord">
+    <Type Name="CheckInRecord">
+      <Column Name="CheckInRecordNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoomOrderDetailNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CheckInDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CheckOutDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="RoomOrderDetail_CheckInRecord" Member="RoomOrderDetail" ThisKey="RoomOrderDetailNo" OtherKey="RoomOrderDetailNo" Type="RoomOrderDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Coupon" Member="Coupon">
+    <Type Name="Coupon">
+      <Column Name="CouponId" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="GenerateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Coupon_RoomOrder" Member="RoomOrder" ThisKey="CouponId" OtherKey="CouponId" Type="RoomOrder" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DramaSchedule" Member="DramaSchedule">
+    <Type Name="DramaSchedule">
+      <Column Name="DramaScheduleNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AttractionsNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ShowTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Association Name="Attractions_DramaSchedule" Member="Attractions" ThisKey="AttractionsNo" OtherKey="AttractionsNo" Type="Attractions" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Group]" Member="Group">
+    <Type Name="Group">
+      <Column Name="GroupNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Group_Account" Member="Account" ThisKey="GroupNo" OtherKey="GroupNo" Type="Account" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Guest" Member="Guest">
+    <Type Name="Guest">
+      <Column Name="GuestNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Temperature" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IdentityNo" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Citizenship" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="RoomOrderDetailNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="isMain" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Guest_RoomOrder" Member="RoomOrder" ThisKey="GuestNo" OtherKey="GuestNo" Type="RoomOrder" />
+      <Association Name="RoomOrderDetail_Guest" Member="RoomOrderDetail" ThisKey="RoomOrderDetailNo" OtherKey="RoomOrderDetailNo" Type="RoomOrderDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HolidayEvent" Member="HolidayEvent">
+    <Type Name="HolidayEvent">
+      <Column Name="HolidayEventNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HolidayEventName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Month" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hotel" Member="Hotel">
+    <Type Name="Hotel">
+      <Column Name="HotelNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HotelName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Feature" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Hotel_SuitesLevel" Member="SuitesLevel" ThisKey="HotelNo" OtherKey="HotelNo" Type="SuitesLevel" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LogRecord" Member="LogRecord">
+    <Type Name="LogRecord">
+      <Column Name="LogRecordNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LoginTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Account_LogRecord" Member="Account" ThisKey="AccountId" OtherKey="AccountId" Type="Account" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MaintenanceSchedule" Member="MaintenanceSchedule">
+    <Type Name="MaintenanceSchedule">
+      <Column Name="MaintenanceScheduleNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AttractionsNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartDateTiime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="Attractions_MaintenanceSchedule" Member="Attractions" ThisKey="AttractionsNo" OtherKey="AttractionsNo" Type="Attractions" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.News" Member="News">
+    <Type Name="News">
+      <Column Name="NewsNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimesViewed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Video" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Order">
+    <Type Name="Order">
+      <Column Name="OrderNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AccountId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="InvoiceNo" Type="System.String" DbType="NVarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="PurchaseDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentCertificate" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="PaymentMethodNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Order_Ticket" Member="Ticket" ThisKey="OrderNo" OtherKey="OrderNo" Type="Ticket" />
+      <Association Name="Account_Order" Member="Account" ThisKey="AccountId" OtherKey="AccountId" Type="Account" IsForeignKey="true" />
+      <Association Name="PaymentMethod_Order" Member="PaymentMethod" ThisKey="PaymentMethodNo" OtherKey="PaymentMethodNo" Type="PaymentMethod" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PaymentMethod" Member="PaymentMethod">
+    <Type Name="PaymentMethod">
+      <Column Name="PaymentMethodNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Method" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Discount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="isUsable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PaymentMethod_Order" Member="Order" ThisKey="PaymentMethodNo" OtherKey="PaymentMethodNo" Type="Order" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QueueRecord" Member="QueueRecord">
+    <Type Name="QueueRecord">
+      <Column Name="QueueNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AttractionsNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TicketId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="isQueue" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="QueueTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Association Name="Attractions_QueueRecord" Member="Attractions" ThisKey="AttractionsNo" OtherKey="AttractionsNo" Type="Attractions" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Room" Member="Room">
+    <Type Name="Room">
+      <Column Name="RoomNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoomId" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RoomSeriesNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Floor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomStatusNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomAttributesNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Room_RoomOrderDetail" Member="RoomOrderDetail" ThisKey="RoomNo" OtherKey="RoomNo" Type="RoomOrderDetail" />
+      <Association Name="RoomAttributes_Room" Member="RoomAttributes" ThisKey="RoomAttributesNo" OtherKey="RoomAttributesNo" Type="RoomAttributes" IsForeignKey="true" />
+      <Association Name="RoomSeries_Room" Member="RoomSeries" ThisKey="RoomSeriesNo" OtherKey="RoomSeriesNo" Type="RoomSeries" IsForeignKey="true" />
+      <Association Name="RoomStatus_Room" Member="RoomStatus" ThisKey="RoomStatusNo" OtherKey="RoomStatusNo" Type="RoomStatus" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomAttributes" Member="RoomAttributes">
+    <Type Name="RoomAttributes">
+      <Column Name="RoomAttributesNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Attributes" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="RoomAttributes_Room" Member="Room" ThisKey="RoomAttributesNo" OtherKey="RoomAttributesNo" Type="Room" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomOrder" Member="RoomOrder">
+    <Type Name="RoomOrder">
+      <Column Name="RoomOrderNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="GuestNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CouponId" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="RoomOrder_RoomOrderDetail" Member="RoomOrderDetail" ThisKey="RoomOrderNo" OtherKey="RoomOrderNo" Type="RoomOrderDetail" />
+      <Association Name="Coupon_RoomOrder" Member="Coupon" ThisKey="CouponId" OtherKey="CouponId" Type="Coupon" IsForeignKey="true" />
+      <Association Name="Guest_RoomOrder" Member="Guest" ThisKey="GuestNo" OtherKey="GuestNo" Type="Guest" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomOrderDetail" Member="RoomOrderDetail">
+    <Type Name="RoomOrderDetail">
+      <Column Name="RoomOrderDetailNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoomOrderNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="needBreakfast" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LuggageStorage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="GuestNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChildrenNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="RoomOrderDetail_CheckInRecord" Member="CheckInRecord" ThisKey="RoomOrderDetailNo" OtherKey="RoomOrderDetailNo" Type="CheckInRecord" />
+      <Association Name="RoomOrderDetail_Guest" Member="Guest" ThisKey="RoomOrderDetailNo" OtherKey="RoomOrderDetailNo" Type="Guest" />
+      <Association Name="RoomOrderDetail_RoomServiceRecord" Member="RoomServiceRecord" ThisKey="RoomOrderDetailNo" OtherKey="RoomOrderDetailNo" Type="RoomServiceRecord" />
+      <Association Name="Room_RoomOrderDetail" Member="Room" ThisKey="RoomNo" OtherKey="RoomNo" Type="Room" IsForeignKey="true" />
+      <Association Name="RoomOrder_RoomOrderDetail" Member="RoomOrder" ThisKey="RoomOrderNo" OtherKey="RoomOrderNo" Type="RoomOrder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomSeries" Member="RoomSeries">
+    <Type Name="RoomSeries">
+      <Column Name="RoomSeriesNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SuitesLevelNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SuitesName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Amenities" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Feature" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MaximumPerson" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="RoomSeries_Room" Member="Room" ThisKey="RoomSeriesNo" OtherKey="RoomSeriesNo" Type="Room" />
+      <Association Name="SuitesLevel_RoomSeries" Member="SuitesLevel" ThisKey="SuitesLevelNo" OtherKey="SuitesLevelNo" Type="SuitesLevel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomService" Member="RoomService">
+    <Type Name="RoomService">
+      <Column Name="RoomServiceNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ServiceName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="RoomService_RoomServiceRecord" Member="RoomServiceRecord" ThisKey="RoomServiceNo" OtherKey="RoomServiceNo" Type="RoomServiceRecord" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomServiceRecord" Member="RoomServiceRecord">
+    <Type Name="RoomServiceRecord">
+      <Column Name="RoomServiceRecordNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoomOrderDetailNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoomServiceNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="RoomService_RoomServiceRecord" Member="RoomService" ThisKey="RoomServiceNo" OtherKey="RoomServiceNo" Type="RoomService" IsForeignKey="true" />
+      <Association Name="RoomOrderDetail_RoomServiceRecord" Member="RoomOrderDetail" ThisKey="RoomOrderDetailNo" OtherKey="RoomOrderDetailNo" Type="RoomOrderDetail" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RoomStatus" Member="RoomStatus">
+    <Type Name="RoomStatus">
+      <Column Name="RoomStatusNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="RoomStatus_Room" Member="Room" ThisKey="RoomStatusNo" OtherKey="RoomStatusNo" Type="Room" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SuitesLevel" Member="SuitesLevel">
+    <Type Name="SuitesLevel">
+      <Column Name="SuitesLevelNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HotelNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LevelName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Feature" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="SuitesLevel_RoomSeries" Member="RoomSeries" ThisKey="SuitesLevelNo" OtherKey="SuitesLevelNo" Type="RoomSeries" />
+      <Association Name="Hotel_SuitesLevel" Member="Hotel" ThisKey="HotelNo" OtherKey="HotelNo" Type="Hotel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ThemePark" Member="ThemePark">
+    <Type Name="ThemePark">
+      <Column Name="ThemeParkNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ThemeParkName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Introduction" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="ThemePark_Attractions" Member="Attractions" ThisKey="ThemeParkNo" OtherKey="ThemeParkNo" Type="Attractions" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ticket" Member="Ticket">
+    <Type Name="Ticket">
+      <Column Name="TicketId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrderNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TicketOfferNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Order_Ticket" Member="Order" ThisKey="OrderNo" OtherKey="OrderNo" Type="Order" IsForeignKey="true" />
+      <Association Name="TicketOffer_Ticket" Member="TicketOffer" ThisKey="TicketOfferNo" OtherKey="TicketOfferNo" Type="TicketOffer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TicketOffer" Member="TicketOffer">
+    <Type Name="TicketOffer">
+      <Column Name="TicketOfferNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TicketName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Discount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="TicketOffer_Ticket" Member="Ticket" ThisKey="TicketOfferNo" OtherKey="TicketOfferNo" Type="Ticket" />
+    </Type>
+  </Table>
+</Database>
