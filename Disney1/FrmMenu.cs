@@ -22,6 +22,7 @@ namespace Disney1
         DisneyDataDataContext db;
         int errorTimes = 0;
         int lockTime = 10;
+        int changePwdDay = 30;
 
         public void DataRefresh()
         {
@@ -76,6 +77,11 @@ namespace Disney1
                 panelMenu.Visible = true;
                 panelMenu.Enabled = true;
                 MessageBox.Show("Login successfully.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TimeSpan ts = DateTime.Now - user.LastTimeChangePwd;
+                if(ts.TotalDays > changePwdDay)
+                {
+                    new FrmChangePwd().ShowDialog();
+                }
             }
             catch (Exception)
             {

@@ -11,7 +11,7 @@
       <Column Name="Email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="GroupNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="HotelNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="LastTimeChangePwd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="LastTimeChangePwd" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="Account_LogRecord" Member="LogRecord" ThisKey="AccountId" OtherKey="AccountId" Type="LogRecord" />
       <Association Name="Account_Order" Member="Order" ThisKey="AccountId" OtherKey="AccountId" Type="Order" />
       <Association Name="Group_Account" Member="Group" ThisKey="GroupNo" OtherKey="GroupNo" Type="Group" IsForeignKey="true" />

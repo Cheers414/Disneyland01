@@ -428,7 +428,7 @@ namespace Disney1
 		
 		private System.Nullable<int> _HotelNo;
 		
-		private System.Nullable<System.DateTime> _LastTimeChangePwd;
+		private System.DateTime _LastTimeChangePwd;
 		
 		private EntitySet<LogRecord> _LogRecord;
 		
@@ -460,7 +460,7 @@ namespace Disney1
     partial void OnGroupNoChanged();
     partial void OnHotelNoChanging(System.Nullable<int> value);
     partial void OnHotelNoChanged();
-    partial void OnLastTimeChangePwdChanging(System.Nullable<System.DateTime> value);
+    partial void OnLastTimeChangePwdChanging(System.DateTime value);
     partial void OnLastTimeChangePwdChanged();
     #endregion
 		
@@ -661,8 +661,8 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastTimeChangePwd", DbType="Date")]
-		public System.Nullable<System.DateTime> LastTimeChangePwd
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastTimeChangePwd", DbType="Date NOT NULL")]
+		public System.DateTime LastTimeChangePwd
 		{
 			get
 			{

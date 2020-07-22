@@ -42,6 +42,7 @@ namespace Disney1
 
         private void cboGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Show or hide hotel selections
             var group = (Group)cboGroup.SelectedItem;
             if (Global.isHotelManager(group))
             {
