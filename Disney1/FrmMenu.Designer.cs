@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnManage = new System.Windows.Forms.Button();
-            this.btnMyData = new System.Windows.Forms.Button();
+            this.btnProfile = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.gpbLogin = new System.Windows.Forms.GroupBox();
             this.btnSignUp = new System.Windows.Forms.Button();
@@ -44,18 +44,19 @@
             this.lblUserInfo = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.timerLock = new System.Windows.Forms.Timer(this.components);
+            this.panelMenu = new System.Windows.Forms.Panel();
             this.signUp1 = new Disney1.SignUp();
+            this.profile1 = new Disney1.Profile();
             this.panel1.SuspendLayout();
             this.gpbLogin.SuspendLayout();
             this.gpbUserInfo.SuspendLayout();
+            this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Controls.Add(this.btnManage);
-            this.panel1.Controls.Add(this.btnMyData);
-            this.panel1.Controls.Add(this.btnHome);
+            this.panel1.Controls.Add(this.panelMenu);
             this.panel1.Controls.Add(this.gpbLogin);
             this.panel1.Controls.Add(this.gpbUserInfo);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -66,25 +67,26 @@
             // 
             // btnManage
             // 
-            this.btnManage.Location = new System.Drawing.Point(21, 261);
+            this.btnManage.Location = new System.Drawing.Point(9, 71);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(193, 23);
             this.btnManage.TabIndex = 8;
             this.btnManage.Text = "5.Manage";
             this.btnManage.UseVisualStyleBackColor = true;
             // 
-            // btnMyData
+            // btnProfile
             // 
-            this.btnMyData.Location = new System.Drawing.Point(21, 203);
-            this.btnMyData.Name = "btnMyData";
-            this.btnMyData.Size = new System.Drawing.Size(193, 23);
-            this.btnMyData.TabIndex = 6;
-            this.btnMyData.Text = "3.My Data";
-            this.btnMyData.UseVisualStyleBackColor = true;
+            this.btnProfile.Location = new System.Drawing.Point(9, 13);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(193, 23);
+            this.btnProfile.TabIndex = 6;
+            this.btnProfile.Text = "3.Profile";
+            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnHome
             // 
-            this.btnHome.Location = new System.Drawing.Point(21, 232);
+            this.btnHome.Location = new System.Drawing.Point(9, 42);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(193, 23);
             this.btnHome.TabIndex = 7;
@@ -194,6 +196,16 @@
             this.timerLock.Interval = 1000;
             this.timerLock.Tick += new System.EventHandler(this.timerLock_Tick);
             // 
+            // panelMenu
+            // 
+            this.panelMenu.Controls.Add(this.btnProfile);
+            this.panelMenu.Controls.Add(this.btnManage);
+            this.panelMenu.Controls.Add(this.btnHome);
+            this.panelMenu.Location = new System.Drawing.Point(12, 181);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(208, 108);
+            this.panelMenu.TabIndex = 2;
+            // 
             // signUp1
             // 
             this.signUp1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -204,11 +216,22 @@
             this.signUp1.Size = new System.Drawing.Size(1031, 681);
             this.signUp1.TabIndex = 1;
             // 
+            // profile1
+            // 
+            this.profile1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.profile1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.profile1.Location = new System.Drawing.Point(233, 0);
+            this.profile1.Margin = new System.Windows.Forms.Padding(4);
+            this.profile1.Name = "profile1";
+            this.profile1.Size = new System.Drawing.Size(1031, 681);
+            this.profile1.TabIndex = 2;
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.profile1);
             this.Controls.Add(this.signUp1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -217,11 +240,13 @@
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Disneyland";
+            this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.panel1.ResumeLayout(false);
             this.gpbLogin.ResumeLayout(false);
             this.gpbLogin.PerformLayout();
             this.gpbUserInfo.ResumeLayout(false);
             this.gpbUserInfo.PerformLayout();
+            this.panelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -237,13 +262,15 @@
         private System.Windows.Forms.TextBox txtAccount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gpbUserInfo;
-        private System.Windows.Forms.Button btnMyData;
+        private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnManage;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Label lblUserInfo;
         private System.Windows.Forms.Timer timerLock;
         private SignUp signUp1;
+        private System.Windows.Forms.Panel panelMenu;
+        private Profile profile1;
     }
 }
 

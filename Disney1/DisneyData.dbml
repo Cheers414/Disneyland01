@@ -8,13 +8,14 @@
       <Column Name="Birthday" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Gender" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Citizenship" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="GroupNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="HotelNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="LastTimeChangePwd" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="Account_LogRecord" Member="LogRecord" ThisKey="AccountId" OtherKey="AccountId" Type="LogRecord" />
       <Association Name="Account_Order" Member="Order" ThisKey="AccountId" OtherKey="AccountId" Type="Order" />
       <Association Name="Group_Account" Member="Group" ThisKey="GroupNo" OtherKey="GroupNo" Type="Group" IsForeignKey="true" />
+      <Association Name="Hotel_Account" Member="Hotel" ThisKey="HotelNo" OtherKey="HotelNo" Type="Hotel" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Weather" Member="Weather">
@@ -147,6 +148,7 @@
       <Column Name="HotelName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Feature" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Hotel_Account" Member="Account" ThisKey="HotelNo" OtherKey="HotelNo" Type="Account" />
       <Association Name="Hotel_SuitesLevel" Member="SuitesLevel" ThisKey="HotelNo" OtherKey="HotelNo" Type="SuitesLevel" />
     </Type>
   </Table>

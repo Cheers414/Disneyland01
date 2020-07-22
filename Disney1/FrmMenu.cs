@@ -26,12 +26,12 @@ namespace Disney1
         public void DataRefresh()
         {
             Global.User = null;
+            gpbLogin.Enabled = true;
             gpbLogin.Visible = true;
             txtAccount.Text = "";
             txtPwd.Text = "";
-            btnMyData.Visible = false;
-            btnHome.Visible = false;
-            btnManage.Visible = false;
+            panelMenu.Visible = false;
+            panelMenu.Enabled = false;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -61,16 +61,26 @@ namespace Disney1
             }
 
             //Login successfully
-            Global.User = user;
-            lblUserInfo.Text = $"Welcome {user.Name}\nYou are {user.Group.GroupName}";
-            gpbLogin.Visible = false;
-            db.LogRecord.InsertOnSubmit(new LogRecord()
+            try
             {
-                AccountId = user.AccountId,
-                LoginTime = DateTime.Now
-            });
-            db.SubmitChanges();
-            MessageBox.Show("Login successfully.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Global.User = user;
+                db.LogRecord.InsertOnSubmit(new LogRecord()
+                {
+                    AccountId = user.AccountId,
+                    LoginTime = DateTime.Now
+                });
+                db.SubmitChanges();
+                lblUserInfo.Text = $"Welcome {user.Name}\nYou are {user.Group.GroupName}";
+                gpbLogin.Enabled = false;
+                gpbLogin.Visible = false;
+                panelMenu.Visible = true;
+                panelMenu.Enabled = true;
+                MessageBox.Show("Login successfully.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(e.ToString());
+            }
         }
 
         private void timerLock_Tick(object sender, EventArgs e)
@@ -95,6 +105,17 @@ namespace Disney1
         {
             signUp1.DataRefresh();
             signUp1.BringToFront();
+        }
+
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+            this.DataRefresh();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            profile1.DataRefresh();
+            profile1.BringToFront();
         }
     }
 }

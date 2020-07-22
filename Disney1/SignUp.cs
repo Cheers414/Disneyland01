@@ -43,7 +43,7 @@ namespace Disney1
         private void cboGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             var group = (Group)cboGroup.SelectedItem;
-            if (group.GroupNo == 5 || group.GroupNo == 6)
+            if (Global.isHotelManager(group))
             {
                 lblHotel.Visible = true;
                 cboHotel.Visible = true;
