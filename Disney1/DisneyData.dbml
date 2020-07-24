@@ -82,6 +82,12 @@
       <Association Name="Attractions_BusinessSchedule" Member="Attractions" ThisKey="AttractionsNo" OtherKey="AttractionsNo" Type="Attractions" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.CarouselText" Member="CarouselText">
+    <Type Name="CarouselText">
+      <Column Name="CarouselNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CarouselText" Member="CarouselText1" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.CheckInRecord" Member="CheckInRecord">
     <Type Name="CheckInRecord">
       <Column Name="CheckInRecordNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

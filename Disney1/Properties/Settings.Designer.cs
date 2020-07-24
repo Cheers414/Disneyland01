@@ -35,19 +35,18 @@ namespace Disney1.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Info {
+        public global::System.Collections.Generic.List<bool> Carousel {
             get {
-                return ((string)(this["Info"]));
+                return ((global::System.Collections.Generic.List<bool>)(this["Carousel"]));
             }
             set {
-                this["Info"] = value;
+                this["Carousel"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public int StayTime {
             get {
                 return ((int)(this["StayTime"]));
@@ -59,25 +58,13 @@ namespace Disney1.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public int ShowMode {
             get {
                 return ((int)(this["ShowMode"]));
             }
             set {
                 this["ShowMode"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ScrollText {
-            get {
-                return ((string)(this["ScrollText"]));
-            }
-            set {
-                this["ScrollText"] = value;
             }
         }
     }

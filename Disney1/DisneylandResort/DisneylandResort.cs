@@ -44,7 +44,7 @@ namespace Disney1.DisneylandResort
 
         private void DisneylandResort_Load(object sender, EventArgs e)
         {
-            DataRefresh();
+
         }
     }
 }

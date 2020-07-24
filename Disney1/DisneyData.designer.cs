@@ -48,6 +48,9 @@ namespace Disney1
     partial void InsertBusinessSchedule(BusinessSchedule instance);
     partial void UpdateBusinessSchedule(BusinessSchedule instance);
     partial void DeleteBusinessSchedule(BusinessSchedule instance);
+    partial void InsertCarouselText(CarouselText instance);
+    partial void UpdateCarouselText(CarouselText instance);
+    partial void DeleteCarouselText(CarouselText instance);
     partial void InsertCheckInRecord(CheckInRecord instance);
     partial void UpdateCheckInRecord(CheckInRecord instance);
     partial void DeleteCheckInRecord(CheckInRecord instance);
@@ -203,6 +206,14 @@ namespace Disney1
 			get
 			{
 				return this.GetTable<BusinessSchedule>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CarouselText> CarouselText
+		{
+			get
+			{
+				return this.GetTable<CarouselText>();
 			}
 		}
 		
@@ -2123,6 +2134,92 @@ namespace Disney1
 						this._AttractionsNo = default(int);
 					}
 					this.SendPropertyChanged("Attractions");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CarouselText")]
+	public partial class CarouselText : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _CarouselNo;
+		
+		private string _CarouselText1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnCarouselNoChanging(int value);
+    partial void OnCarouselNoChanged();
+    partial void OnCarouselText1Changing(string value);
+    partial void OnCarouselText1Changed();
+    #endregion
+		
+		public CarouselText()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CarouselNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int CarouselNo
+		{
+			get
+			{
+				return this._CarouselNo;
+			}
+			set
+			{
+				if ((this._CarouselNo != value))
+				{
+					this.OnCarouselNoChanging(value);
+					this.SendPropertyChanging();
+					this._CarouselNo = value;
+					this.SendPropertyChanged("CarouselNo");
+					this.OnCarouselNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="CarouselText", Storage="_CarouselText1", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string CarouselText1
+		{
+			get
+			{
+				return this._CarouselText1;
+			}
+			set
+			{
+				if ((this._CarouselText1 != value))
+				{
+					this.OnCarouselText1Changing(value);
+					this.SendPropertyChanging();
+					this._CarouselText1 = value;
+					this.SendPropertyChanged("CarouselText1");
+					this.OnCarouselText1Changed();
 				}
 			}
 		}

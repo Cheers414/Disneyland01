@@ -28,20 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.timerMove = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // Resort
+            // timerMove
+            // 
+            this.timerMove.Interval = 1;
+            this.timerMove.Tick += new System.EventHandler(this.timerMove_Tick);
+            // 
+            // CarouselResort
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Resort";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "CarouselResort";
             this.Size = new System.Drawing.Size(1031, 681);
+            this.Load += new System.EventHandler(this.CarouselResort_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer timerMove;
     }
 }

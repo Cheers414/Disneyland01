@@ -91,6 +91,7 @@ namespace Disney1
 
         private void timerLock_Tick(object sender, EventArgs e)
         {
+            //Countdown lock
             lockTime -= 1;
             btnLogin.Text = lockTime.ToString();
             if (lockTime == 0)
@@ -104,11 +105,13 @@ namespace Disney1
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            //Logout
             this.DataRefresh();
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
+            //Sign up account
             signUp1.DataRefresh();
             signUp1.BringToFront();
         }
@@ -121,12 +124,14 @@ namespace Disney1
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
+            //Show user profile
             profile1.DataRefresh();
             profile1.BringToFront();
         }
 
         private void btnResort_Click(object sender, EventArgs e)
         {
+            //Show resort information
             if (Properties.Settings.Default.ShowMode == 1)
             {
                 carouselResort1.BringToFront();
