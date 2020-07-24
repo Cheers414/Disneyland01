@@ -148,6 +148,8 @@
       <Column Name="HotelName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Feature" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
       <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Association Name="Hotel_Account" Member="Account" ThisKey="HotelNo" OtherKey="HotelNo" Type="Account" />
       <Association Name="Hotel_SuitesLevel" Member="SuitesLevel" ThisKey="HotelNo" OtherKey="HotelNo" Type="SuitesLevel" />
     </Type>
@@ -329,6 +331,8 @@
       <Column Name="TicketId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="OrderNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TicketOfferNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Order_Ticket" Member="Order" ThisKey="OrderNo" OtherKey="OrderNo" Type="Order" IsForeignKey="true" />
       <Association Name="TicketOffer_Ticket" Member="TicketOffer" ThisKey="TicketOfferNo" OtherKey="TicketOfferNo" Type="TicketOffer" IsForeignKey="true" />
     </Type>
@@ -342,6 +346,14 @@
       <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Association Name="TicketOffer_Ticket" Member="Ticket" ThisKey="TicketOfferNo" OtherKey="TicketOfferNo" Type="Ticket" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TrafficMethod" Member="TrafficMethod">
+    <Type Name="TrafficMethod">
+      <Column Name="TrafficMethodNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Method" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TrafficContent" Type="System.String" DbType="NVarChar(3000) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

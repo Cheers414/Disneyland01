@@ -123,6 +123,9 @@ namespace Disney1
     partial void InsertTicketOffer(TicketOffer instance);
     partial void UpdateTicketOffer(TicketOffer instance);
     partial void DeleteTicketOffer(TicketOffer instance);
+    partial void InsertTrafficMethod(TrafficMethod instance);
+    partial void UpdateTrafficMethod(TrafficMethod instance);
+    partial void DeleteTrafficMethod(TrafficMethod instance);
     #endregion
 		
 		public DisneyDataDataContext() : 
@@ -400,6 +403,14 @@ namespace Disney1
 			get
 			{
 				return this.GetTable<TicketOffer>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TrafficMethod> TrafficMethod
+		{
+			get
+			{
+				return this.GetTable<TrafficMethod>();
 			}
 		}
 	}
@@ -3306,6 +3317,10 @@ namespace Disney1
 		
 		private string _Photo;
 		
+		private string _Address;
+		
+		private string _PhoneNumber;
+		
 		private EntitySet<Account> _Account;
 		
 		private EntitySet<SuitesLevel> _SuitesLevel;
@@ -3322,6 +3337,10 @@ namespace Disney1
     partial void OnFeatureChanged();
     partial void OnPhotoChanging(string value);
     partial void OnPhotoChanged();
+    partial void OnAddressChanging(string value);
+    partial void OnAddressChanged();
+    partial void OnPhoneNumberChanging(string value);
+    partial void OnPhoneNumberChanged();
     #endregion
 		
 		public Hotel()
@@ -3407,6 +3426,46 @@ namespace Disney1
 					this._Photo = value;
 					this.SendPropertyChanged("Photo");
 					this.OnPhotoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(200)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this.OnAddressChanging(value);
+					this.SendPropertyChanging();
+					this._Address = value;
+					this.SendPropertyChanged("Address");
+					this.OnAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(10)")]
+		public string PhoneNumber
+		{
+			get
+			{
+				return this._PhoneNumber;
+			}
+			set
+			{
+				if ((this._PhoneNumber != value))
+				{
+					this.OnPhoneNumberChanging(value);
+					this.SendPropertyChanging();
+					this._PhoneNumber = value;
+					this.SendPropertyChanged("PhoneNumber");
+					this.OnPhoneNumberChanged();
 				}
 			}
 		}
@@ -7018,6 +7077,10 @@ namespace Disney1
 		
 		private int _TicketOfferNo;
 		
+		private System.DateTime _EffectiveDate;
+		
+		private bool _Status;
+		
 		private EntityRef<Order> _Order;
 		
 		private EntityRef<TicketOffer> _TicketOffer;
@@ -7032,6 +7095,10 @@ namespace Disney1
     partial void OnOrderNoChanged();
     partial void OnTicketOfferNoChanging(int value);
     partial void OnTicketOfferNoChanged();
+    partial void OnEffectiveDateChanging(System.DateTime value);
+    partial void OnEffectiveDateChanged();
+    partial void OnStatusChanging(bool value);
+    partial void OnStatusChanged();
     #endregion
 		
 		public Ticket()
@@ -7105,6 +7172,46 @@ namespace Disney1
 					this._TicketOfferNo = value;
 					this.SendPropertyChanged("TicketOfferNo");
 					this.OnTicketOfferNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EffectiveDate", DbType="Date NOT NULL")]
+		public System.DateTime EffectiveDate
+		{
+			get
+			{
+				return this._EffectiveDate;
+			}
+			set
+			{
+				if ((this._EffectiveDate != value))
+				{
+					this.OnEffectiveDateChanging(value);
+					this.SendPropertyChanging();
+					this._EffectiveDate = value;
+					this.SendPropertyChanged("EffectiveDate");
+					this.OnEffectiveDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Bit NOT NULL")]
+		public bool Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
 				}
 			}
 		}
@@ -7405,6 +7512,140 @@ namespace Disney1
 		{
 			this.SendPropertyChanging();
 			entity.TicketOffer = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TrafficMethod")]
+	public partial class TrafficMethod : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _TrafficMethodNo;
+		
+		private string _Method;
+		
+		private string _TrafficContent;
+		
+		private string _Photo;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTrafficMethodNoChanging(int value);
+    partial void OnTrafficMethodNoChanged();
+    partial void OnMethodChanging(string value);
+    partial void OnMethodChanged();
+    partial void OnTrafficContentChanging(string value);
+    partial void OnTrafficContentChanged();
+    partial void OnPhotoChanging(string value);
+    partial void OnPhotoChanged();
+    #endregion
+		
+		public TrafficMethod()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrafficMethodNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int TrafficMethodNo
+		{
+			get
+			{
+				return this._TrafficMethodNo;
+			}
+			set
+			{
+				if ((this._TrafficMethodNo != value))
+				{
+					this.OnTrafficMethodNoChanging(value);
+					this.SendPropertyChanging();
+					this._TrafficMethodNo = value;
+					this.SendPropertyChanged("TrafficMethodNo");
+					this.OnTrafficMethodNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Method", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Method
+		{
+			get
+			{
+				return this._Method;
+			}
+			set
+			{
+				if ((this._Method != value))
+				{
+					this.OnMethodChanging(value);
+					this.SendPropertyChanging();
+					this._Method = value;
+					this.SendPropertyChanged("Method");
+					this.OnMethodChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrafficContent", DbType="NVarChar(3000) NOT NULL", CanBeNull=false)]
+		public string TrafficContent
+		{
+			get
+			{
+				return this._TrafficContent;
+			}
+			set
+			{
+				if ((this._TrafficContent != value))
+				{
+					this.OnTrafficContentChanging(value);
+					this.SendPropertyChanging();
+					this._TrafficContent = value;
+					this.SendPropertyChanged("TrafficContent");
+					this.OnTrafficContentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Photo", DbType="NVarChar(100)")]
+		public string Photo
+		{
+			get
+			{
+				return this._Photo;
+			}
+			set
+			{
+				if ((this._Photo != value))
+				{
+					this.OnPhotoChanging(value);
+					this.SendPropertyChanging();
+					this._Photo = value;
+					this.SendPropertyChanged("Photo");
+					this.OnPhotoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

@@ -78,7 +78,7 @@ namespace Disney1
                 panelMenu.Enabled = true;
                 MessageBox.Show("Login successfully.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 TimeSpan ts = DateTime.Now - user.LastTimeChangePwd;
-                if(ts.TotalDays > changePwdDay)
+                if (ts.TotalDays > changePwdDay)
                 {
                     new FrmChangePwd().ShowDialog();
                 }
@@ -116,12 +116,25 @@ namespace Disney1
         private void FrmMenu_Load(object sender, EventArgs e)
         {
             this.DataRefresh();
+            this.btnResort_Click(null, null);
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
             profile1.DataRefresh();
             profile1.BringToFront();
+        }
+
+        private void btnResort_Click(object sender, EventArgs e)
+        {
+            if (Properties.Settings.Default.ShowMode == 1)
+            {
+                carouselResort1.BringToFront();
+            }
+            else
+            {
+                generalResort1.BringToFront();
+            }
         }
     }
 }
