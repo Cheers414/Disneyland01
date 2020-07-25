@@ -24,15 +24,38 @@ namespace Disney1
 
         FlowLayoutPanel flowlayout;
         List<bool> lstCarousel = Properties.Settings.Default.Carousel;
-        int carouselNum = Properties.Settings.Default.Carousel.Count(x => x == true);
+        int carouselNum;
         int stayTime = Properties.Settings.Default.StayTime;
+        DisneyDataDataContext db;
+        Label lblCarousel;
 
         public void DataRefresh()
         {
+            db = new DisneyDataDataContext();
+
+            //Set label text
+            string cText = "";
+            db.CarouselText.ToList().ForEach(x =>
+            {
+                cText += x.CarouselText1 + "                    ";
+            });
+
+            //Create label
+            lblCarousel = new Label()
+            {
+                Location = new Point(1031, 655),
+                AutoSize = true,
+                Text = cText.Trim()
+            };
+            this.Controls.Add(lblCarousel);
+            timerMove.Start();
+
+            //Create FlowLayoutPanel
+            carouselNum = lstCarousel.Count;
             flowlayout = new FlowLayoutPanel()
             {
                 Location = new Point(0, 0),
-                Size = new Size(1031 * carouselNum, 615),
+                Size = new Size(1031 * carouselNum, 650),
                 AutoScroll = false,
                 FlowDirection = FlowDirection.TopDown
             }; ;
@@ -109,8 +132,9 @@ namespace Disney1
             DataRefresh();
         }
 
-        private void timerMove_Tick(object sender, EventArgs e)
+        private void CarouselChange()
         {
+            //Turn to next carousel
             carouselNum -= 1;
             if (carouselNum == 0)
             {
@@ -121,19 +145,30 @@ namespace Disney1
             {
                 flowlayout.Left -= 1031;
             }
-            timerMove.Stop();
             timerStay.Start();
         }
 
         private void timerStay_Tick(object sender, EventArgs e)
         {
+            //Stay carousel
             stayTime -= 1;
 
             if (stayTime == 0)
             {
                 stayTime = Properties.Settings.Default.StayTime;
                 timerStay.Stop();
-                timerMove.Start();
+                CarouselChange();
+            }
+        }
+
+        private void timerMove_Tick(object sender, EventArgs e)
+        {
+            //Move label
+            lblCarousel.Left -= 1;
+
+            if (lblCarousel.Right == 0)
+            {
+                lblCarousel.Location = new Point(1031,655);
             }
         }
     }
