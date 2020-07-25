@@ -50,7 +50,7 @@ namespace Disney1
             if (user == null)
             {
                 errorTimes += 1;
-                MessageBox.Show("Account or password are not correct.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Account or password incorrect.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (errorTimes >= 3)
                 {
                     MessageBox.Show("You entered the account incorrcetly more than 3 times,\n" +
@@ -134,11 +134,39 @@ namespace Disney1
             //Show resort information
             if (Properties.Settings.Default.ShowMode == 1)
             {
+                carouselResort1.DataRefresh();
                 carouselResort1.BringToFront();
             }
             else
             {
+                generalResort1.DataRefresh();
                 generalResort1.BringToFront();
+            }
+        }
+
+        private void btnManage_Click(object sender, EventArgs e)
+        {
+            switch (Global.User.GroupNo)
+            {
+                case 1:
+                    resortManager1.DataRefresh();
+                    resortManager1.BringToFront();
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+
+                    break;
             }
         }
     }

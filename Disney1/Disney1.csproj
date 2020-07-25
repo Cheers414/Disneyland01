@@ -132,6 +132,24 @@
       <DependentUpon>GeneralResort.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="Manage\Manager\ShowMode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\ShowMode.Designer.cs">
+      <DependentUpon>ShowMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ResortManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ResortManager.Designer.cs">
+      <DependentUpon>ResortManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ResortMember.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ResortMember.Designer.cs">
+      <DependentUpon>ResortMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -188,6 +206,15 @@
     <EmbeddedResource Include="GeneralResort.resx">
       <DependentUpon>GeneralResort.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\ShowMode.resx">
+      <DependentUpon>ShowMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ResortManager.resx">
+      <DependentUpon>ResortManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ResortMember.resx">
+      <DependentUpon>ResortMember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +259,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Manage\Member\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

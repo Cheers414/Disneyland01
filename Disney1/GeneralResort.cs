@@ -20,6 +20,11 @@ namespace Disney1
             InitializeComponent();
         }
 
+        public void DataRefresh()
+        {
+            disneylandResortToolStripMenuItem_Click(null, null);
+        }
+
         private void disneylandResortToolStripMenuItem_Click(object sender, EventArgs e)
         {
             disneylandResort1.DataRefresh();

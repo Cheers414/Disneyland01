@@ -49,6 +49,7 @@
             this.signUp1 = new Disney1.SignUp();
             this.carouselResort1 = new Disney1.CarouselResort();
             this.generalResort1 = new Disney1.GeneralResort();
+            this.resortManager1 = new Disney1.Manage.ResortManager();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.gpbLogin.SuspendLayout();
@@ -95,6 +96,7 @@
             this.btnManage.TabIndex = 8;
             this.btnManage.Text = "5.Manage";
             this.btnManage.UseVisualStyleBackColor = true;
+            this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
             // 
             // btnResort
             // 
@@ -249,11 +251,22 @@
             this.generalResort1.Size = new System.Drawing.Size(1031, 681);
             this.generalResort1.TabIndex = 4;
             // 
+            // resortManager1
+            // 
+            this.resortManager1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resortManager1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.resortManager1.Location = new System.Drawing.Point(233, 0);
+            this.resortManager1.Margin = new System.Windows.Forms.Padding(4);
+            this.resortManager1.Name = "resortManager1";
+            this.resortManager1.Size = new System.Drawing.Size(1031, 681);
+            this.resortManager1.TabIndex = 5;
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.resortManager1);
             this.Controls.Add(this.generalResort1);
             this.Controls.Add(this.carouselResort1);
             this.Controls.Add(this.profile1);
@@ -298,6 +311,7 @@
         private Profile profile1;
         private CarouselResort carouselResort1;
         private GeneralResort generalResort1;
+        private Manage.ResortManager resortManager1;
     }
 }
 

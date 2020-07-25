@@ -12,6 +12,7 @@ using System.Runtime.InteropServices;
 using Disney1.DisneylandResort;
 using System.Threading;
 using System.Globalization;
+using System.ComponentModel.Design;
 
 namespace Disney1
 {
@@ -23,15 +24,20 @@ namespace Disney1
         }
 
         FlowLayoutPanel flowlayout;
-        List<bool> lstCarousel = Properties.Settings.Default.Carousel;
+        List<bool> lstCarousel;
         int carouselNum;
-        int stayTime = Properties.Settings.Default.StayTime;
+        int stayTime;
         DisneyDataDataContext db;
         Label lblCarousel;
 
         public void DataRefresh()
         {
             db = new DisneyDataDataContext();
+
+            lstCarousel = Properties.Settings.Default.Carousel;
+            stayTime = Properties.Settings.Default.StayTime;
+
+            this.Controls.Clear();
 
             //Set label text
             string cText = "";
@@ -51,7 +57,7 @@ namespace Disney1
             timerMove.Start();
 
             //Create FlowLayoutPanel
-            carouselNum = lstCarousel.Count;
+            carouselNum = lstCarousel.Count(x => x == true);
             flowlayout = new FlowLayoutPanel()
             {
                 Location = new Point(0, 0),
@@ -71,7 +77,7 @@ namespace Disney1
             {
                 if (!lstCarousel[i])
                 {
-                    return;
+                    continue;
                 }
 
                 switch (i)
@@ -129,7 +135,7 @@ namespace Disney1
 
         private void CarouselResort_Load(object sender, EventArgs e)
         {
-            DataRefresh();
+
         }
 
         private void CarouselChange()
@@ -139,7 +145,7 @@ namespace Disney1
             if (carouselNum == 0)
             {
                 flowlayout.Location = new Point(0, 0);
-                carouselNum = lstCarousel.Count;
+                carouselNum = lstCarousel.Count(x=>x == true);
             }
             else
             {
@@ -168,7 +174,7 @@ namespace Disney1
 
             if (lblCarousel.Right == 0)
             {
-                lblCarousel.Location = new Point(1031,655);
+                lblCarousel.Location = new Point(1031, 655);
             }
         }
     }
