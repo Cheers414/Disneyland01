@@ -30,12 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timerMove = new System.Windows.Forms.Timer(this.components);
+            this.timerStay = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // timerMove
             // 
             this.timerMove.Interval = 1;
             this.timerMove.Tick += new System.EventHandler(this.timerMove_Tick);
+            // 
+            // timerStay
+            // 
+            this.timerStay.Interval = 1000;
+            this.timerStay.Tick += new System.EventHandler(this.timerStay_Tick);
             // 
             // CarouselResort
             // 
@@ -53,5 +59,6 @@
         #endregion
 
         private System.Windows.Forms.Timer timerMove;
+        private System.Windows.Forms.Timer timerStay;
     }
 }

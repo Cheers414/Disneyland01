@@ -56,7 +56,7 @@
             this.Controls.Add(this.lblDrama);
             this.Controls.Add(this.cboAttractions);
             this.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "Drama";
             this.Size = new System.Drawing.Size(1031, 657);
             this.Load += new System.EventHandler(this.Drama_Load);
