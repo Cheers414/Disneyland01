@@ -44,7 +44,7 @@ namespace Disney1
         {
             //Show or hide hotel selections
             var group = (Group)cboGroup.SelectedItem;
-            if (Global.isHotelManager(group))
+            if (group.GroupNo == 5 || group.GroupNo == 6)
             {
                 lblHotel.Visible = true;
                 cboHotel.Visible = true;

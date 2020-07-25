@@ -37,7 +37,7 @@ namespace Disney1
             dtpBirthday.Value = user.Birthday;
             (user.Gender == "M" ? rbMen : rbFemale).Checked = true;
             cboGroup.SelectedIndex = user.GroupNo - 1;
-            if (Global.isHotelManager(user.Group))
+            if (user.GroupNo == 5 || user.GroupNo == 6)
             {
                 cboHotel.SelectedIndex = (int)user.HotelNo - 1;
             }
@@ -47,7 +47,7 @@ namespace Disney1
         {
             //Show or hide hotel selections
             var group = (Group)cboGroup.SelectedItem;
-            if (Global.isHotelManager(group))
+            if (group.GroupNo == 5 || group.GroupNo == 6)
             {
                 lblHotel.Visible = true;
                 cboHotel.Visible = true;

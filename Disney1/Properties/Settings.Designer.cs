@@ -32,5 +32,40 @@ namespace Disney1.Properties {
                 return ((string)(this["ShanghaiDisneyland01ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Generic.List<bool> Carousel {
+            get {
+                return ((global::System.Collections.Generic.List<bool>)(this["Carousel"]));
+            }
+            set {
+                this["Carousel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int StayTime {
+            get {
+                return ((int)(this["StayTime"]));
+            }
+            set {
+                this["StayTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int ShowMode {
+            get {
+                return ((int)(this["ShowMode"]));
+            }
+            set {
+                this["ShowMode"] = value;
+            }
+        }
     }
 }

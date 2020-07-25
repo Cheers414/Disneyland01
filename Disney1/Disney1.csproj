@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -52,6 +53,66 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DisneyData.dbml</DependentUpon>
     </Compile>
+    <Compile Include="DisneylandResort\AttractionsInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\AttractionsInfo.Designer.cs">
+      <DependentUpon>AttractionsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\AttractionsSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\AttractionsSchedule.Designer.cs">
+      <DependentUpon>AttractionsSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\DisneylandResort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\DisneylandResort.Designer.cs">
+      <DependentUpon>DisneylandResort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\Drama.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\Drama.Designer.cs">
+      <DependentUpon>Drama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\Maintenance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\Maintenance.Designer.cs">
+      <DependentUpon>Maintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\News.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\News.Designer.cs">
+      <DependentUpon>News.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\TicketInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\TicketInfo.Designer.cs">
+      <DependentUpon>TicketInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\Tourist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\Tourist.Designer.cs">
+      <DependentUpon>Tourist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\TrafficInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\TrafficInfo.Designer.cs">
+      <DependentUpon>TrafficInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\Weather.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\Weather.Designer.cs">
+      <DependentUpon>Weather.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmChangePwd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +125,12 @@
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="GeneralResort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GeneralResort.Designer.cs">
+      <DependentUpon>GeneralResort.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Profile.cs">
       <SubType>UserControl</SubType>
@@ -73,17 +140,59 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CarouselResort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CarouselResort.Designer.cs">
+      <DependentUpon>CarouselResort.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DisneylandResort\AttractionsInfo.resx">
+      <DependentUpon>AttractionsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\AttractionsSchedule.resx">
+      <DependentUpon>AttractionsSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\DisneylandResort.resx">
+      <DependentUpon>DisneylandResort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\Drama.resx">
+      <DependentUpon>Drama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\Maintenance.resx">
+      <DependentUpon>Maintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\News.resx">
+      <DependentUpon>News.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\TicketInfo.resx">
+      <DependentUpon>TicketInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\Tourist.resx">
+      <DependentUpon>Tourist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\TrafficInfo.resx">
+      <DependentUpon>TrafficInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\Weather.resx">
+      <DependentUpon>Weather.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmChangePwd.resx">
       <DependentUpon>FrmChangePwd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GeneralResort.resx">
+      <DependentUpon>GeneralResort.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarouselResort.resx">
+      <DependentUpon>CarouselResort.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
@@ -123,9 +232,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DisneylandResort\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
