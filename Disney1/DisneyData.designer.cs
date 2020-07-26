@@ -2204,7 +2204,7 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="CarouselText", Storage="_CarouselText1", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="CarouselText", Storage="_CarouselText1", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
 		public string CarouselText1
 		{
 			get
@@ -3805,6 +3805,8 @@ namespace Disney1
 		
 		private string _Note;
 		
+		private System.Nullable<bool> _Status;
+		
 		private EntityRef<Attractions> _Attractions;
 		
     #region Extensibility Method Definitions
@@ -3821,6 +3823,8 @@ namespace Disney1
     partial void OnEndDateTimeChanged();
     partial void OnNoteChanging(string value);
     partial void OnNoteChanged();
+    partial void OnStatusChanging(System.Nullable<bool> value);
+    partial void OnStatusChanged();
     #endregion
 		
 		public MaintenanceSchedule()
@@ -3929,6 +3933,26 @@ namespace Disney1
 					this._Note = value;
 					this.SendPropertyChanged("Note");
 					this.OnNoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Bit")]
+		public System.Nullable<bool> Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
 				}
 			}
 		}
@@ -4686,6 +4710,8 @@ namespace Disney1
 		
 		private bool _isQueue;
 		
+		private System.DateTime _QueueDatetime;
+		
 		private System.TimeSpan _QueueTime;
 		
 		private EntityRef<Attractions> _Attractions;
@@ -4702,6 +4728,8 @@ namespace Disney1
     partial void OnTicketIdChanged();
     partial void OnisQueueChanging(bool value);
     partial void OnisQueueChanged();
+    partial void OnQueueDatetimeChanging(System.DateTime value);
+    partial void OnQueueDatetimeChanged();
     partial void OnQueueTimeChanging(System.TimeSpan value);
     partial void OnQueueTimeChanged();
     #endregion
@@ -4792,6 +4820,26 @@ namespace Disney1
 					this._isQueue = value;
 					this.SendPropertyChanged("isQueue");
 					this.OnisQueueChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_QueueDatetime", DbType="DateTime NOT NULL")]
+		public System.DateTime QueueDatetime
+		{
+			get
+			{
+				return this._QueueDatetime;
+			}
+			set
+			{
+				if ((this._QueueDatetime != value))
+				{
+					this.OnQueueDatetimeChanging(value);
+					this.SendPropertyChanging();
+					this._QueueDatetime = value;
+					this.SendPropertyChanged("QueueDatetime");
+					this.OnQueueDatetimeChanged();
 				}
 			}
 		}

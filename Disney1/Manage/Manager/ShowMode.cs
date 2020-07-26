@@ -70,11 +70,6 @@ namespace Disney1.Manage.Manager
                 }
             }
 
-            DataGridViewRefresh();
-        }
-
-        private void DataGridViewRefresh()
-        {
             dgv.DataSource = db.CarouselText.Select(x => new { x.CarouselText1 }).ToList();
         }
 
@@ -147,7 +142,7 @@ namespace Disney1.Manage.Manager
             var deleteText = db.CarouselText.FirstOrDefault(x => x.CarouselText1 == (string)dgv.SelectedCells[0].Value);
             db.CarouselText.DeleteOnSubmit(deleteText);
             db.SubmitChanges();
-            DataGridViewRefresh();
+            dgv.DataSource = db.CarouselText.Select(x => new { x.CarouselText1 }).ToList();
         }
 
         private void btnAddText_Click(object sender, EventArgs e)
@@ -166,7 +161,7 @@ namespace Disney1.Manage.Manager
                     CarouselText1 = txtCarouselText.Text
                 });
                 db.SubmitChanges();
-                DataGridViewRefresh();
+                dgv.DataSource = db.CarouselText.Select(x => new { x.CarouselText1 }).ToList();
                 txtCarouselText.Text = "";
             }
             catch (Exception)

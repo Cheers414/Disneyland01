@@ -22,5 +22,17 @@ namespace Disney1.Manage
             showMode1.DataRefresh();
             showMode1.BringToFront();
         }
+
+        private void attractionsStatisticsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            attractionsStatistics1.DataRefresh();
+            attractionsStatistics1.BringToFront();
+        }
+
+        private void setShowModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showMode1.DataRefresh();
+            showMode1.BringToFront();
+        }
     }
 }

@@ -85,7 +85,7 @@
   <Table Name="dbo.CarouselText" Member="CarouselText">
     <Type Name="CarouselText">
       <Column Name="CarouselNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CarouselText" Member="CarouselText1" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CarouselText" Member="CarouselText1" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.CheckInRecord" Member="CheckInRecord">
@@ -175,6 +175,7 @@
       <Column Name="StartDateTiime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="EndDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="Attractions_MaintenanceSchedule" Member="Attractions" ThisKey="AttractionsNo" OtherKey="AttractionsNo" Type="Attractions" IsForeignKey="true" />
     </Type>
   </Table>
@@ -218,6 +219,7 @@
       <Column Name="AttractionsNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TicketId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="isQueue" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="QueueDatetime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="QueueTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
       <Association Name="Attractions_QueueRecord" Member="Attractions" ThisKey="AttractionsNo" OtherKey="AttractionsNo" Type="Attractions" IsForeignKey="true" />
     </Type>

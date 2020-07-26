@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -132,6 +135,24 @@
       <DependentUpon>GeneralResort.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="Manage\Manager\AttractionsStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\AttractionsStatistics.Designer.cs">
+      <DependentUpon>AttractionsStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Manager\MaintenanceStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\MaintenanceStatistics.Designer.cs">
+      <DependentUpon>MaintenanceStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Manager\QueueTimeStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\QueueTimeStatistics.Designer.cs">
+      <DependentUpon>QueueTimeStatistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Manager\ShowMode.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -205,6 +226,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GeneralResort.resx">
       <DependentUpon>GeneralResort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\AttractionsStatistics.resx">
+      <DependentUpon>AttractionsStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\MaintenanceStatistics.resx">
+      <DependentUpon>MaintenanceStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\QueueTimeStatistics.resx">
+      <DependentUpon>QueueTimeStatistics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\Manager\ShowMode.resx">
       <DependentUpon>ShowMode.cs</DependentUpon>

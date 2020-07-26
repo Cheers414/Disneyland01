@@ -44,13 +44,13 @@
             this.cbNews = new System.Windows.Forms.CheckBox();
             this.cbDisneylandResort = new System.Windows.Forms.CheckBox();
             this.gbText = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAddText = new System.Windows.Forms.Button();
             this.txtCarouselText = new System.Windows.Forms.TextBox();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.gbMode.SuspendLayout();
             this.gbItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStayTime)).BeginInit();
@@ -231,6 +231,15 @@
             this.gbText.TabStop = false;
             this.gbText.Text = "Carousel Text";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(443, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "New Text";
+            // 
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(443, 174);
@@ -279,6 +288,7 @@
             this.dgv.Location = new System.Drawing.Point(40, 37);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
             this.dgv.RowTemplate.Height = 24;
             this.dgv.Size = new System.Drawing.Size(370, 160);
@@ -303,15 +313,6 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(443, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "New Text";
             // 
             // ShowMode
             // 
