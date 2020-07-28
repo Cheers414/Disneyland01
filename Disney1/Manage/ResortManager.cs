@@ -34,5 +34,17 @@ namespace Disney1.Manage
             showMode1.DataRefresh();
             showMode1.BringToFront();
         }
+
+        private void queueTimeStatisticsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            queueTimeStatistics1.DataRefresh();
+            queueTimeStatistics1.BringToFront();
+        }
+
+        private void maintenanceStatisticsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            maintenanceStatistics1.DataRefresh();
+            maintenanceStatistics1.BringToFront();
+        }
     }
 }

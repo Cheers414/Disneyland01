@@ -36,8 +36,10 @@
             this.maintenanceStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.attractionsStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.queueTimeStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showMode1 = new Disney1.Manage.Manager.ShowMode();
+            this.queueTimeStatistics1 = new Disney1.Manage.Manager.QueueTimeStatistics();
             this.attractionsStatistics1 = new Disney1.Manage.Manager.AttractionsStatistics();
+            this.showMode1 = new Disney1.Manage.Manager.ShowMode();
+            this.maintenanceStatistics1 = new Disney1.Manage.Manager.MaintenanceStatistics();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +90,7 @@
             this.maintenanceStatisticsToolStripMenuItem.Name = "maintenanceStatisticsToolStripMenuItem";
             this.maintenanceStatisticsToolStripMenuItem.Size = new System.Drawing.Size(137, 20);
             this.maintenanceStatisticsToolStripMenuItem.Text = "Maintenance Statistics";
+            this.maintenanceStatisticsToolStripMenuItem.Click += new System.EventHandler(this.maintenanceStatisticsToolStripMenuItem_Click);
             // 
             // attractionsStatisticsToolStripMenuItem
             // 
@@ -101,16 +104,17 @@
             this.queueTimeStatisticsToolStripMenuItem.Name = "queueTimeStatisticsToolStripMenuItem";
             this.queueTimeStatisticsToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
             this.queueTimeStatisticsToolStripMenuItem.Text = "Queue Time Statistics";
+            this.queueTimeStatisticsToolStripMenuItem.Click += new System.EventHandler(this.queueTimeStatisticsToolStripMenuItem_Click);
             // 
-            // showMode1
+            // queueTimeStatistics1
             // 
-            this.showMode1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.showMode1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.showMode1.Location = new System.Drawing.Point(0, 24);
-            this.showMode1.Margin = new System.Windows.Forms.Padding(4);
-            this.showMode1.Name = "showMode1";
-            this.showMode1.Size = new System.Drawing.Size(1031, 657);
-            this.showMode1.TabIndex = 1;
+            this.queueTimeStatistics1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.queueTimeStatistics1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.queueTimeStatistics1.Location = new System.Drawing.Point(0, 24);
+            this.queueTimeStatistics1.Margin = new System.Windows.Forms.Padding(4);
+            this.queueTimeStatistics1.Name = "queueTimeStatistics1";
+            this.queueTimeStatistics1.Size = new System.Drawing.Size(1031, 657);
+            this.queueTimeStatistics1.TabIndex = 3;
             // 
             // attractionsStatistics1
             // 
@@ -122,10 +126,32 @@
             this.attractionsStatistics1.Size = new System.Drawing.Size(1031, 657);
             this.attractionsStatistics1.TabIndex = 2;
             // 
+            // showMode1
+            // 
+            this.showMode1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.showMode1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.showMode1.Location = new System.Drawing.Point(0, 24);
+            this.showMode1.Margin = new System.Windows.Forms.Padding(4);
+            this.showMode1.Name = "showMode1";
+            this.showMode1.Size = new System.Drawing.Size(1031, 657);
+            this.showMode1.TabIndex = 1;
+            // 
+            // maintenanceStatistics1
+            // 
+            this.maintenanceStatistics1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maintenanceStatistics1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.maintenanceStatistics1.Location = new System.Drawing.Point(0, 24);
+            this.maintenanceStatistics1.Margin = new System.Windows.Forms.Padding(4);
+            this.maintenanceStatistics1.Name = "maintenanceStatistics1";
+            this.maintenanceStatistics1.Size = new System.Drawing.Size(1031, 657);
+            this.maintenanceStatistics1.TabIndex = 4;
+            // 
             // ResortManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.maintenanceStatistics1);
+            this.Controls.Add(this.queueTimeStatistics1);
             this.Controls.Add(this.attractionsStatistics1);
             this.Controls.Add(this.showMode1);
             this.Controls.Add(this.menuStrip1);
@@ -152,5 +178,7 @@
         private System.Windows.Forms.ToolStripMenuItem attractionsStatisticsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem queueTimeStatisticsToolStripMenuItem;
         private Manager.AttractionsStatistics attractionsStatistics1;
+        private Manager.QueueTimeStatistics queueTimeStatistics1;
+        private Manager.MaintenanceStatistics maintenanceStatistics1;
     }
 }

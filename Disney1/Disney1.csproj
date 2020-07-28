@@ -191,6 +191,7 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="WeatherData.cs" />
     <EmbeddedResource Include="DisneylandResort\AttractionsInfo.resx">
       <DependentUpon>AttractionsInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +284,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="WeatherData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

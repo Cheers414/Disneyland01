@@ -24,6 +24,8 @@ namespace Disney1.Manage.Manager
         public void DataRefresh()
         {
             db = new DisneyDataDataContext();
+            monthCalendar1.SelectionStart = DateTime.Today;
+            monthCalendar1.SelectionEnd = DateTime.Today;
             monthCalendar1_DateChanged(null, null);
         }
 

@@ -3805,8 +3805,6 @@ namespace Disney1
 		
 		private string _Note;
 		
-		private System.Nullable<bool> _Status;
-		
 		private EntityRef<Attractions> _Attractions;
 		
     #region Extensibility Method Definitions
@@ -3823,8 +3821,6 @@ namespace Disney1
     partial void OnEndDateTimeChanged();
     partial void OnNoteChanging(string value);
     partial void OnNoteChanged();
-    partial void OnStatusChanging(System.Nullable<bool> value);
-    partial void OnStatusChanged();
     #endregion
 		
 		public MaintenanceSchedule()
@@ -3933,26 +3929,6 @@ namespace Disney1
 					this._Note = value;
 					this.SendPropertyChanged("Note");
 					this.OnNoteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Bit")]
-		public System.Nullable<bool> Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
 				}
 			}
 		}

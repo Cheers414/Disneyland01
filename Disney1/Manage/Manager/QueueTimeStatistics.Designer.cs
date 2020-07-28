@@ -45,15 +45,16 @@
             this.btnExport.TabIndex = 7;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(275, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 16);
+            this.label1.Size = new System.Drawing.Size(131, 16);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Attractions Statistics Report";
+            this.label1.Text = "Queue Time Report";
             // 
             // dgv
             // 
@@ -83,15 +84,17 @@
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Person-Time";
+            this.Column2.HeaderText = "Average Queue Time";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // monthCalendar1
             // 
             this.monthCalendar1.Location = new System.Drawing.Point(27, 22);
+            this.monthCalendar1.MaxSelectionCount = 31;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 4;
+            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
             // QueueTimeStatistics
             // 
@@ -102,7 +105,7 @@
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.monthCalendar1);
             this.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QueueTimeStatistics";
             this.Size = new System.Drawing.Size(1031, 657);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
@@ -116,8 +119,8 @@
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }

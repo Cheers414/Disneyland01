@@ -43,7 +43,7 @@ namespace Disney1
             string cText = "";
             db.CarouselText.ToList().ForEach(x =>
             {
-                cText += x.CarouselText1 + "                    ";
+                cText += x.CarouselText1 + "                                            ";
             });
 
             //Create label
@@ -145,7 +145,7 @@ namespace Disney1
             if (carouselNum == 0)
             {
                 flowlayout.Location = new Point(0, 0);
-                carouselNum = lstCarousel.Count(x=>x == true);
+                carouselNum = lstCarousel.Count(x => x == true);
             }
             else
             {
