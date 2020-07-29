@@ -96,7 +96,8 @@ namespace Disney1.Manage
 
         private void touristToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            setTourist1.DataRefresh();
+            setTourist1.BringToFront();
         }
     }
 }

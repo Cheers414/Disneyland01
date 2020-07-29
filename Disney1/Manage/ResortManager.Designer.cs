@@ -33,10 +33,6 @@
             this.maintenanceStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.attractionsStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.queueTimeStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.queueTimeStatistics1 = new Disney1.Manage.Manager.QueueTimeStatistics();
-            this.attractionsStatistics1 = new Disney1.Manage.Manager.AttractionsStatistics();
-            this.showMode1 = new Disney1.Manage.Manager.ShowMode();
-            this.maintenanceStatistics1 = new Disney1.Manage.Manager.MaintenanceStatistics();
             this.resortDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disneylandResortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trafficMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,13 +43,18 @@
             this.newsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.weatherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.touristToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.disneylandResort1 = new Disney1.DisneylandResort.DisneylandResort();
-            this.trafficInfo1 = new Disney1.DisneylandResort.TrafficInfo();
-            this.ticketInfo1 = new Disney1.DisneylandResort.TicketInfo();
-            this.attractionsInfo1 = new Disney1.DisneylandResort.AttractionsInfo();
-            this.drama1 = new Disney1.DisneylandResort.Drama();
-            this.maintenance1 = new Disney1.DisneylandResort.Maintenance();
             this.setNews1 = new Disney1.Manage.Manager.SetNews();
+            this.maintenance1 = new Disney1.DisneylandResort.Maintenance();
+            this.drama1 = new Disney1.DisneylandResort.Drama();
+            this.attractionsInfo1 = new Disney1.DisneylandResort.AttractionsInfo();
+            this.ticketInfo1 = new Disney1.DisneylandResort.TicketInfo();
+            this.trafficInfo1 = new Disney1.DisneylandResort.TrafficInfo();
+            this.disneylandResort1 = new Disney1.DisneylandResort.DisneylandResort();
+            this.maintenanceStatistics1 = new Disney1.Manage.Manager.MaintenanceStatistics();
+            this.queueTimeStatistics1 = new Disney1.Manage.Manager.QueueTimeStatistics();
+            this.attractionsStatistics1 = new Disney1.Manage.Manager.AttractionsStatistics();
+            this.showMode1 = new Disney1.Manage.Manager.ShowMode();
+            this.setTourist1 = new Disney1.Manage.Manager.SetTourist();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,46 +100,6 @@
             this.queueTimeStatisticsToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
             this.queueTimeStatisticsToolStripMenuItem.Text = "Queue Time Statistics";
             this.queueTimeStatisticsToolStripMenuItem.Click += new System.EventHandler(this.queueTimeStatisticsToolStripMenuItem_Click);
-            // 
-            // queueTimeStatistics1
-            // 
-            this.queueTimeStatistics1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.queueTimeStatistics1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.queueTimeStatistics1.Location = new System.Drawing.Point(0, 24);
-            this.queueTimeStatistics1.Margin = new System.Windows.Forms.Padding(4);
-            this.queueTimeStatistics1.Name = "queueTimeStatistics1";
-            this.queueTimeStatistics1.Size = new System.Drawing.Size(1031, 657);
-            this.queueTimeStatistics1.TabIndex = 3;
-            // 
-            // attractionsStatistics1
-            // 
-            this.attractionsStatistics1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.attractionsStatistics1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.attractionsStatistics1.Location = new System.Drawing.Point(0, 24);
-            this.attractionsStatistics1.Margin = new System.Windows.Forms.Padding(4);
-            this.attractionsStatistics1.Name = "attractionsStatistics1";
-            this.attractionsStatistics1.Size = new System.Drawing.Size(1031, 657);
-            this.attractionsStatistics1.TabIndex = 2;
-            // 
-            // showMode1
-            // 
-            this.showMode1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.showMode1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.showMode1.Location = new System.Drawing.Point(0, 24);
-            this.showMode1.Margin = new System.Windows.Forms.Padding(4);
-            this.showMode1.Name = "showMode1";
-            this.showMode1.Size = new System.Drawing.Size(1031, 657);
-            this.showMode1.TabIndex = 1;
-            // 
-            // maintenanceStatistics1
-            // 
-            this.maintenanceStatistics1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.maintenanceStatistics1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.maintenanceStatistics1.Location = new System.Drawing.Point(0, 24);
-            this.maintenanceStatistics1.Margin = new System.Windows.Forms.Padding(4);
-            this.maintenanceStatistics1.Name = "maintenanceStatistics1";
-            this.maintenanceStatistics1.Size = new System.Drawing.Size(1031, 657);
-            this.maintenanceStatistics1.TabIndex = 4;
             // 
             // resortDataToolStripMenuItem
             // 
@@ -219,55 +180,15 @@
             this.touristToolStripMenuItem.Text = "Tourist";
             this.touristToolStripMenuItem.Click += new System.EventHandler(this.touristToolStripMenuItem_Click);
             // 
-            // disneylandResort1
+            // setNews1
             // 
-            this.disneylandResort1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.disneylandResort1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.disneylandResort1.Location = new System.Drawing.Point(0, 24);
-            this.disneylandResort1.Margin = new System.Windows.Forms.Padding(0);
-            this.disneylandResort1.Name = "disneylandResort1";
-            this.disneylandResort1.Size = new System.Drawing.Size(1031, 657);
-            this.disneylandResort1.TabIndex = 5;
-            // 
-            // trafficInfo1
-            // 
-            this.trafficInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trafficInfo1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.trafficInfo1.Location = new System.Drawing.Point(0, 24);
-            this.trafficInfo1.Margin = new System.Windows.Forms.Padding(0);
-            this.trafficInfo1.Name = "trafficInfo1";
-            this.trafficInfo1.Size = new System.Drawing.Size(1031, 657);
-            this.trafficInfo1.TabIndex = 6;
-            // 
-            // ticketInfo1
-            // 
-            this.ticketInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ticketInfo1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.ticketInfo1.Location = new System.Drawing.Point(0, 24);
-            this.ticketInfo1.Margin = new System.Windows.Forms.Padding(0);
-            this.ticketInfo1.Name = "ticketInfo1";
-            this.ticketInfo1.Size = new System.Drawing.Size(1031, 657);
-            this.ticketInfo1.TabIndex = 7;
-            // 
-            // attractionsInfo1
-            // 
-            this.attractionsInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.attractionsInfo1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.attractionsInfo1.Location = new System.Drawing.Point(0, 24);
-            this.attractionsInfo1.Margin = new System.Windows.Forms.Padding(0);
-            this.attractionsInfo1.Name = "attractionsInfo1";
-            this.attractionsInfo1.Size = new System.Drawing.Size(1031, 657);
-            this.attractionsInfo1.TabIndex = 8;
-            // 
-            // drama1
-            // 
-            this.drama1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.drama1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.drama1.Location = new System.Drawing.Point(0, 24);
-            this.drama1.Margin = new System.Windows.Forms.Padding(0);
-            this.drama1.Name = "drama1";
-            this.drama1.Size = new System.Drawing.Size(1031, 657);
-            this.drama1.TabIndex = 9;
+            this.setNews1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setNews1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.setNews1.Location = new System.Drawing.Point(0, 24);
+            this.setNews1.Margin = new System.Windows.Forms.Padding(4);
+            this.setNews1.Name = "setNews1";
+            this.setNews1.Size = new System.Drawing.Size(1031, 657);
+            this.setNews1.TabIndex = 11;
             // 
             // maintenance1
             // 
@@ -279,20 +200,111 @@
             this.maintenance1.Size = new System.Drawing.Size(1031, 657);
             this.maintenance1.TabIndex = 10;
             // 
-            // setNews1
+            // drama1
             // 
-            this.setNews1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.setNews1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.setNews1.Location = new System.Drawing.Point(0, 24);
-            this.setNews1.Margin = new System.Windows.Forms.Padding(4);
-            this.setNews1.Name = "setNews1";
-            this.setNews1.Size = new System.Drawing.Size(1031, 657);
-            this.setNews1.TabIndex = 11;
+            this.drama1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.drama1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.drama1.Location = new System.Drawing.Point(0, 24);
+            this.drama1.Margin = new System.Windows.Forms.Padding(0);
+            this.drama1.Name = "drama1";
+            this.drama1.Size = new System.Drawing.Size(1031, 657);
+            this.drama1.TabIndex = 9;
+            // 
+            // attractionsInfo1
+            // 
+            this.attractionsInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attractionsInfo1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.attractionsInfo1.Location = new System.Drawing.Point(0, 24);
+            this.attractionsInfo1.Margin = new System.Windows.Forms.Padding(0);
+            this.attractionsInfo1.Name = "attractionsInfo1";
+            this.attractionsInfo1.Size = new System.Drawing.Size(1031, 657);
+            this.attractionsInfo1.TabIndex = 8;
+            // 
+            // ticketInfo1
+            // 
+            this.ticketInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ticketInfo1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ticketInfo1.Location = new System.Drawing.Point(0, 24);
+            this.ticketInfo1.Margin = new System.Windows.Forms.Padding(0);
+            this.ticketInfo1.Name = "ticketInfo1";
+            this.ticketInfo1.Size = new System.Drawing.Size(1031, 657);
+            this.ticketInfo1.TabIndex = 7;
+            // 
+            // trafficInfo1
+            // 
+            this.trafficInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trafficInfo1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.trafficInfo1.Location = new System.Drawing.Point(0, 24);
+            this.trafficInfo1.Margin = new System.Windows.Forms.Padding(0);
+            this.trafficInfo1.Name = "trafficInfo1";
+            this.trafficInfo1.Size = new System.Drawing.Size(1031, 657);
+            this.trafficInfo1.TabIndex = 6;
+            // 
+            // disneylandResort1
+            // 
+            this.disneylandResort1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.disneylandResort1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.disneylandResort1.Location = new System.Drawing.Point(0, 24);
+            this.disneylandResort1.Margin = new System.Windows.Forms.Padding(0);
+            this.disneylandResort1.Name = "disneylandResort1";
+            this.disneylandResort1.Size = new System.Drawing.Size(1031, 657);
+            this.disneylandResort1.TabIndex = 5;
+            // 
+            // maintenanceStatistics1
+            // 
+            this.maintenanceStatistics1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maintenanceStatistics1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.maintenanceStatistics1.Location = new System.Drawing.Point(0, 24);
+            this.maintenanceStatistics1.Margin = new System.Windows.Forms.Padding(4);
+            this.maintenanceStatistics1.Name = "maintenanceStatistics1";
+            this.maintenanceStatistics1.Size = new System.Drawing.Size(1031, 657);
+            this.maintenanceStatistics1.TabIndex = 4;
+            // 
+            // queueTimeStatistics1
+            // 
+            this.queueTimeStatistics1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.queueTimeStatistics1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.queueTimeStatistics1.Location = new System.Drawing.Point(0, 24);
+            this.queueTimeStatistics1.Margin = new System.Windows.Forms.Padding(4);
+            this.queueTimeStatistics1.Name = "queueTimeStatistics1";
+            this.queueTimeStatistics1.Size = new System.Drawing.Size(1031, 657);
+            this.queueTimeStatistics1.TabIndex = 3;
+            // 
+            // attractionsStatistics1
+            // 
+            this.attractionsStatistics1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attractionsStatistics1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.attractionsStatistics1.Location = new System.Drawing.Point(0, 24);
+            this.attractionsStatistics1.Margin = new System.Windows.Forms.Padding(4);
+            this.attractionsStatistics1.Name = "attractionsStatistics1";
+            this.attractionsStatistics1.Size = new System.Drawing.Size(1031, 657);
+            this.attractionsStatistics1.TabIndex = 2;
+            // 
+            // showMode1
+            // 
+            this.showMode1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.showMode1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.showMode1.Location = new System.Drawing.Point(0, 24);
+            this.showMode1.Margin = new System.Windows.Forms.Padding(4);
+            this.showMode1.Name = "showMode1";
+            this.showMode1.Size = new System.Drawing.Size(1031, 657);
+            this.showMode1.TabIndex = 1;
+            // 
+            // setTourist1
+            // 
+            this.setTourist1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setTourist1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.setTourist1.Location = new System.Drawing.Point(0, 24);
+            this.setTourist1.Margin = new System.Windows.Forms.Padding(4);
+            this.setTourist1.Name = "setTourist1";
+            this.setTourist1.Size = new System.Drawing.Size(1031, 657);
+            this.setTourist1.TabIndex = 12;
             // 
             // ResortManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.setTourist1);
             this.Controls.Add(this.setNews1);
             this.Controls.Add(this.maintenance1);
             this.Controls.Add(this.drama1);
@@ -344,5 +356,6 @@
         private DisneylandResort.Drama drama1;
         private DisneylandResort.Maintenance maintenance1;
         private Manager.SetNews setNews1;
+        private Manager.SetTourist setTourist1;
     }
 }
