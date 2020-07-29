@@ -23,6 +23,8 @@ namespace Disney1
         public void DataRefresh()
         {
             db = new DisneyDataDataContext();
+            dtpBirthday.MaxDate = DateTime.Today;
+
             txtAccount.Text = "";
             txtCitizenship.Text = "";
             txtEmail.Text = "";

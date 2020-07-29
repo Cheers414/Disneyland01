@@ -33,6 +33,7 @@ namespace Disney1
             txtPwd.Text = "";
             panelMenu.Visible = false;
             panelMenu.Enabled = false;
+            btnResort_Click(null, null);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -149,11 +150,11 @@ namespace Disney1
             switch (Global.User.GroupNo)
             {
                 case 1:
-                    resortManager1.DataRefresh();
-                    resortManager1.BringToFront();
+                    
                     break;
                 case 2:
-
+                    resortManager1.DataRefresh();
+                    resortManager1.BringToFront();
                     break;
                 case 3:
 

@@ -31,7 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.rbGeneral = new System.Windows.Forms.RadioButton();
             this.gbMode = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.rbCarousel = new System.Windows.Forms.RadioButton();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.gbItem = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.nudStayTime = new System.Windows.Forms.NumericUpDown();
@@ -46,11 +48,10 @@
             this.gbText = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSaveText = new System.Windows.Forms.Button();
             this.btnAddText = new System.Windows.Forms.Button();
             this.txtCarouselText = new System.Windows.Forms.TextBox();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.gbMode.SuspendLayout();
             this.gbItem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudStayTime)).BeginInit();
@@ -72,14 +73,27 @@
             // 
             // gbMode
             // 
+            this.gbMode.Controls.Add(this.btnSave);
             this.gbMode.Controls.Add(this.rbCarousel);
             this.gbMode.Controls.Add(this.rbGeneral);
-            this.gbMode.Location = new System.Drawing.Point(113, 30);
+            this.gbMode.Controls.Add(this.btnCancel);
+            this.gbMode.Controls.Add(this.gbItem);
+            this.gbMode.Location = new System.Drawing.Point(102, 42);
             this.gbMode.Name = "gbMode";
-            this.gbMode.Size = new System.Drawing.Size(793, 127);
+            this.gbMode.Size = new System.Drawing.Size(825, 333);
             this.gbMode.TabIndex = 1;
             this.gbMode.TabStop = false;
             this.gbMode.Text = "Show Mode";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(718, 296);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // rbCarousel
             // 
@@ -91,6 +105,16 @@
             this.rbCarousel.TabStop = true;
             this.rbCarousel.Text = "Carousel Mode";
             this.rbCarousel.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(637, 296);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // gbItem
             // 
@@ -104,9 +128,9 @@
             this.gbItem.Controls.Add(this.cbWeather);
             this.gbItem.Controls.Add(this.cbNews);
             this.gbItem.Controls.Add(this.cbDisneylandResort);
-            this.gbItem.Location = new System.Drawing.Point(113, 163);
+            this.gbItem.Location = new System.Drawing.Point(40, 117);
             this.gbItem.Name = "gbItem";
-            this.gbItem.Size = new System.Drawing.Size(793, 166);
+            this.gbItem.Size = new System.Drawing.Size(753, 159);
             this.gbItem.TabIndex = 2;
             this.gbItem.TabStop = false;
             this.gbItem.Text = "Carousel Item";
@@ -221,12 +245,13 @@
             // 
             this.gbText.Controls.Add(this.label2);
             this.gbText.Controls.Add(this.btnDelete);
+            this.gbText.Controls.Add(this.btnSaveText);
             this.gbText.Controls.Add(this.btnAddText);
             this.gbText.Controls.Add(this.txtCarouselText);
             this.gbText.Controls.Add(this.dgv);
-            this.gbText.Location = new System.Drawing.Point(113, 348);
+            this.gbText.Location = new System.Drawing.Point(102, 398);
             this.gbText.Name = "gbText";
-            this.gbText.Size = new System.Drawing.Size(793, 219);
+            this.gbText.Size = new System.Drawing.Size(825, 219);
             this.gbText.TabIndex = 2;
             this.gbText.TabStop = false;
             this.gbText.Text = "Carousel Text";
@@ -234,7 +259,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(443, 37);
+            this.label2.Location = new System.Drawing.Point(482, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 16);
             this.label2.TabIndex = 3;
@@ -242,19 +267,29 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(443, 174);
+            this.btnDelete.Location = new System.Drawing.Point(482, 171);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(154, 23);
+            this.btnDelete.Size = new System.Drawing.Size(92, 23);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // btnSaveText
+            // 
+            this.btnSaveText.Location = new System.Drawing.Point(700, 171);
+            this.btnSaveText.Name = "btnSaveText";
+            this.btnSaveText.Size = new System.Drawing.Size(92, 23);
+            this.btnSaveText.TabIndex = 2;
+            this.btnSaveText.Text = "Save";
+            this.btnSaveText.UseVisualStyleBackColor = true;
+            this.btnSaveText.Click += new System.EventHandler(this.btnSaveText_Click);
+            // 
             // btnAddText
             // 
-            this.btnAddText.Location = new System.Drawing.Point(600, 174);
+            this.btnAddText.Location = new System.Drawing.Point(591, 171);
             this.btnAddText.Name = "btnAddText";
-            this.btnAddText.Size = new System.Drawing.Size(154, 23);
+            this.btnAddText.Size = new System.Drawing.Size(92, 23);
             this.btnAddText.TabIndex = 2;
             this.btnAddText.Text = "Add";
             this.btnAddText.UseVisualStyleBackColor = true;
@@ -262,9 +297,10 @@
             // 
             // txtCarouselText
             // 
-            this.txtCarouselText.Location = new System.Drawing.Point(443, 56);
+            this.txtCarouselText.Location = new System.Drawing.Point(482, 53);
             this.txtCarouselText.Multiline = true;
             this.txtCarouselText.Name = "txtCarouselText";
+            this.txtCarouselText.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtCarouselText.Size = new System.Drawing.Size(311, 112);
             this.txtCarouselText.TabIndex = 1;
             // 
@@ -275,7 +311,7 @@
             this.dgv.AllowUserToResizeColumns = false;
             this.dgv.AllowUserToResizeRows = false;
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -291,37 +327,15 @@
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersVisible = false;
             this.dgv.RowTemplate.Height = 24;
-            this.dgv.Size = new System.Drawing.Size(370, 160);
+            this.dgv.Size = new System.Drawing.Size(404, 160);
             this.dgv.TabIndex = 0;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(831, 595);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(750, 595);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellClick);
             // 
             // ShowMode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.gbText);
-            this.Controls.Add(this.gbItem);
             this.Controls.Add(this.gbMode);
             this.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -363,5 +377,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown nudStayTime;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSaveText;
     }
 }

@@ -31,8 +31,6 @@
             this.lblTouristStatistics = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,25 +60,12 @@
             this.dgv.AllowUserToResizeRows = false;
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
             this.dgv.Location = new System.Drawing.Point(541, 135);
             this.dgv.Name = "dgv";
             this.dgv.RowHeadersVisible = false;
             this.dgv.RowTemplate.Height = 24;
             this.dgv.Size = new System.Drawing.Size(303, 446);
             this.dgv.TabIndex = 1;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Theme Park";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Number of Tourist";
-            this.Column2.Name = "Column2";
             // 
             // Tourist
             // 
@@ -104,7 +89,5 @@
         private System.Windows.Forms.Label lblTouristStatistics;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

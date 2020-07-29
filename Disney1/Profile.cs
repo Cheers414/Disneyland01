@@ -27,6 +27,7 @@ namespace Disney1
             cboGroup.DisplayMember = "GroupName";
             cboHotel.DataSource = db.Hotel;
             cboHotel.DisplayMember = "HotelName";
+            dtpBirthday.MaxDate = DateTime.Today;
 
             var user = Global.User;
             lblAccount.Text = user.AccountId;
@@ -96,6 +97,7 @@ namespace Disney1
                     account.HotelNo = null;
                 }
                 db.SubmitChanges();
+                Global.User = account;
                 MessageBox.Show("Save successfully.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.DataRefresh();
             }

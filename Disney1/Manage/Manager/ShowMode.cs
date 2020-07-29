@@ -20,6 +20,8 @@ namespace Disney1.Manage.Manager
         int showMode;
         List<bool> lstCarousel;
         DisneyDataDataContext db;
+        bool addMode = false;
+        List<CarouselText> lstText;
 
         public void DataRefresh()
         {
@@ -27,6 +29,7 @@ namespace Disney1.Manage.Manager
 
             showMode = Properties.Settings.Default.ShowMode;
             lstCarousel = Properties.Settings.Default.Carousel;
+            lstText = db.CarouselText.ToList();
 
             txtCarouselText.Text = "";
 
@@ -70,7 +73,12 @@ namespace Disney1.Manage.Manager
                 }
             }
 
-            dgv.DataSource = db.CarouselText.Select(x => new { x.CarouselText1 }).ToList();
+            dgvReset();
+        }
+
+        private void dgvReset()
+        {
+            dgv.DataSource = lstText.Select(x => new { x.CarouselText1 }).ToList();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -113,10 +121,7 @@ namespace Disney1.Manage.Manager
                     }
                 }
                 Properties.Settings.Default.Carousel = lstCarousel;
-
-
                 Properties.Settings.Default.Save();
-                db.SubmitChanges();
 
                 MessageBox.Show("Save successfully!", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DataRefresh();
@@ -147,22 +152,37 @@ namespace Disney1.Manage.Manager
 
         private void btnAddText_Click(object sender, EventArgs e)
         {
+            txtCarouselText.Text = "";
+            addMode = true;
+        }
+
+        private void btnSaveText_Click(object sender, EventArgs e)
+        {
             if (txtCarouselText.Text == "")
             {
                 MessageBox.Show("Value can not be empty!", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
-            //Add carousel text
             try
             {
-                db.CarouselText.InsertOnSubmit(new CarouselText
+                if (addMode)
                 {
-                    CarouselText1 = txtCarouselText.Text
-                });
+                    //Add carousel text
+                    db.CarouselText.InsertOnSubmit(new CarouselText
+                    {
+                        CarouselText1 = txtCarouselText.Text
+                    });
+                    txtCarouselText.Text = "";
+                }
+                else
+                {
+                    //Edit carousel text
+                    lstText[dgv.CurrentCell.RowIndex].CarouselText1 = txtCarouselText.Text;
+                }
                 db.SubmitChanges();
-                dgv.DataSource = db.CarouselText.Select(x => new { x.CarouselText1 }).ToList();
-                txtCarouselText.Text = "";
+                lstText = db.CarouselText.ToList();
+                dgvReset();
+                MessageBox.Show("Save successfully.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
@@ -181,6 +201,15 @@ namespace Disney1.Manage.Manager
             {
                 gbItem.Enabled = true;
                 gbText.Enabled = true;
+            }
+        }
+
+        private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                txtCarouselText.Text = lstText[e.RowIndex].CarouselText1;
+                addMode = false;
             }
         }
     }

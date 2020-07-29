@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Disney1
 {
-
     public class WeatherData
     {
         public Weatherlist[] WeatherList { get; set; }
@@ -18,6 +17,7 @@ namespace Disney1
         public string TempMax { get; set; }
         public string TempMin { get; set; }
         public string Humidity { get; set; }
+        public string Weather { get; set; }
         public Timeweather[] TimeWeather { get; set; }
     }
 
@@ -27,5 +27,4 @@ namespace Disney1
         public string Temp { get; set; }
         public string POP { get; set; }
     }
-
 }

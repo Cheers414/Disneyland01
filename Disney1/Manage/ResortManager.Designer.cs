@@ -30,9 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.setShowModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.weatherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.touristStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maintenanceStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.attractionsStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.queueTimeStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,6 +37,23 @@
             this.attractionsStatistics1 = new Disney1.Manage.Manager.AttractionsStatistics();
             this.showMode1 = new Disney1.Manage.Manager.ShowMode();
             this.maintenanceStatistics1 = new Disney1.Manage.Manager.MaintenanceStatistics();
+            this.resortDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disneylandResortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.trafficMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.attractionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dramaScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maintenanceScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weatherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.touristToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disneylandResort1 = new Disney1.DisneylandResort.DisneylandResort();
+            this.trafficInfo1 = new Disney1.DisneylandResort.TrafficInfo();
+            this.ticketInfo1 = new Disney1.DisneylandResort.TicketInfo();
+            this.attractionsInfo1 = new Disney1.DisneylandResort.AttractionsInfo();
+            this.drama1 = new Disney1.DisneylandResort.Drama();
+            this.maintenance1 = new Disney1.DisneylandResort.Maintenance();
+            this.setNews1 = new Disney1.Manage.Manager.SetNews();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,12 +62,10 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setShowModeToolStripMenuItem,
-            this.newsToolStripMenuItem,
-            this.weatherToolStripMenuItem,
-            this.touristStatisticsToolStripMenuItem,
             this.maintenanceStatisticsToolStripMenuItem,
             this.attractionsStatisticsToolStripMenuItem,
-            this.queueTimeStatisticsToolStripMenuItem});
+            this.queueTimeStatisticsToolStripMenuItem,
+            this.resortDataToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1031, 24);
@@ -66,24 +78,6 @@
             this.setShowModeToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.setShowModeToolStripMenuItem.Text = "Set Show Mode";
             this.setShowModeToolStripMenuItem.Click += new System.EventHandler(this.setShowModeToolStripMenuItem_Click);
-            // 
-            // newsToolStripMenuItem
-            // 
-            this.newsToolStripMenuItem.Name = "newsToolStripMenuItem";
-            this.newsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.newsToolStripMenuItem.Text = "News";
-            // 
-            // weatherToolStripMenuItem
-            // 
-            this.weatherToolStripMenuItem.Name = "weatherToolStripMenuItem";
-            this.weatherToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.weatherToolStripMenuItem.Text = "Weather";
-            // 
-            // touristStatisticsToolStripMenuItem
-            // 
-            this.touristStatisticsToolStripMenuItem.Name = "touristStatisticsToolStripMenuItem";
-            this.touristStatisticsToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
-            this.touristStatisticsToolStripMenuItem.Text = "Tourist Statistics";
             // 
             // maintenanceStatisticsToolStripMenuItem
             // 
@@ -146,10 +140,166 @@
             this.maintenanceStatistics1.Size = new System.Drawing.Size(1031, 657);
             this.maintenanceStatistics1.TabIndex = 4;
             // 
+            // resortDataToolStripMenuItem
+            // 
+            this.resortDataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.disneylandResortToolStripMenuItem,
+            this.trafficMethodToolStripMenuItem,
+            this.tiketToolStripMenuItem,
+            this.attractionsToolStripMenuItem,
+            this.dramaScheduleToolStripMenuItem,
+            this.maintenanceScheduleToolStripMenuItem,
+            this.newsToolStripMenuItem,
+            this.weatherToolStripMenuItem,
+            this.touristToolStripMenuItem});
+            this.resortDataToolStripMenuItem.Name = "resortDataToolStripMenuItem";
+            this.resortDataToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.resortDataToolStripMenuItem.Text = "Resort Data";
+            // 
+            // disneylandResortToolStripMenuItem
+            // 
+            this.disneylandResortToolStripMenuItem.Name = "disneylandResortToolStripMenuItem";
+            this.disneylandResortToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.disneylandResortToolStripMenuItem.Text = "Disneyland Resort";
+            this.disneylandResortToolStripMenuItem.Click += new System.EventHandler(this.disneylandResortToolStripMenuItem_Click);
+            // 
+            // trafficMethodToolStripMenuItem
+            // 
+            this.trafficMethodToolStripMenuItem.Name = "trafficMethodToolStripMenuItem";
+            this.trafficMethodToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.trafficMethodToolStripMenuItem.Text = "Traffic Method";
+            this.trafficMethodToolStripMenuItem.Click += new System.EventHandler(this.trafficMethodToolStripMenuItem_Click);
+            // 
+            // tiketToolStripMenuItem
+            // 
+            this.tiketToolStripMenuItem.Name = "tiketToolStripMenuItem";
+            this.tiketToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.tiketToolStripMenuItem.Text = "Tiket";
+            this.tiketToolStripMenuItem.Click += new System.EventHandler(this.tiketToolStripMenuItem_Click);
+            // 
+            // attractionsToolStripMenuItem
+            // 
+            this.attractionsToolStripMenuItem.Name = "attractionsToolStripMenuItem";
+            this.attractionsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.attractionsToolStripMenuItem.Text = "Attractions";
+            this.attractionsToolStripMenuItem.Click += new System.EventHandler(this.attractionsToolStripMenuItem_Click);
+            // 
+            // dramaScheduleToolStripMenuItem
+            // 
+            this.dramaScheduleToolStripMenuItem.Name = "dramaScheduleToolStripMenuItem";
+            this.dramaScheduleToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.dramaScheduleToolStripMenuItem.Text = "Drama Schedule";
+            this.dramaScheduleToolStripMenuItem.Click += new System.EventHandler(this.dramaScheduleToolStripMenuItem_Click);
+            // 
+            // maintenanceScheduleToolStripMenuItem
+            // 
+            this.maintenanceScheduleToolStripMenuItem.Name = "maintenanceScheduleToolStripMenuItem";
+            this.maintenanceScheduleToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.maintenanceScheduleToolStripMenuItem.Text = "Maintenance Schedule";
+            this.maintenanceScheduleToolStripMenuItem.Click += new System.EventHandler(this.maintenanceScheduleToolStripMenuItem_Click);
+            // 
+            // newsToolStripMenuItem
+            // 
+            this.newsToolStripMenuItem.Name = "newsToolStripMenuItem";
+            this.newsToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.newsToolStripMenuItem.Text = "News";
+            this.newsToolStripMenuItem.Click += new System.EventHandler(this.newsToolStripMenuItem_Click);
+            // 
+            // weatherToolStripMenuItem
+            // 
+            this.weatherToolStripMenuItem.Name = "weatherToolStripMenuItem";
+            this.weatherToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.weatherToolStripMenuItem.Text = "Weather";
+            this.weatherToolStripMenuItem.Click += new System.EventHandler(this.weatherToolStripMenuItem_Click);
+            // 
+            // touristToolStripMenuItem
+            // 
+            this.touristToolStripMenuItem.Name = "touristToolStripMenuItem";
+            this.touristToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.touristToolStripMenuItem.Text = "Tourist";
+            this.touristToolStripMenuItem.Click += new System.EventHandler(this.touristToolStripMenuItem_Click);
+            // 
+            // disneylandResort1
+            // 
+            this.disneylandResort1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.disneylandResort1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.disneylandResort1.Location = new System.Drawing.Point(0, 24);
+            this.disneylandResort1.Margin = new System.Windows.Forms.Padding(0);
+            this.disneylandResort1.Name = "disneylandResort1";
+            this.disneylandResort1.Size = new System.Drawing.Size(1031, 657);
+            this.disneylandResort1.TabIndex = 5;
+            // 
+            // trafficInfo1
+            // 
+            this.trafficInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trafficInfo1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.trafficInfo1.Location = new System.Drawing.Point(0, 24);
+            this.trafficInfo1.Margin = new System.Windows.Forms.Padding(0);
+            this.trafficInfo1.Name = "trafficInfo1";
+            this.trafficInfo1.Size = new System.Drawing.Size(1031, 657);
+            this.trafficInfo1.TabIndex = 6;
+            // 
+            // ticketInfo1
+            // 
+            this.ticketInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ticketInfo1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ticketInfo1.Location = new System.Drawing.Point(0, 24);
+            this.ticketInfo1.Margin = new System.Windows.Forms.Padding(0);
+            this.ticketInfo1.Name = "ticketInfo1";
+            this.ticketInfo1.Size = new System.Drawing.Size(1031, 657);
+            this.ticketInfo1.TabIndex = 7;
+            // 
+            // attractionsInfo1
+            // 
+            this.attractionsInfo1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attractionsInfo1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.attractionsInfo1.Location = new System.Drawing.Point(0, 24);
+            this.attractionsInfo1.Margin = new System.Windows.Forms.Padding(0);
+            this.attractionsInfo1.Name = "attractionsInfo1";
+            this.attractionsInfo1.Size = new System.Drawing.Size(1031, 657);
+            this.attractionsInfo1.TabIndex = 8;
+            // 
+            // drama1
+            // 
+            this.drama1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.drama1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.drama1.Location = new System.Drawing.Point(0, 24);
+            this.drama1.Margin = new System.Windows.Forms.Padding(0);
+            this.drama1.Name = "drama1";
+            this.drama1.Size = new System.Drawing.Size(1031, 657);
+            this.drama1.TabIndex = 9;
+            // 
+            // maintenance1
+            // 
+            this.maintenance1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.maintenance1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.maintenance1.Location = new System.Drawing.Point(0, 24);
+            this.maintenance1.Margin = new System.Windows.Forms.Padding(0);
+            this.maintenance1.Name = "maintenance1";
+            this.maintenance1.Size = new System.Drawing.Size(1031, 657);
+            this.maintenance1.TabIndex = 10;
+            // 
+            // setNews1
+            // 
+            this.setNews1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setNews1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.setNews1.Location = new System.Drawing.Point(0, 24);
+            this.setNews1.Margin = new System.Windows.Forms.Padding(4);
+            this.setNews1.Name = "setNews1";
+            this.setNews1.Size = new System.Drawing.Size(1031, 657);
+            this.setNews1.TabIndex = 11;
+            // 
             // ResortManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.setNews1);
+            this.Controls.Add(this.maintenance1);
+            this.Controls.Add(this.drama1);
+            this.Controls.Add(this.attractionsInfo1);
+            this.Controls.Add(this.ticketInfo1);
+            this.Controls.Add(this.trafficInfo1);
+            this.Controls.Add(this.disneylandResort1);
             this.Controls.Add(this.maintenanceStatistics1);
             this.Controls.Add(this.queueTimeStatistics1);
             this.Controls.Add(this.attractionsStatistics1);
@@ -170,9 +320,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem setShowModeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem weatherToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem touristStatisticsToolStripMenuItem;
         private Manager.ShowMode showMode1;
         private System.Windows.Forms.ToolStripMenuItem maintenanceStatisticsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem attractionsStatisticsToolStripMenuItem;
@@ -180,5 +327,22 @@
         private Manager.AttractionsStatistics attractionsStatistics1;
         private Manager.QueueTimeStatistics queueTimeStatistics1;
         private Manager.MaintenanceStatistics maintenanceStatistics1;
+        private System.Windows.Forms.ToolStripMenuItem resortDataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem disneylandResortToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem trafficMethodToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tiketToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem attractionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dramaScheduleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem maintenanceScheduleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem weatherToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem touristToolStripMenuItem;
+        private DisneylandResort.DisneylandResort disneylandResort1;
+        private DisneylandResort.TrafficInfo trafficInfo1;
+        private DisneylandResort.TicketInfo ticketInfo1;
+        private DisneylandResort.AttractionsInfo attractionsInfo1;
+        private DisneylandResort.Drama drama1;
+        private DisneylandResort.Maintenance maintenance1;
+        private Manager.SetNews setNews1;
     }
 }

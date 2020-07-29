@@ -106,7 +106,7 @@
             // dtpBirthday
             // 
             this.dtpBirthday.Location = new System.Drawing.Point(427, 246);
-            this.dtpBirthday.MaxDate = new System.DateTime(2020, 7, 22, 0, 0, 0, 0);
+            this.dtpBirthday.MaxDate = new System.DateTime(2020, 7, 29, 0, 0, 0, 0);
             this.dtpBirthday.Name = "dtpBirthday";
             this.dtpBirthday.Size = new System.Drawing.Size(249, 27);
             this.dtpBirthday.TabIndex = 24;

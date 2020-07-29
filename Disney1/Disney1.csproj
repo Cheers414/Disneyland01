@@ -153,6 +153,24 @@
     <Compile Include="Manage\Manager\QueueTimeStatistics.Designer.cs">
       <DependentUpon>QueueTimeStatistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manage\Manager\SetNews.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\SetNews.Designer.cs">
+      <DependentUpon>SetNews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Manager\SetTourist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\SetTourist.Designer.cs">
+      <DependentUpon>SetTourist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Manager\SetWeather.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\SetWeather.Designer.cs">
+      <DependentUpon>SetWeather.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Manager\ShowMode.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -171,6 +189,7 @@
     <Compile Include="Manage\ResortMember.Designer.cs">
       <DependentUpon>ResortMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewsData.cs" />
     <Compile Include="Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -191,6 +210,7 @@
     <Compile Include="SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="TouristData.cs" />
     <Compile Include="WeatherData.cs" />
     <EmbeddedResource Include="DisneylandResort\AttractionsInfo.resx">
       <DependentUpon>AttractionsInfo.cs</DependentUpon>
@@ -236,6 +256,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\Manager\QueueTimeStatistics.resx">
       <DependentUpon>QueueTimeStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\SetNews.resx">
+      <DependentUpon>SetNews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\SetTourist.resx">
+      <DependentUpon>SetTourist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\SetWeather.resx">
+      <DependentUpon>SetWeather.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\Manager\ShowMode.resx">
       <DependentUpon>ShowMode.cs</DependentUpon>
@@ -284,9 +313,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="WeatherData.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

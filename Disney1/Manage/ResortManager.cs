@@ -46,5 +46,57 @@ namespace Disney1.Manage
             maintenanceStatistics1.DataRefresh();
             maintenanceStatistics1.BringToFront();
         }
+
+        private void disneylandResortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            disneylandResort1.DataRefresh();
+            disneylandResort1.BringToFront();
+        }
+
+        private void trafficMethodToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            trafficInfo1.DataRefresh();
+            trafficInfo1.BringToFront();
+        }
+
+        private void tiketToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ticketInfo1.DataRefresh();
+            ticketInfo1.BringToFront();
+        }
+
+        private void attractionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            attractionsInfo1.DataRefresh();
+            attractionsInfo1.BringToFront();
+        }
+
+        private void dramaScheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            drama1.DataRefresh();
+            drama1.BringToFront();
+        }
+
+        private void maintenanceScheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            maintenance1.DataRefresh();
+            maintenance1.BringToFront();
+        }
+
+        private void newsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            setNews1.DataRefresh();
+            setNews1.BringToFront();
+        }
+
+        private void weatherToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void touristToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
