@@ -43,6 +43,7 @@
             this.newsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.weatherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.touristToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setTourist1 = new Disney1.Manage.Manager.SetTourist();
             this.setNews1 = new Disney1.Manage.Manager.SetNews();
             this.maintenance1 = new Disney1.DisneylandResort.Maintenance();
             this.drama1 = new Disney1.DisneylandResort.Drama();
@@ -54,7 +55,7 @@
             this.queueTimeStatistics1 = new Disney1.Manage.Manager.QueueTimeStatistics();
             this.attractionsStatistics1 = new Disney1.Manage.Manager.AttractionsStatistics();
             this.showMode1 = new Disney1.Manage.Manager.ShowMode();
-            this.setTourist1 = new Disney1.Manage.Manager.SetTourist();
+            this.setWeather1 = new Disney1.Manage.Manager.SetWeather();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -180,6 +181,16 @@
             this.touristToolStripMenuItem.Text = "Tourist";
             this.touristToolStripMenuItem.Click += new System.EventHandler(this.touristToolStripMenuItem_Click);
             // 
+            // setTourist1
+            // 
+            this.setTourist1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setTourist1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.setTourist1.Location = new System.Drawing.Point(0, 24);
+            this.setTourist1.Margin = new System.Windows.Forms.Padding(4);
+            this.setTourist1.Name = "setTourist1";
+            this.setTourist1.Size = new System.Drawing.Size(1031, 657);
+            this.setTourist1.TabIndex = 12;
+            // 
             // setNews1
             // 
             this.setNews1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -290,20 +301,21 @@
             this.showMode1.Size = new System.Drawing.Size(1031, 657);
             this.showMode1.TabIndex = 1;
             // 
-            // setTourist1
+            // setWeather1
             // 
-            this.setTourist1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.setTourist1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.setTourist1.Location = new System.Drawing.Point(0, 24);
-            this.setTourist1.Margin = new System.Windows.Forms.Padding(4);
-            this.setTourist1.Name = "setTourist1";
-            this.setTourist1.Size = new System.Drawing.Size(1031, 657);
-            this.setTourist1.TabIndex = 12;
+            this.setWeather1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.setWeather1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.setWeather1.Location = new System.Drawing.Point(0, 24);
+            this.setWeather1.Margin = new System.Windows.Forms.Padding(4);
+            this.setWeather1.Name = "setWeather1";
+            this.setWeather1.Size = new System.Drawing.Size(1031, 657);
+            this.setWeather1.TabIndex = 13;
             // 
             // ResortManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.setWeather1);
             this.Controls.Add(this.setTourist1);
             this.Controls.Add(this.setNews1);
             this.Controls.Add(this.maintenance1);
@@ -357,5 +369,6 @@
         private DisneylandResort.Maintenance maintenance1;
         private Manager.SetNews setNews1;
         private Manager.SetTourist setTourist1;
+        private Manager.SetWeather setWeather1;
     }
 }

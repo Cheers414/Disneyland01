@@ -45,11 +45,12 @@
             this.lblUserInfo = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.timerLock = new System.Windows.Forms.Timer(this.components);
+            this.resortManager1 = new Disney1.Manage.ResortManager();
+            this.generalResort1 = new Disney1.GeneralResort();
+            this.carouselResort1 = new Disney1.CarouselResort();
             this.profile1 = new Disney1.Profile();
             this.signUp1 = new Disney1.SignUp();
-            this.carouselResort1 = new Disney1.CarouselResort();
-            this.generalResort1 = new Disney1.GeneralResort();
-            this.resortManager1 = new Disney1.Manage.ResortManager();
+            this.resortMember1 = new Disney1.Manage.ResortMember();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.gpbLogin.SuspendLayout();
@@ -211,6 +212,36 @@
             this.timerLock.Interval = 1000;
             this.timerLock.Tick += new System.EventHandler(this.timerLock_Tick);
             // 
+            // resortManager1
+            // 
+            this.resortManager1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resortManager1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.resortManager1.Location = new System.Drawing.Point(233, 0);
+            this.resortManager1.Margin = new System.Windows.Forms.Padding(4);
+            this.resortManager1.Name = "resortManager1";
+            this.resortManager1.Size = new System.Drawing.Size(1031, 681);
+            this.resortManager1.TabIndex = 5;
+            // 
+            // generalResort1
+            // 
+            this.generalResort1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.generalResort1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.generalResort1.Location = new System.Drawing.Point(233, 0);
+            this.generalResort1.Margin = new System.Windows.Forms.Padding(4);
+            this.generalResort1.Name = "generalResort1";
+            this.generalResort1.Size = new System.Drawing.Size(1031, 681);
+            this.generalResort1.TabIndex = 4;
+            // 
+            // carouselResort1
+            // 
+            this.carouselResort1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.carouselResort1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.carouselResort1.Location = new System.Drawing.Point(233, 0);
+            this.carouselResort1.Margin = new System.Windows.Forms.Padding(4);
+            this.carouselResort1.Name = "carouselResort1";
+            this.carouselResort1.Size = new System.Drawing.Size(1031, 681);
+            this.carouselResort1.TabIndex = 3;
+            // 
             // profile1
             // 
             this.profile1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -231,41 +262,22 @@
             this.signUp1.Size = new System.Drawing.Size(1031, 681);
             this.signUp1.TabIndex = 1;
             // 
-            // carouselResort1
+            // resortMember1
             // 
-            this.carouselResort1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.carouselResort1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.carouselResort1.Location = new System.Drawing.Point(233, 0);
-            this.carouselResort1.Margin = new System.Windows.Forms.Padding(4);
-            this.carouselResort1.Name = "carouselResort1";
-            this.carouselResort1.Size = new System.Drawing.Size(1031, 681);
-            this.carouselResort1.TabIndex = 3;
-            // 
-            // generalResort1
-            // 
-            this.generalResort1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.generalResort1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.generalResort1.Location = new System.Drawing.Point(233, 0);
-            this.generalResort1.Margin = new System.Windows.Forms.Padding(4);
-            this.generalResort1.Name = "generalResort1";
-            this.generalResort1.Size = new System.Drawing.Size(1031, 681);
-            this.generalResort1.TabIndex = 4;
-            // 
-            // resortManager1
-            // 
-            this.resortManager1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resortManager1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.resortManager1.Location = new System.Drawing.Point(233, 0);
-            this.resortManager1.Margin = new System.Windows.Forms.Padding(4);
-            this.resortManager1.Name = "resortManager1";
-            this.resortManager1.Size = new System.Drawing.Size(1031, 681);
-            this.resortManager1.TabIndex = 5;
+            this.resortMember1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resortMember1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.resortMember1.Location = new System.Drawing.Point(233, 0);
+            this.resortMember1.Margin = new System.Windows.Forms.Padding(4);
+            this.resortMember1.Name = "resortMember1";
+            this.resortMember1.Size = new System.Drawing.Size(1031, 681);
+            this.resortMember1.TabIndex = 6;
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.resortMember1);
             this.Controls.Add(this.resortManager1);
             this.Controls.Add(this.generalResort1);
             this.Controls.Add(this.carouselResort1);
@@ -312,6 +324,7 @@
         private CarouselResort carouselResort1;
         private GeneralResort generalResort1;
         private Manage.ResortManager resortManager1;
+        private Manage.ResortMember resortMember1;
     }
 }
 

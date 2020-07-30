@@ -157,7 +157,7 @@ namespace Disney1
                     resortManager1.BringToFront();
                     break;
                 case 3:
-
+                    resortMember1.BringToFront();
                     break;
                 case 4:
 

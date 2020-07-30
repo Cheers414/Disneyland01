@@ -91,7 +91,8 @@ namespace Disney1.Manage
 
         private void weatherToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            setWeather1.DataRefresh();
+            setWeather1.BringToFront();
         }
 
         private void touristToolStripMenuItem_Click(object sender, EventArgs e)
