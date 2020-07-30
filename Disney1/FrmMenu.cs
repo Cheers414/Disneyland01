@@ -42,7 +42,7 @@ namespace Disney1
             db = new DisneyDataDataContext();
             if (txtAccount.Text == "" || txtPwd.Text == "")
             {
-                MessageBox.Show("Account or password can not be empty.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Account or password cannot be empty.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             var user = db.Account.ToList().FirstOrDefault(x => x.AccountId == txtAccount.Text && x.Password == txtPwd.Text);

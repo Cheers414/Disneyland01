@@ -54,7 +54,7 @@ namespace Disney1.Manage.Manager
         {
             if (txtAuthor.Text == "" || txtContent.Text == "" || txtTitle.Text == "")
             {
-                MessageBox.Show("Values can not be empty!", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Values cannot be empty!", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 

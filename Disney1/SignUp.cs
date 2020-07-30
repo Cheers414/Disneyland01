@@ -63,6 +63,7 @@ namespace Disney1
             try
             {
                 var account = db.Account.FirstOrDefault(x => x.AccountId == txtAccount.Text);
+                var groupName = db.Group.ToList().Where(x => x.GroupName == txtName.Text);
                 var group = (Group)cboGroup.SelectedItem;
                 var hotel = (Hotel)cboHotel.SelectedItem;
 
@@ -72,9 +73,15 @@ namespace Disney1
                     return;
                 }
 
+                if(groupName != null)
+                {
+                    MessageBox.Show("The name cannot be used", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 if (txtAccount.Text == "" || txtCitizenship.Text == "" || txtEmail.Text == "" || txtName.Text == "" || txtPwd.Text == "")
                 {
-                    MessageBox.Show("Values can not be empty.");
+                    MessageBox.Show("Values cannot be empty.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 

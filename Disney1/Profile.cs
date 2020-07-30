@@ -75,7 +75,7 @@ namespace Disney1
 
                 if (txtCitizenship.Text == "" || txtEmail.Text == "" || txtName.Text == "" || txtPwd.Text == "")
                 {
-                    MessageBox.Show("Values can not be empty.");
+                    MessageBox.Show("Values cannot be empty.");
                     return;
                 }
 

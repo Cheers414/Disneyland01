@@ -31,7 +31,7 @@ namespace Disney1
         {
             if (txtNewPwd.Text == "")
             {
-                MessageBox.Show("Value can not be empty!", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Value cannot be empty!", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (txtNewPwd.Text == lblNowPwd.Text)

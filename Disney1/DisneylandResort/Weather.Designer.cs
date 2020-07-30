@@ -40,9 +40,9 @@
             this.lblWeather.AutoSize = true;
             this.lblWeather.Location = new System.Drawing.Point(54, 68);
             this.lblWeather.Name = "lblWeather";
-            this.lblWeather.Size = new System.Drawing.Size(46, 16);
+            this.lblWeather.Size = new System.Drawing.Size(60, 16);
             this.lblWeather.TabIndex = 1;
-            this.lblWeather.Text = "label1";
+            this.lblWeather.Text = "No Data";
             // 
             // dgv
             // 
