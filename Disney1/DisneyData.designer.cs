@@ -33,9 +33,9 @@ namespace Disney1
     partial void InsertAccount(Account instance);
     partial void UpdateAccount(Account instance);
     partial void DeleteAccount(Account instance);
-    partial void InsertWeather(Weather instance);
-    partial void UpdateWeather(Weather instance);
-    partial void DeleteWeather(Weather instance);
+    partial void InsertTicketOffer(TicketOffer instance);
+    partial void UpdateTicketOffer(TicketOffer instance);
+    partial void DeleteTicketOffer(TicketOffer instance);
     partial void InsertAdProvider(AdProvider instance);
     partial void UpdateAdProvider(AdProvider instance);
     partial void DeleteAdProvider(AdProvider instance);
@@ -45,6 +45,12 @@ namespace Disney1
     partial void InsertAttractions(Attractions instance);
     partial void UpdateAttractions(Attractions instance);
     partial void DeleteAttractions(Attractions instance);
+    partial void InsertAuthority(Authority instance);
+    partial void UpdateAuthority(Authority instance);
+    partial void DeleteAuthority(Authority instance);
+    partial void InsertAuthorityDetail(AuthorityDetail instance);
+    partial void UpdateAuthorityDetail(AuthorityDetail instance);
+    partial void DeleteAuthorityDetail(AuthorityDetail instance);
     partial void InsertBusinessSchedule(BusinessSchedule instance);
     partial void UpdateBusinessSchedule(BusinessSchedule instance);
     partial void DeleteBusinessSchedule(BusinessSchedule instance);
@@ -78,9 +84,6 @@ namespace Disney1
     partial void InsertMaintenanceSchedule(MaintenanceSchedule instance);
     partial void UpdateMaintenanceSchedule(MaintenanceSchedule instance);
     partial void DeleteMaintenanceSchedule(MaintenanceSchedule instance);
-    partial void InsertNews(News instance);
-    partial void UpdateNews(News instance);
-    partial void DeleteNews(News instance);
     partial void InsertOrder(Order instance);
     partial void UpdateOrder(Order instance);
     partial void DeleteOrder(Order instance);
@@ -96,6 +99,9 @@ namespace Disney1
     partial void InsertRoomAttributes(RoomAttributes instance);
     partial void UpdateRoomAttributes(RoomAttributes instance);
     partial void DeleteRoomAttributes(RoomAttributes instance);
+    partial void InsertRoomAttributesDetail(RoomAttributesDetail instance);
+    partial void UpdateRoomAttributesDetail(RoomAttributesDetail instance);
+    partial void DeleteRoomAttributesDetail(RoomAttributesDetail instance);
     partial void InsertRoomOrder(RoomOrder instance);
     partial void UpdateRoomOrder(RoomOrder instance);
     partial void DeleteRoomOrder(RoomOrder instance);
@@ -123,9 +129,6 @@ namespace Disney1
     partial void InsertTicket(Ticket instance);
     partial void UpdateTicket(Ticket instance);
     partial void DeleteTicket(Ticket instance);
-    partial void InsertTicketOffer(TicketOffer instance);
-    partial void UpdateTicketOffer(TicketOffer instance);
-    partial void DeleteTicketOffer(TicketOffer instance);
     partial void InsertTrafficMethod(TrafficMethod instance);
     partial void UpdateTrafficMethod(TrafficMethod instance);
     partial void DeleteTrafficMethod(TrafficMethod instance);
@@ -169,11 +172,11 @@ namespace Disney1
 			}
 		}
 		
-		public System.Data.Linq.Table<Weather> Weather
+		public System.Data.Linq.Table<TicketOffer> TicketOffer
 		{
 			get
 			{
-				return this.GetTable<Weather>();
+				return this.GetTable<TicketOffer>();
 			}
 		}
 		
@@ -198,6 +201,22 @@ namespace Disney1
 			get
 			{
 				return this.GetTable<Attractions>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Authority> Authority
+		{
+			get
+			{
+				return this.GetTable<Authority>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AuthorityDetail> AuthorityDetail
+		{
+			get
+			{
+				return this.GetTable<AuthorityDetail>();
 			}
 		}
 		
@@ -289,14 +308,6 @@ namespace Disney1
 			}
 		}
 		
-		public System.Data.Linq.Table<News> News
-		{
-			get
-			{
-				return this.GetTable<News>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Order> Order
 		{
 			get
@@ -334,6 +345,14 @@ namespace Disney1
 			get
 			{
 				return this.GetTable<RoomAttributes>();
+			}
+		}
+		
+		public System.Data.Linq.Table<RoomAttributesDetail> RoomAttributesDetail
+		{
+			get
+			{
+				return this.GetTable<RoomAttributesDetail>();
 			}
 		}
 		
@@ -406,14 +425,6 @@ namespace Disney1
 			get
 			{
 				return this.GetTable<Ticket>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TicketOffer> TicketOffer
-		{
-			get
-			{
-				return this.GetTable<TicketOffer>();
 			}
 		}
 		
@@ -842,212 +853,180 @@ namespace Disney1
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Weather")]
-	public partial class Weather : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TicketOffer")]
+	public partial class TicketOffer : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _WeatherNo;
+		private int _TicketOfferNo;
 		
-		private System.DateTime _Date;
+		private string _TicketName;
 		
-		private int _Temperature;
+		private int _Price;
 		
-		private string _Weather1;
+		private double _Discount;
 		
-		private int _ProbabilityOfRain;
+		private string _Photo;
 		
-		private int _HighTemp;
+		private string _Note;
 		
-		private int _LowTemp;
-		
-		private int _Humidity;
+		private EntitySet<Ticket> _Ticket;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnWeatherNoChanging(int value);
-    partial void OnWeatherNoChanged();
-    partial void OnDateChanging(System.DateTime value);
-    partial void OnDateChanged();
-    partial void OnTemperatureChanging(int value);
-    partial void OnTemperatureChanged();
-    partial void OnWeather1Changing(string value);
-    partial void OnWeather1Changed();
-    partial void OnProbabilityOfRainChanging(int value);
-    partial void OnProbabilityOfRainChanged();
-    partial void OnHighTempChanging(int value);
-    partial void OnHighTempChanged();
-    partial void OnLowTempChanging(int value);
-    partial void OnLowTempChanged();
-    partial void OnHumidityChanging(int value);
-    partial void OnHumidityChanged();
+    partial void OnTicketOfferNoChanging(int value);
+    partial void OnTicketOfferNoChanged();
+    partial void OnTicketNameChanging(string value);
+    partial void OnTicketNameChanged();
+    partial void OnPriceChanging(int value);
+    partial void OnPriceChanged();
+    partial void OnDiscountChanging(double value);
+    partial void OnDiscountChanged();
+    partial void OnPhotoChanging(string value);
+    partial void OnPhotoChanged();
+    partial void OnNoteChanging(string value);
+    partial void OnNoteChanged();
     #endregion
 		
-		public Weather()
+		public TicketOffer()
 		{
+			this._Ticket = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Ticket), new Action<Ticket>(this.detach_Ticket));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WeatherNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int WeatherNo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketOfferNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int TicketOfferNo
 		{
 			get
 			{
-				return this._WeatherNo;
+				return this._TicketOfferNo;
 			}
 			set
 			{
-				if ((this._WeatherNo != value))
+				if ((this._TicketOfferNo != value))
 				{
-					this.OnWeatherNoChanging(value);
+					this.OnTicketOfferNoChanging(value);
 					this.SendPropertyChanging();
-					this._WeatherNo = value;
-					this.SendPropertyChanged("WeatherNo");
-					this.OnWeatherNoChanged();
+					this._TicketOfferNo = value;
+					this.SendPropertyChanged("TicketOfferNo");
+					this.OnTicketOfferNoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
-		public System.DateTime Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string TicketName
 		{
 			get
 			{
-				return this._Date;
+				return this._TicketName;
 			}
 			set
 			{
-				if ((this._Date != value))
+				if ((this._TicketName != value))
 				{
-					this.OnDateChanging(value);
+					this.OnTicketNameChanging(value);
 					this.SendPropertyChanging();
-					this._Date = value;
-					this.SendPropertyChanged("Date");
-					this.OnDateChanged();
+					this._TicketName = value;
+					this.SendPropertyChanged("TicketName");
+					this.OnTicketNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Temperature", DbType="Int NOT NULL")]
-		public int Temperature
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Int NOT NULL")]
+		public int Price
 		{
 			get
 			{
-				return this._Temperature;
+				return this._Price;
 			}
 			set
 			{
-				if ((this._Temperature != value))
+				if ((this._Price != value))
 				{
-					this.OnTemperatureChanging(value);
+					this.OnPriceChanging(value);
 					this.SendPropertyChanging();
-					this._Temperature = value;
-					this.SendPropertyChanged("Temperature");
-					this.OnTemperatureChanged();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Weather", Storage="_Weather1", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Weather1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discount", DbType="Float NOT NULL")]
+		public double Discount
 		{
 			get
 			{
-				return this._Weather1;
+				return this._Discount;
 			}
 			set
 			{
-				if ((this._Weather1 != value))
+				if ((this._Discount != value))
 				{
-					this.OnWeather1Changing(value);
+					this.OnDiscountChanging(value);
 					this.SendPropertyChanging();
-					this._Weather1 = value;
-					this.SendPropertyChanged("Weather1");
-					this.OnWeather1Changed();
+					this._Discount = value;
+					this.SendPropertyChanged("Discount");
+					this.OnDiscountChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProbabilityOfRain", DbType="Int NOT NULL")]
-		public int ProbabilityOfRain
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Photo", DbType="NVarChar(100)")]
+		public string Photo
 		{
 			get
 			{
-				return this._ProbabilityOfRain;
+				return this._Photo;
 			}
 			set
 			{
-				if ((this._ProbabilityOfRain != value))
+				if ((this._Photo != value))
 				{
-					this.OnProbabilityOfRainChanging(value);
+					this.OnPhotoChanging(value);
 					this.SendPropertyChanging();
-					this._ProbabilityOfRain = value;
-					this.SendPropertyChanged("ProbabilityOfRain");
-					this.OnProbabilityOfRainChanged();
+					this._Photo = value;
+					this.SendPropertyChanged("Photo");
+					this.OnPhotoChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HighTemp", DbType="Int NOT NULL")]
-		public int HighTemp
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(200)")]
+		public string Note
 		{
 			get
 			{
-				return this._HighTemp;
+				return this._Note;
 			}
 			set
 			{
-				if ((this._HighTemp != value))
+				if ((this._Note != value))
 				{
-					this.OnHighTempChanging(value);
+					this.OnNoteChanging(value);
 					this.SendPropertyChanging();
-					this._HighTemp = value;
-					this.SendPropertyChanged("HighTemp");
-					this.OnHighTempChanged();
+					this._Note = value;
+					this.SendPropertyChanged("Note");
+					this.OnNoteChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LowTemp", DbType="Int NOT NULL")]
-		public int LowTemp
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TicketOffer_Ticket", Storage="_Ticket", ThisKey="TicketOfferNo", OtherKey="TicketOfferNo")]
+		public EntitySet<Ticket> Ticket
 		{
 			get
 			{
-				return this._LowTemp;
+				return this._Ticket;
 			}
 			set
 			{
-				if ((this._LowTemp != value))
-				{
-					this.OnLowTempChanging(value);
-					this.SendPropertyChanging();
-					this._LowTemp = value;
-					this.SendPropertyChanged("LowTemp");
-					this.OnLowTempChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Humidity", DbType="Int NOT NULL")]
-		public int Humidity
-		{
-			get
-			{
-				return this._Humidity;
-			}
-			set
-			{
-				if ((this._Humidity != value))
-				{
-					this.OnHumidityChanging(value);
-					this.SendPropertyChanging();
-					this._Humidity = value;
-					this.SendPropertyChanged("Humidity");
-					this.OnHumidityChanged();
-				}
+				this._Ticket.Assign(value);
 			}
 		}
 		
@@ -1069,6 +1048,18 @@ namespace Disney1
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_Ticket(Ticket entity)
+		{
+			this.SendPropertyChanging();
+			entity.TicketOffer = this;
+		}
+		
+		private void detach_Ticket(Ticket entity)
+		{
+			this.SendPropertyChanging();
+			entity.TicketOffer = null;
 		}
 	}
 	
@@ -1960,6 +1951,336 @@ namespace Disney1
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Authority")]
+	public partial class Authority : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _AuthorityNo;
+		
+		private string _Event;
+		
+		private EntitySet<AuthorityDetail> _AuthorityDetail;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAuthorityNoChanging(int value);
+    partial void OnAuthorityNoChanged();
+    partial void OnEventChanging(string value);
+    partial void OnEventChanged();
+    #endregion
+		
+		public Authority()
+		{
+			this._AuthorityDetail = new EntitySet<AuthorityDetail>(new Action<AuthorityDetail>(this.attach_AuthorityDetail), new Action<AuthorityDetail>(this.detach_AuthorityDetail));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AuthorityNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int AuthorityNo
+		{
+			get
+			{
+				return this._AuthorityNo;
+			}
+			set
+			{
+				if ((this._AuthorityNo != value))
+				{
+					this.OnAuthorityNoChanging(value);
+					this.SendPropertyChanging();
+					this._AuthorityNo = value;
+					this.SendPropertyChanged("AuthorityNo");
+					this.OnAuthorityNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Event", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Event
+		{
+			get
+			{
+				return this._Event;
+			}
+			set
+			{
+				if ((this._Event != value))
+				{
+					this.OnEventChanging(value);
+					this.SendPropertyChanging();
+					this._Event = value;
+					this.SendPropertyChanged("Event");
+					this.OnEventChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Authority_AuthorityDetail", Storage="_AuthorityDetail", ThisKey="AuthorityNo", OtherKey="AuthorityNo")]
+		public EntitySet<AuthorityDetail> AuthorityDetail
+		{
+			get
+			{
+				return this._AuthorityDetail;
+			}
+			set
+			{
+				this._AuthorityDetail.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_AuthorityDetail(AuthorityDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Authority = this;
+		}
+		
+		private void detach_AuthorityDetail(AuthorityDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Authority = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AuthorityDetail")]
+	public partial class AuthorityDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _AuthorityDetailNo;
+		
+		private int _GroupNo;
+		
+		private int _AuthorityNo;
+		
+		private bool _isAllow;
+		
+		private EntityRef<Authority> _Authority;
+		
+		private EntityRef<Group> _Group;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAuthorityDetailNoChanging(int value);
+    partial void OnAuthorityDetailNoChanged();
+    partial void OnGroupNoChanging(int value);
+    partial void OnGroupNoChanged();
+    partial void OnAuthorityNoChanging(int value);
+    partial void OnAuthorityNoChanged();
+    partial void OnisAllowChanging(bool value);
+    partial void OnisAllowChanged();
+    #endregion
+		
+		public AuthorityDetail()
+		{
+			this._Authority = default(EntityRef<Authority>);
+			this._Group = default(EntityRef<Group>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AuthorityDetailNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int AuthorityDetailNo
+		{
+			get
+			{
+				return this._AuthorityDetailNo;
+			}
+			set
+			{
+				if ((this._AuthorityDetailNo != value))
+				{
+					this.OnAuthorityDetailNoChanging(value);
+					this.SendPropertyChanging();
+					this._AuthorityDetailNo = value;
+					this.SendPropertyChanged("AuthorityDetailNo");
+					this.OnAuthorityDetailNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupNo", DbType="Int NOT NULL")]
+		public int GroupNo
+		{
+			get
+			{
+				return this._GroupNo;
+			}
+			set
+			{
+				if ((this._GroupNo != value))
+				{
+					if (this._Group.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnGroupNoChanging(value);
+					this.SendPropertyChanging();
+					this._GroupNo = value;
+					this.SendPropertyChanged("GroupNo");
+					this.OnGroupNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AuthorityNo", DbType="Int NOT NULL")]
+		public int AuthorityNo
+		{
+			get
+			{
+				return this._AuthorityNo;
+			}
+			set
+			{
+				if ((this._AuthorityNo != value))
+				{
+					if (this._Authority.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAuthorityNoChanging(value);
+					this.SendPropertyChanging();
+					this._AuthorityNo = value;
+					this.SendPropertyChanged("AuthorityNo");
+					this.OnAuthorityNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isAllow", DbType="Bit NOT NULL")]
+		public bool isAllow
+		{
+			get
+			{
+				return this._isAllow;
+			}
+			set
+			{
+				if ((this._isAllow != value))
+				{
+					this.OnisAllowChanging(value);
+					this.SendPropertyChanging();
+					this._isAllow = value;
+					this.SendPropertyChanged("isAllow");
+					this.OnisAllowChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Authority_AuthorityDetail", Storage="_Authority", ThisKey="AuthorityNo", OtherKey="AuthorityNo", IsForeignKey=true)]
+		public Authority Authority
+		{
+			get
+			{
+				return this._Authority.Entity;
+			}
+			set
+			{
+				Authority previousValue = this._Authority.Entity;
+				if (((previousValue != value) 
+							|| (this._Authority.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Authority.Entity = null;
+						previousValue.AuthorityDetail.Remove(this);
+					}
+					this._Authority.Entity = value;
+					if ((value != null))
+					{
+						value.AuthorityDetail.Add(this);
+						this._AuthorityNo = value.AuthorityNo;
+					}
+					else
+					{
+						this._AuthorityNo = default(int);
+					}
+					this.SendPropertyChanged("Authority");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_AuthorityDetail", Storage="_Group", ThisKey="GroupNo", OtherKey="GroupNo", IsForeignKey=true)]
+		public Group Group
+		{
+			get
+			{
+				return this._Group.Entity;
+			}
+			set
+			{
+				Group previousValue = this._Group.Entity;
+				if (((previousValue != value) 
+							|| (this._Group.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Group.Entity = null;
+						previousValue.AuthorityDetail.Remove(this);
+					}
+					this._Group.Entity = value;
+					if ((value != null))
+					{
+						value.AuthorityDetail.Add(this);
+						this._GroupNo = value.GroupNo;
+					}
+					else
+					{
+						this._GroupNo = default(int);
+					}
+					this.SendPropertyChanged("Group");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.BusinessSchedule")]
 	public partial class BusinessSchedule : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2817,6 +3138,8 @@ namespace Disney1
 		
 		private EntitySet<Account> _Account;
 		
+		private EntitySet<AuthorityDetail> _AuthorityDetail;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2830,6 +3153,7 @@ namespace Disney1
 		public Group()
 		{
 			this._Account = new EntitySet<Account>(new Action<Account>(this.attach_Account), new Action<Account>(this.detach_Account));
+			this._AuthorityDetail = new EntitySet<AuthorityDetail>(new Action<AuthorityDetail>(this.attach_AuthorityDetail), new Action<AuthorityDetail>(this.detach_AuthorityDetail));
 			OnCreated();
 		}
 		
@@ -2886,6 +3210,19 @@ namespace Disney1
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_AuthorityDetail", Storage="_AuthorityDetail", ThisKey="GroupNo", OtherKey="GroupNo")]
+		public EntitySet<AuthorityDetail> AuthorityDetail
+		{
+			get
+			{
+				return this._AuthorityDetail;
+			}
+			set
+			{
+				this._AuthorityDetail.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2913,6 +3250,18 @@ namespace Disney1
 		}
 		
 		private void detach_Account(Account entity)
+		{
+			this.SendPropertyChanging();
+			entity.Group = null;
+		}
+		
+		private void attach_AuthorityDetail(AuthorityDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Group = this;
+		}
+		
+		private void detach_AuthorityDetail(AuthorityDetail entity)
 		{
 			this.SendPropertyChanging();
 			entity.Group = null;
@@ -3988,236 +4337,6 @@ namespace Disney1
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.News")]
-	public partial class News : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _NewsNo;
-		
-		private string _Title;
-		
-		private string _Text;
-		
-		private System.DateTime _StartTime;
-		
-		private System.DateTime _EndTime;
-		
-		private int _TimesViewed;
-		
-		private string _Photo;
-		
-		private string _Video;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnNewsNoChanging(int value);
-    partial void OnNewsNoChanged();
-    partial void OnTitleChanging(string value);
-    partial void OnTitleChanged();
-    partial void OnTextChanging(string value);
-    partial void OnTextChanged();
-    partial void OnStartTimeChanging(System.DateTime value);
-    partial void OnStartTimeChanged();
-    partial void OnEndTimeChanging(System.DateTime value);
-    partial void OnEndTimeChanged();
-    partial void OnTimesViewedChanging(int value);
-    partial void OnTimesViewedChanged();
-    partial void OnPhotoChanging(string value);
-    partial void OnPhotoChanged();
-    partial void OnVideoChanging(string value);
-    partial void OnVideoChanged();
-    #endregion
-		
-		public News()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NewsNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int NewsNo
-		{
-			get
-			{
-				return this._NewsNo;
-			}
-			set
-			{
-				if ((this._NewsNo != value))
-				{
-					this.OnNewsNoChanging(value);
-					this.SendPropertyChanging();
-					this._NewsNo = value;
-					this.SendPropertyChanged("NewsNo");
-					this.OnNewsNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Title
-		{
-			get
-			{
-				return this._Title;
-			}
-			set
-			{
-				if ((this._Title != value))
-				{
-					this.OnTitleChanging(value);
-					this.SendPropertyChanging();
-					this._Title = value;
-					this.SendPropertyChanged("Title");
-					this.OnTitleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Text", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
-		public string Text
-		{
-			get
-			{
-				return this._Text;
-			}
-			set
-			{
-				if ((this._Text != value))
-				{
-					this.OnTextChanging(value);
-					this.SendPropertyChanging();
-					this._Text = value;
-					this.SendPropertyChanged("Text");
-					this.OnTextChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartTime", DbType="DateTime NOT NULL")]
-		public System.DateTime StartTime
-		{
-			get
-			{
-				return this._StartTime;
-			}
-			set
-			{
-				if ((this._StartTime != value))
-				{
-					this.OnStartTimeChanging(value);
-					this.SendPropertyChanging();
-					this._StartTime = value;
-					this.SendPropertyChanged("StartTime");
-					this.OnStartTimeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndTime", DbType="DateTime NOT NULL")]
-		public System.DateTime EndTime
-		{
-			get
-			{
-				return this._EndTime;
-			}
-			set
-			{
-				if ((this._EndTime != value))
-				{
-					this.OnEndTimeChanging(value);
-					this.SendPropertyChanging();
-					this._EndTime = value;
-					this.SendPropertyChanged("EndTime");
-					this.OnEndTimeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimesViewed", DbType="Int NOT NULL")]
-		public int TimesViewed
-		{
-			get
-			{
-				return this._TimesViewed;
-			}
-			set
-			{
-				if ((this._TimesViewed != value))
-				{
-					this.OnTimesViewedChanging(value);
-					this.SendPropertyChanging();
-					this._TimesViewed = value;
-					this.SendPropertyChanged("TimesViewed");
-					this.OnTimesViewedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Photo", DbType="NVarChar(100)")]
-		public string Photo
-		{
-			get
-			{
-				return this._Photo;
-			}
-			set
-			{
-				if ((this._Photo != value))
-				{
-					this.OnPhotoChanging(value);
-					this.SendPropertyChanging();
-					this._Photo = value;
-					this.SendPropertyChanged("Photo");
-					this.OnPhotoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Video", DbType="NVarChar(100)")]
-		public string Video
-		{
-			get
-			{
-				return this._Video;
-			}
-			set
-			{
-				if ((this._Video != value))
-				{
-					this.OnVideoChanging(value);
-					this.SendPropertyChanging();
-					this._Video = value;
-					this.SendPropertyChanged("Video");
-					this.OnVideoChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Order]")]
 	public partial class Order : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -4911,11 +5030,9 @@ namespace Disney1
 		
 		private int _RoomStatusNo;
 		
-		private System.Nullable<int> _RoomAttributesNo;
+		private EntitySet<RoomAttributesDetail> _RoomAttributesDetail;
 		
 		private EntitySet<RoomOrderDetail> _RoomOrderDetail;
-		
-		private EntityRef<RoomAttributes> _RoomAttributes;
 		
 		private EntityRef<RoomSeries> _RoomSeries;
 		
@@ -4935,14 +5052,12 @@ namespace Disney1
     partial void OnFloorChanged();
     partial void OnRoomStatusNoChanging(int value);
     partial void OnRoomStatusNoChanged();
-    partial void OnRoomAttributesNoChanging(System.Nullable<int> value);
-    partial void OnRoomAttributesNoChanged();
     #endregion
 		
 		public Room()
 		{
+			this._RoomAttributesDetail = new EntitySet<RoomAttributesDetail>(new Action<RoomAttributesDetail>(this.attach_RoomAttributesDetail), new Action<RoomAttributesDetail>(this.detach_RoomAttributesDetail));
 			this._RoomOrderDetail = new EntitySet<RoomOrderDetail>(new Action<RoomOrderDetail>(this.attach_RoomOrderDetail), new Action<RoomOrderDetail>(this.detach_RoomOrderDetail));
-			this._RoomAttributes = default(EntityRef<RoomAttributes>);
 			this._RoomSeries = default(EntityRef<RoomSeries>);
 			this._RoomStatus = default(EntityRef<RoomStatus>);
 			OnCreated();
@@ -5056,27 +5171,16 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomAttributesNo", DbType="Int")]
-		public System.Nullable<int> RoomAttributesNo
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Room_RoomAttributesDetail", Storage="_RoomAttributesDetail", ThisKey="RoomNo", OtherKey="RoomNo")]
+		public EntitySet<RoomAttributesDetail> RoomAttributesDetail
 		{
 			get
 			{
-				return this._RoomAttributesNo;
+				return this._RoomAttributesDetail;
 			}
 			set
 			{
-				if ((this._RoomAttributesNo != value))
-				{
-					if (this._RoomAttributes.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnRoomAttributesNoChanging(value);
-					this.SendPropertyChanging();
-					this._RoomAttributesNo = value;
-					this.SendPropertyChanged("RoomAttributesNo");
-					this.OnRoomAttributesNoChanged();
-				}
+				this._RoomAttributesDetail.Assign(value);
 			}
 		}
 		
@@ -5090,40 +5194,6 @@ namespace Disney1
 			set
 			{
 				this._RoomOrderDetail.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomAttributes_Room", Storage="_RoomAttributes", ThisKey="RoomAttributesNo", OtherKey="RoomAttributesNo", IsForeignKey=true)]
-		public RoomAttributes RoomAttributes
-		{
-			get
-			{
-				return this._RoomAttributes.Entity;
-			}
-			set
-			{
-				RoomAttributes previousValue = this._RoomAttributes.Entity;
-				if (((previousValue != value) 
-							|| (this._RoomAttributes.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._RoomAttributes.Entity = null;
-						previousValue.Room.Remove(this);
-					}
-					this._RoomAttributes.Entity = value;
-					if ((value != null))
-					{
-						value.Room.Add(this);
-						this._RoomAttributesNo = value.RoomAttributesNo;
-					}
-					else
-					{
-						this._RoomAttributesNo = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("RoomAttributes");
-				}
 			}
 		}
 		
@@ -5215,6 +5285,18 @@ namespace Disney1
 			}
 		}
 		
+		private void attach_RoomAttributesDetail(RoomAttributesDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Room = this;
+		}
+		
+		private void detach_RoomAttributesDetail(RoomAttributesDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Room = null;
+		}
+		
 		private void attach_RoomOrderDetail(RoomOrderDetail entity)
 		{
 			this.SendPropertyChanging();
@@ -5238,7 +5320,7 @@ namespace Disney1
 		
 		private string _Attributes;
 		
-		private EntitySet<Room> _Room;
+		private EntitySet<RoomAttributesDetail> _RoomAttributesDetail;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5252,7 +5334,7 @@ namespace Disney1
 		
 		public RoomAttributes()
 		{
-			this._Room = new EntitySet<Room>(new Action<Room>(this.attach_Room), new Action<Room>(this.detach_Room));
+			this._RoomAttributesDetail = new EntitySet<RoomAttributesDetail>(new Action<RoomAttributesDetail>(this.attach_RoomAttributesDetail), new Action<RoomAttributesDetail>(this.detach_RoomAttributesDetail));
 			OnCreated();
 		}
 		
@@ -5296,16 +5378,16 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomAttributes_Room", Storage="_Room", ThisKey="RoomAttributesNo", OtherKey="RoomAttributesNo")]
-		public EntitySet<Room> Room
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomAttributes_RoomAttributesDetail", Storage="_RoomAttributesDetail", ThisKey="RoomAttributesNo", OtherKey="RoomAttributesNo")]
+		public EntitySet<RoomAttributesDetail> RoomAttributesDetail
 		{
 			get
 			{
-				return this._Room;
+				return this._RoomAttributesDetail;
 			}
 			set
 			{
-				this._Room.Assign(value);
+				this._RoomAttributesDetail.Assign(value);
 			}
 		}
 		
@@ -5329,16 +5411,208 @@ namespace Disney1
 			}
 		}
 		
-		private void attach_Room(Room entity)
+		private void attach_RoomAttributesDetail(RoomAttributesDetail entity)
 		{
 			this.SendPropertyChanging();
 			entity.RoomAttributes = this;
 		}
 		
-		private void detach_Room(Room entity)
+		private void detach_RoomAttributesDetail(RoomAttributesDetail entity)
 		{
 			this.SendPropertyChanging();
 			entity.RoomAttributes = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.RoomAttributesDetail")]
+	public partial class RoomAttributesDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _RoomAttributesDetailNo;
+		
+		private int _RoomNo;
+		
+		private int _RoomAttributesNo;
+		
+		private EntityRef<Room> _Room;
+		
+		private EntityRef<RoomAttributes> _RoomAttributes;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRoomAttributesDetailNoChanging(int value);
+    partial void OnRoomAttributesDetailNoChanged();
+    partial void OnRoomNoChanging(int value);
+    partial void OnRoomNoChanged();
+    partial void OnRoomAttributesNoChanging(int value);
+    partial void OnRoomAttributesNoChanged();
+    #endregion
+		
+		public RoomAttributesDetail()
+		{
+			this._Room = default(EntityRef<Room>);
+			this._RoomAttributes = default(EntityRef<RoomAttributes>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomAttributesDetailNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int RoomAttributesDetailNo
+		{
+			get
+			{
+				return this._RoomAttributesDetailNo;
+			}
+			set
+			{
+				if ((this._RoomAttributesDetailNo != value))
+				{
+					this.OnRoomAttributesDetailNoChanging(value);
+					this.SendPropertyChanging();
+					this._RoomAttributesDetailNo = value;
+					this.SendPropertyChanged("RoomAttributesDetailNo");
+					this.OnRoomAttributesDetailNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomNo", DbType="Int NOT NULL")]
+		public int RoomNo
+		{
+			get
+			{
+				return this._RoomNo;
+			}
+			set
+			{
+				if ((this._RoomNo != value))
+				{
+					if (this._Room.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRoomNoChanging(value);
+					this.SendPropertyChanging();
+					this._RoomNo = value;
+					this.SendPropertyChanged("RoomNo");
+					this.OnRoomNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomAttributesNo", DbType="Int NOT NULL")]
+		public int RoomAttributesNo
+		{
+			get
+			{
+				return this._RoomAttributesNo;
+			}
+			set
+			{
+				if ((this._RoomAttributesNo != value))
+				{
+					if (this._RoomAttributes.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnRoomAttributesNoChanging(value);
+					this.SendPropertyChanging();
+					this._RoomAttributesNo = value;
+					this.SendPropertyChanged("RoomAttributesNo");
+					this.OnRoomAttributesNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Room_RoomAttributesDetail", Storage="_Room", ThisKey="RoomNo", OtherKey="RoomNo", IsForeignKey=true)]
+		public Room Room
+		{
+			get
+			{
+				return this._Room.Entity;
+			}
+			set
+			{
+				Room previousValue = this._Room.Entity;
+				if (((previousValue != value) 
+							|| (this._Room.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Room.Entity = null;
+						previousValue.RoomAttributesDetail.Remove(this);
+					}
+					this._Room.Entity = value;
+					if ((value != null))
+					{
+						value.RoomAttributesDetail.Add(this);
+						this._RoomNo = value.RoomNo;
+					}
+					else
+					{
+						this._RoomNo = default(int);
+					}
+					this.SendPropertyChanged("Room");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomAttributes_RoomAttributesDetail", Storage="_RoomAttributes", ThisKey="RoomAttributesNo", OtherKey="RoomAttributesNo", IsForeignKey=true)]
+		public RoomAttributes RoomAttributes
+		{
+			get
+			{
+				return this._RoomAttributes.Entity;
+			}
+			set
+			{
+				RoomAttributes previousValue = this._RoomAttributes.Entity;
+				if (((previousValue != value) 
+							|| (this._RoomAttributes.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._RoomAttributes.Entity = null;
+						previousValue.RoomAttributesDetail.Remove(this);
+					}
+					this._RoomAttributes.Entity = value;
+					if ((value != null))
+					{
+						value.RoomAttributesDetail.Add(this);
+						this._RoomAttributesNo = value.RoomAttributesNo;
+					}
+					else
+					{
+						this._RoomAttributesNo = default(int);
+					}
+					this.SendPropertyChanged("RoomAttributes");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -7423,216 +7697,6 @@ namespace Disney1
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TicketOffer")]
-	public partial class TicketOffer : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _TicketOfferNo;
-		
-		private string _TicketName;
-		
-		private int _Price;
-		
-		private double _Discount;
-		
-		private string _Photo;
-		
-		private string _Note;
-		
-		private EntitySet<Ticket> _Ticket;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTicketOfferNoChanging(int value);
-    partial void OnTicketOfferNoChanged();
-    partial void OnTicketNameChanging(string value);
-    partial void OnTicketNameChanged();
-    partial void OnPriceChanging(int value);
-    partial void OnPriceChanged();
-    partial void OnDiscountChanging(double value);
-    partial void OnDiscountChanged();
-    partial void OnPhotoChanging(string value);
-    partial void OnPhotoChanged();
-    partial void OnNoteChanging(string value);
-    partial void OnNoteChanged();
-    #endregion
-		
-		public TicketOffer()
-		{
-			this._Ticket = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Ticket), new Action<Ticket>(this.detach_Ticket));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketOfferNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int TicketOfferNo
-		{
-			get
-			{
-				return this._TicketOfferNo;
-			}
-			set
-			{
-				if ((this._TicketOfferNo != value))
-				{
-					this.OnTicketOfferNoChanging(value);
-					this.SendPropertyChanging();
-					this._TicketOfferNo = value;
-					this.SendPropertyChanged("TicketOfferNo");
-					this.OnTicketOfferNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string TicketName
-		{
-			get
-			{
-				return this._TicketName;
-			}
-			set
-			{
-				if ((this._TicketName != value))
-				{
-					this.OnTicketNameChanging(value);
-					this.SendPropertyChanging();
-					this._TicketName = value;
-					this.SendPropertyChanged("TicketName");
-					this.OnTicketNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Int NOT NULL")]
-		public int Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this.OnPriceChanging(value);
-					this.SendPropertyChanging();
-					this._Price = value;
-					this.SendPropertyChanged("Price");
-					this.OnPriceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discount", DbType="Float NOT NULL")]
-		public double Discount
-		{
-			get
-			{
-				return this._Discount;
-			}
-			set
-			{
-				if ((this._Discount != value))
-				{
-					this.OnDiscountChanging(value);
-					this.SendPropertyChanging();
-					this._Discount = value;
-					this.SendPropertyChanged("Discount");
-					this.OnDiscountChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Photo", DbType="NVarChar(100)")]
-		public string Photo
-		{
-			get
-			{
-				return this._Photo;
-			}
-			set
-			{
-				if ((this._Photo != value))
-				{
-					this.OnPhotoChanging(value);
-					this.SendPropertyChanging();
-					this._Photo = value;
-					this.SendPropertyChanged("Photo");
-					this.OnPhotoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(200)")]
-		public string Note
-		{
-			get
-			{
-				return this._Note;
-			}
-			set
-			{
-				if ((this._Note != value))
-				{
-					this.OnNoteChanging(value);
-					this.SendPropertyChanging();
-					this._Note = value;
-					this.SendPropertyChanged("Note");
-					this.OnNoteChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TicketOffer_Ticket", Storage="_Ticket", ThisKey="TicketOfferNo", OtherKey="TicketOfferNo")]
-		public EntitySet<Ticket> Ticket
-		{
-			get
-			{
-				return this._Ticket;
-			}
-			set
-			{
-				this._Ticket.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Ticket(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.TicketOffer = this;
-		}
-		
-		private void detach_Ticket(Ticket entity)
-		{
-			this.SendPropertyChanging();
-			entity.TicketOffer = null;
 		}
 	}
 	

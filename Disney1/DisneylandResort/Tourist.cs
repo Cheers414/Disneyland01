@@ -22,7 +22,7 @@ namespace Disney1.DisneylandResort
         public void DataRefresh()
         {
             string jsonText = File.ReadAllText("TouristStatistics.json");
-            TouristData touristData = JsonConvert.DeserializeObject<TouristData>(jsonText);
+            TouristData touristData = JsonConvert.DeserializeObject<TouristData>(jsonText);  
             lblTouristStatistics.Text =
                 $"Total Tourist: {touristData.Total}\n" +
                 $"Current Tourist: {touristData.Current}\n";

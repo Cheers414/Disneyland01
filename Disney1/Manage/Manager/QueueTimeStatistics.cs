@@ -45,7 +45,7 @@ namespace Disney1.Manage.Manager
                 dgv.Rows.Add(new object[]
                 {
                     x.AttractionsName,
-                    averageTime.ToString("mm") + "min"
+                    averageTime.TotalMinutes.ToString() + "min"
                 });
             });
 
@@ -60,20 +60,7 @@ namespace Disney1.Manage.Manager
             {
                 return;
             }
-
-            var wordApp = new word.Application();
-            wordApp.Visible = false;
-            var wordDoc = wordApp.Documents.Add();
-            dgv.SelectAll();
-            Clipboard.SetDataObject(dgv.GetClipboardContent());
-            wordDoc.Range().Paste();
-            wordDoc.Tables[1].set_Style("Grid Table 4 - Accent 1");
-            wordDoc.Tables[1].AutoFitBehavior(word.WdAutoFitBehavior.wdAutoFitWindow);
-            wordDoc.SaveAs2(svd.FileName, word.WdSaveFormat.wdFormatPDF);
-            wordDoc.Close(false);
-            wordApp.Quit(false);
-
-            System.Diagnostics.Process.Start(svd.FileName);
+            Global.ExportReport(dgv, svd.FileName);
         }
     }
 }

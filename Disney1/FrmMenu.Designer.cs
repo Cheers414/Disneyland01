@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnManage = new System.Windows.Forms.Button();
@@ -41,9 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAccount = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.gpbUserInfo = new System.Windows.Forms.GroupBox();
-            this.lblUserInfo = new System.Windows.Forms.Label();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.timerLock = new System.Windows.Forms.Timer(this.components);
             this.resortManager1 = new Disney1.Manage.ResortManager();
             this.generalResort1 = new Disney1.GeneralResort();
@@ -54,29 +52,38 @@
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.gpbLogin.SuspendLayout();
-            this.gpbUserInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel1.Controls.Add(this.panelMenu);
             this.panel1.Controls.Add(this.gpbLogin);
-            this.panel1.Controls.Add(this.gpbUserInfo);
+            this.panel1.Controls.Add(this.panelMenu);
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(233, 681);
             this.panel1.TabIndex = 0;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(21, 621);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(193, 23);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.Text = "6.Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // panelMenu
             // 
             this.panelMenu.Controls.Add(this.btnProfile);
             this.panelMenu.Controls.Add(this.btnManage);
             this.panelMenu.Controls.Add(this.btnResort);
-            this.panelMenu.Location = new System.Drawing.Point(12, 181);
+            this.panelMenu.Location = new System.Drawing.Point(12, 70);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(208, 108);
+            this.panelMenu.Size = new System.Drawing.Size(208, 111);
             this.panelMenu.TabIndex = 2;
             // 
             // btnProfile
@@ -84,7 +91,7 @@
             this.btnProfile.Location = new System.Drawing.Point(9, 13);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(193, 23);
-            this.btnProfile.TabIndex = 6;
+            this.btnProfile.TabIndex = 0;
             this.btnProfile.Text = "3.Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
@@ -94,7 +101,7 @@
             this.btnManage.Location = new System.Drawing.Point(9, 71);
             this.btnManage.Name = "btnManage";
             this.btnManage.Size = new System.Drawing.Size(193, 23);
-            this.btnManage.TabIndex = 8;
+            this.btnManage.TabIndex = 0;
             this.btnManage.Text = "5.Manage";
             this.btnManage.UseVisualStyleBackColor = true;
             this.btnManage.Click += new System.EventHandler(this.btnManage_Click);
@@ -104,7 +111,7 @@
             this.btnResort.Location = new System.Drawing.Point(9, 42);
             this.btnResort.Name = "btnResort";
             this.btnResort.Size = new System.Drawing.Size(193, 23);
-            this.btnResort.TabIndex = 7;
+            this.btnResort.TabIndex = 0;
             this.btnResort.Text = "4.Resort";
             this.btnResort.UseVisualStyleBackColor = true;
             this.btnResort.Click += new System.EventHandler(this.btnResort_Click);
@@ -117,7 +124,7 @@
             this.gpbLogin.Controls.Add(this.label2);
             this.gpbLogin.Controls.Add(this.txtAccount);
             this.gpbLogin.Controls.Add(this.label1);
-            this.gpbLogin.Location = new System.Drawing.Point(12, 12);
+            this.gpbLogin.Location = new System.Drawing.Point(12, 36);
             this.gpbLogin.Name = "gpbLogin";
             this.gpbLogin.Size = new System.Drawing.Size(208, 163);
             this.gpbLogin.TabIndex = 0;
@@ -177,36 +184,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Account";
             // 
-            // gpbUserInfo
-            // 
-            this.gpbUserInfo.Controls.Add(this.lblUserInfo);
-            this.gpbUserInfo.Controls.Add(this.btnLogout);
-            this.gpbUserInfo.Location = new System.Drawing.Point(12, 12);
-            this.gpbUserInfo.Name = "gpbUserInfo";
-            this.gpbUserInfo.Size = new System.Drawing.Size(208, 163);
-            this.gpbUserInfo.TabIndex = 2;
-            this.gpbUserInfo.TabStop = false;
-            this.gpbUserInfo.Text = "User Information";
-            // 
-            // lblUserInfo
-            // 
-            this.lblUserInfo.AutoSize = true;
-            this.lblUserInfo.Location = new System.Drawing.Point(6, 23);
-            this.lblUserInfo.Name = "lblUserInfo";
-            this.lblUserInfo.Size = new System.Drawing.Size(46, 16);
-            this.lblUserInfo.TabIndex = 5;
-            this.lblUserInfo.Text = "label3";
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Location = new System.Drawing.Point(9, 121);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(193, 23);
-            this.btnLogout.TabIndex = 5;
-            this.btnLogout.Text = "1-1.Logout";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
             // timerLock
             // 
             this.timerLock.Interval = 1000;
@@ -264,7 +241,6 @@
             // 
             // resortMember1
             // 
-            this.resortMember1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resortMember1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.resortMember1.Location = new System.Drawing.Point(233, 0);
             this.resortMember1.Margin = new System.Windows.Forms.Padding(4);
@@ -295,8 +271,6 @@
             this.panelMenu.ResumeLayout(false);
             this.gpbLogin.ResumeLayout(false);
             this.gpbLogin.PerformLayout();
-            this.gpbUserInfo.ResumeLayout(false);
-            this.gpbUserInfo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -311,20 +285,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAccount;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox gpbUserInfo;
-        private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button btnManage;
-        private System.Windows.Forms.Button btnResort;
-        private System.Windows.Forms.Label lblUserInfo;
         private System.Windows.Forms.Timer timerLock;
         private SignUp signUp1;
-        private System.Windows.Forms.Panel panelMenu;
         private Profile profile1;
         private CarouselResort carouselResort1;
         private GeneralResort generalResort1;
         private Manage.ResortManager resortManager1;
         private Manage.ResortMember resortMember1;
+        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.Button btnManage;
+        private System.Windows.Forms.Button btnResort;
     }
 }
 

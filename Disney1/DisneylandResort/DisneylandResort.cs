@@ -25,6 +25,7 @@ namespace Disney1.DisneylandResort
             db = new DisneyDataDataContext();
             cboThemePark.DataSource = db.ThemePark;
             cboThemePark.DisplayMember = "ThemeParkName";
+            lblHoliday.Text = "The theme party of this month is" + db.HolidayEvent.FirstOrDefault(x => x.Year == DateTime.Today.Year && x.Month == DateTime.Today.Month).HolidayEventName;
         }
 
         private void cboThemePark_SelectedIndexChanged(object sender, EventArgs e)

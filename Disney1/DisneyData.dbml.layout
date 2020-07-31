@@ -1,385 +1,412 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 19.75, 27.125" name="DisneyData">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 19.5, 26.75" name="DisneyData">
   <DataContextMoniker Name="/DisneyDataDataContext" />
   <nestedChildShapes>
-    <classShape Id="50df0352-e578-41af-934f-7f5a18dcf3f5" absoluteBounds="3.5, 3.375, 2, 2.7324039713541666">
+    <classShape Id="a34afac4-e85e-407d-9a24-eda590e44002" absoluteBounds="3.5, 6.125, 2, 2.7324039713541666">
       <DataClassMoniker Name="/DisneyDataDataContext/Account" />
       <nestedChildShapes>
-        <elementListCompartment Id="d66b5f50-c331-4de7-bc48-d072b5d2d42d" absoluteBounds="3.515, 3.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="c3868e50-9038-42a0-95c4-164ed1fb51d6" absoluteBounds="3.515, 6.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="12e59bef-0ea4-4d5c-b862-a32b9f4752d2" absoluteBounds="0.75, 9.875, 2, 2.3478011067708344">
-      <DataClassMoniker Name="/DisneyDataDataContext/Weather" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a2fd29c1-1704-4b8d-a743-3ff2d08b7c6f" absoluteBounds="0.765, 10.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e391a3b4-42c2-4a5d-8b9d-33e69c765248" absoluteBounds="14.75, 1.75, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/DisneyDataDataContext/AdProvider" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9efea75c-c488-442e-8772-d3f444d7910e" absoluteBounds="14.765, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="8a9c764d-b88b-4425-acd4-bcc29229540f" absoluteBounds="17.5, 1.125, 2, 2.5401025390625005">
-      <DataClassMoniker Name="/DisneyDataDataContext/Advertise" />
-      <nestedChildShapes>
-        <elementListCompartment Id="8c6dbc1a-0691-4d1c-8913-8a77a2b26f24" absoluteBounds="17.515, 1.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="07fb05ce-f658-4f99-85a5-9b0cbda99a7f" absoluteBounds="11.5, 20.625, 2, 3.1170068359375023">
-      <DataClassMoniker Name="/DisneyDataDataContext/Attractions" />
-      <nestedChildShapes>
-        <elementListCompartment Id="3fb043bd-37c3-4a4b-b5e9-21615202d336" absoluteBounds="11.515, 21.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="768f8856-588e-4a6d-a562-f5381d7870a2" absoluteBounds="14.25, 19.75, 2, 1.7708968098958309">
-      <DataClassMoniker Name="/DisneyDataDataContext/BusinessSchedule" />
-      <nestedChildShapes>
-        <elementListCompartment Id="cd73ee9f-146f-4df1-8689-c9b96945c96d" absoluteBounds="14.265, 20.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="99348985-8470-4f44-a635-8f850566dfd7" absoluteBounds="8.75, 9.875, 2, 1.1939925130208344">
-      <DataClassMoniker Name="/DisneyDataDataContext/CarouselText" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d40675c4-1a0b-43b2-b3c5-8997f7a0dcbf" absoluteBounds="8.765, 10.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="6f7c712a-3419-4215-a89e-3d5c70d8cb23" absoluteBounds="14.5, 7.5, 2, 1.7708968098958335">
-      <DataClassMoniker Name="/DisneyDataDataContext/CheckInRecord" />
-      <nestedChildShapes>
-        <elementListCompartment Id="490b19e0-6cb6-4f0e-a9e7-42453d8d2e49" absoluteBounds="14.515, 7.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="bb391427-7c04-48a3-b8e8-2683a48179df" absoluteBounds="14.5, 13.375, 2, 1.7708968098958344">
-      <DataClassMoniker Name="/DisneyDataDataContext/Coupon" />
-      <nestedChildShapes>
-        <elementListCompartment Id="fdc91160-598a-45ae-86e7-0497dd62d791" absoluteBounds="14.515, 13.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a624be83-54aa-4278-806c-445856e7829b" absoluteBounds="14.25, 17.5, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/DisneyDataDataContext/DramaSchedule" />
-      <nestedChildShapes>
-        <elementListCompartment Id="dc4e69a9-71f2-4306-b083-f732638db80f" absoluteBounds="14.265, 17.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="ff8b0910-c716-4e85-84a0-a7c64e447093" absoluteBounds="0.75, 4.125, 2, 1.1939925130208335">
-      <DataClassMoniker Name="/DisneyDataDataContext/Group" />
-      <nestedChildShapes>
-        <elementListCompartment Id="73d5b506-fc12-4a51-a7a9-229ff1ad5a38" absoluteBounds="0.765, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="be235763-750c-414d-b76e-d89ddebe84a4" absoluteBounds="14.5, 10, 2, 2.5401025390624987">
-      <DataClassMoniker Name="/DisneyDataDataContext/Guest" />
-      <nestedChildShapes>
-        <elementListCompartment Id="641903c4-c700-4d8d-81c7-fe75b23c1374" absoluteBounds="14.515, 10.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f5f67b91-e378-4152-bfe8-3bca04d17dd0" absoluteBounds="8.75, 11.875, 2, 1.7708968098958344">
-      <DataClassMoniker Name="/DisneyDataDataContext/HolidayEvent" />
-      <nestedChildShapes>
-        <elementListCompartment Id="52665f0f-fa9d-4665-9b7f-7211bc2f6d08" absoluteBounds="8.765, 12.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="26dca050-3b18-442e-bed6-558c384606b2" absoluteBounds="0.75, 6.75, 2, 1.9631982421875005">
-      <DataClassMoniker Name="/DisneyDataDataContext/Hotel" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9c95fe0b-55fe-46c9-95d8-b54ef289c0b7" absoluteBounds="0.765, 7.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a545ff96-41bc-4918-abb7-d58fc040d88f" absoluteBounds="6.25, 4, 2, 1.3862939453125005">
-      <DataClassMoniker Name="/DisneyDataDataContext/LogRecord" />
-      <nestedChildShapes>
-        <elementListCompartment Id="3b7350c3-16f3-4d28-9acc-c40ce193de15" absoluteBounds="6.265, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="83bd1f81-f571-4751-8fda-37dc538d3139" absoluteBounds="14.25, 22.375, 2, 1.7708968098958309">
-      <DataClassMoniker Name="/DisneyDataDataContext/MaintenanceSchedule" />
-      <nestedChildShapes>
-        <elementListCompartment Id="e0e34d19-9ab0-4462-b0ce-58bfbd892d81" absoluteBounds="14.265, 22.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="7400fd02-2a64-44e6-b00f-e5b2cb6bc3be" absoluteBounds="0.75, 13.875, 2, 2.3478011067708344">
-      <DataClassMoniker Name="/DisneyDataDataContext/News" />
-      <nestedChildShapes>
-        <elementListCompartment Id="55ef48c6-709f-4dd3-b9ab-2f5b6750d9ab" absoluteBounds="0.765, 14.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f7cb66c9-5b24-4dad-b4f8-6eca65c57fb2" absoluteBounds="6.25, 0.75, 2, 1.9631982421875005">
-      <DataClassMoniker Name="/DisneyDataDataContext/Order" />
-      <nestedChildShapes>
-        <elementListCompartment Id="251a5b44-38bf-4f6b-a709-db8390c976ba" absoluteBounds="6.265, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a199fbd7-eedf-4ce3-a235-99c8e6bc9a26" absoluteBounds="3.5, 1, 2, 1.5785953776041668">
-      <DataClassMoniker Name="/DisneyDataDataContext/PaymentMethod" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7f87039f-1606-4465-b057-2541f9b861a6" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="2d516be6-7804-4025-97e8-5036ecee5b35" absoluteBounds="14.25, 24.875, 2, 1.9631982421875023">
-      <DataClassMoniker Name="/DisneyDataDataContext/QueueRecord" />
-      <nestedChildShapes>
-        <elementListCompartment Id="93461d7e-112e-433a-b15b-60fcd5b646ff" absoluteBounds="14.265, 25.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e4d27af0-e179-448e-ac02-d44e142ef990" absoluteBounds="9, 6.75, 2, 1.9631982421874996">
-      <DataClassMoniker Name="/DisneyDataDataContext/Room" />
-      <nestedChildShapes>
-        <elementListCompartment Id="7252a354-4e5b-41b9-9ed4-e050eff2ca36" absoluteBounds="9.015, 7.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="cda1b443-8aaa-45c6-949b-7fbf8ad2a51f" absoluteBounds="6.25, 14.125, 2, 1.1939925130208344">
-      <DataClassMoniker Name="/DisneyDataDataContext/RoomAttributes" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f3390474-ca9d-4435-b319-f411a1400b6e" absoluteBounds="6.265, 14.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f784d2de-3f63-4e97-8db3-6e2070727910" absoluteBounds="17.25, 10.375, 2, 1.7708968098958344">
-      <DataClassMoniker Name="/DisneyDataDataContext/RoomOrder" />
-      <nestedChildShapes>
-        <elementListCompartment Id="fd02ead5-80dc-4fd0-a587-b923cbad4890" absoluteBounds="17.265, 10.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5ce18709-e797-4f76-95a5-9d0928317f81" absoluteBounds="11.75, 6.375, 2, 2.7324039713541657">
-      <DataClassMoniker Name="/DisneyDataDataContext/RoomOrderDetail" />
-      <nestedChildShapes>
-        <elementListCompartment Id="06d279ad-7abb-4889-88ad-e44862ac7e89" absoluteBounds="11.765, 6.835, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="15398b9c-ff1b-458d-858d-95b2f82d6c19" absoluteBounds="6.25, 6.5, 2, 2.3478011067708344">
-      <DataClassMoniker Name="/DisneyDataDataContext/RoomSeries" />
-      <nestedChildShapes>
-        <elementListCompartment Id="16e303ee-0ff2-4323-b352-6bfa5c03f5ac" absoluteBounds="6.265, 6.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="8d5f3887-0c9d-4f1f-a452-8aa46584702b" absoluteBounds="11.75, 4, 2, 1.3862939453125005">
-      <DataClassMoniker Name="/DisneyDataDataContext/RoomService" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f2003f6b-7eca-43b3-8166-848cbd045610" absoluteBounds="11.765, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="2e8fbc64-4f6e-4887-a541-7c41e222f51d" absoluteBounds="14.5, 5, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/DisneyDataDataContext/RoomServiceRecord" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4e2fddeb-77cd-48da-975a-16b1f1347675" absoluteBounds="14.515, 5.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="5f0cfe96-ea1f-4b44-b36b-51c75bcbf1a7" absoluteBounds="6.25, 16.125, 2, 1.1939925130208344">
-      <DataClassMoniker Name="/DisneyDataDataContext/RoomStatus" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5b177ebc-d2f8-4748-a63b-c97917767016" absoluteBounds="6.265, 16.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f1fcd265-4bd7-4a96-81bb-4dc6b382c710" absoluteBounds="3.5, 7, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/DisneyDataDataContext/SuitesLevel" />
-      <nestedChildShapes>
-        <elementListCompartment Id="3bfc999b-0985-4c68-ba11-c66fd61bccb4" absoluteBounds="3.515, 7.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="9fb5410f-c356-4081-a57f-bb3cabd09794" absoluteBounds="8.75, 21.375, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/DisneyDataDataContext/ThemePark" />
-      <nestedChildShapes>
-        <elementListCompartment Id="bec6cbb1-5546-46f1-9bf2-8d2253452003" absoluteBounds="8.765, 21.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="c66add63-8c07-4f88-9421-5b4286ab69d7" absoluteBounds="9, 0.875, 2, 1.7708968098958331">
-      <DataClassMoniker Name="/DisneyDataDataContext/Ticket" />
-      <nestedChildShapes>
-        <elementListCompartment Id="5cbb5c89-cb71-47f7-998f-fcd2d9cf1a92" absoluteBounds="9.015, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="8a032d3d-c94e-47d0-968c-b98259b98ce1" absoluteBounds="6.25, 11.5, 2, 1.9631982421874987">
+    <classShape Id="3cbf3205-a757-4dac-bbb2-496e22407219" absoluteBounds="6.25, 12.5, 2, 1.9631982421874987">
       <DataClassMoniker Name="/DisneyDataDataContext/TicketOffer" />
       <nestedChildShapes>
-        <elementListCompartment Id="56677a05-b0d1-41b8-b9cb-e277637f45cc" absoluteBounds="6.265, 11.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2b66fd89-46c7-4794-b905-9d32b6efb351" absoluteBounds="6.265, 12.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="95f8a995-cd14-4579-97a1-f78f9155f220" absoluteBounds="8.75, 14.875, 2, 1.5785953776041666">
+    <classShape Id="028594e8-977a-40dc-bee2-45f87838463b" absoluteBounds="0.75, 19.375, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/DisneyDataDataContext/AdProvider" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a79e6662-2b49-4758-9b81-57f467abe578" absoluteBounds="0.765, 19.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89b09cb0-4bcc-4c9f-82b3-024701ec9ca8" absoluteBounds="3.5, 18.75, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/DisneyDataDataContext/Advertise" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bdddc1dd-2d99-481c-acf3-562a49ed1ff7" absoluteBounds="3.515, 19.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1be73e62-2eaf-486c-8f98-14078258d309" absoluteBounds="11.5, 20.25, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/DisneyDataDataContext/Attractions" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ea3c92c-189f-4342-b794-2cab360af0ef" absoluteBounds="11.515, 20.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e3e10bfc-dc74-446c-85bc-e13f67e39832" absoluteBounds="0.75, 4.5, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DisneyDataDataContext/Authority" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b7626ac7-a423-43b5-9566-f85e16af4626" absoluteBounds="0.765, 4.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7d6d9c0-b129-4531-af28-6c35c0a9a245" absoluteBounds="3.5, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DisneyDataDataContext/AuthorityDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f16690fd-3402-4171-b6bc-97b89f11c50c" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="056d5dba-d4bc-413e-8f59-aad27f7f1e68" absoluteBounds="14.25, 19.375, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/DisneyDataDataContext/BusinessSchedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd3e8ae4-21c7-4ba1-990e-f042a0cc61eb" absoluteBounds="14.265, 19.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="71186f2e-6a3f-4b13-9edb-23cc3cf2052f" absoluteBounds="0.75, 12.5, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DisneyDataDataContext/CarouselText" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43fe242f-9342-4c89-98e7-9eabad55c445" absoluteBounds="0.765, 12.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="20dd6d30-4f16-4537-a959-70d6e4517b20" absoluteBounds="14.5, 7.375, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/DisneyDataDataContext/CheckInRecord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="946b8b7a-ab63-4486-b6a3-25543c6a28d0" absoluteBounds="14.515, 7.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85c981e1-1630-4c3c-b54b-6eb730565c48" absoluteBounds="14.5, 13.25, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/DisneyDataDataContext/Coupon" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0286497b-afeb-422b-829e-9ca91262c4dc" absoluteBounds="14.515, 13.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0952dd49-ef56-4b7c-b962-a9abb79034ea" absoluteBounds="14.25, 17.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DisneyDataDataContext/DramaSchedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a9ae4c62-a302-4efc-bce8-cb493cd8dd37" absoluteBounds="14.265, 17.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="24c640df-8121-4311-994b-a392c3f0b923" absoluteBounds="0.75, 7, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DisneyDataDataContext/Group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a8479d6-507f-4a29-b07c-600d56253513" absoluteBounds="0.765, 7.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="33e0273d-084a-4933-b279-b763dee7b3a5" absoluteBounds="14.5, 9.875, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/DisneyDataDataContext/Guest" />
+      <nestedChildShapes>
+        <elementListCompartment Id="303d2290-c483-4e32-863e-b2f282a30c72" absoluteBounds="14.515, 10.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d1e2925-6047-4164-9d13-7432a84e750e" absoluteBounds="8.75, 12.5, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/DisneyDataDataContext/HolidayEvent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bde4ab54-8727-44a1-a777-c30369db970e" absoluteBounds="8.765, 12.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c97b469a-b22c-4966-b1fc-3bdf0c931452" absoluteBounds="0.75, 9.5, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DisneyDataDataContext/Hotel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53e42854-9153-419b-aa23-aec41fe83416" absoluteBounds="0.765, 9.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0577d962-477b-43bd-aba5-5fef5afd9a6e" absoluteBounds="6.25, 6.875, 2, 1.3862939453125014">
+      <DataClassMoniker Name="/DisneyDataDataContext/LogRecord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2eb035d4-5281-4cfb-9f9b-5e99fab2d211" absoluteBounds="6.265, 7.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dc4b441f-a13b-42d5-8af8-e683790ca6a3" absoluteBounds="14.25, 22, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/DisneyDataDataContext/MaintenanceSchedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c1969e12-592b-447a-b343-e9cee9879cb1" absoluteBounds="14.265, 22.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="23261f35-2208-400e-afeb-e9335490b17f" absoluteBounds="6.25, 3.5, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/DisneyDataDataContext/Order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3935515e-ec67-4d10-b086-21620c6abafe" absoluteBounds="6.265, 3.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e383c13a-0282-446b-87b0-78f8e0a4749c" absoluteBounds="3.5, 3.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DisneyDataDataContext/PaymentMethod" />
+      <nestedChildShapes>
+        <elementListCompartment Id="257bd30e-e981-4c9e-81c3-053cd7570963" absoluteBounds="3.515, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0ac0b583-7909-41cc-8962-fd3afa5fcaa6" absoluteBounds="14.25, 24.5, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/DisneyDataDataContext/QueueRecord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9477d4ed-9a3b-48c7-aeba-330b1a12dd8a" absoluteBounds="14.265, 24.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dde9a496-bad3-464d-8786-7fef4dcd40e0" absoluteBounds="9, 9.625, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/DisneyDataDataContext/Room" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5fbf734a-153f-40b9-b6d5-ef5197b4fb73" absoluteBounds="9.015, 10.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5a89354c-5127-4f21-b091-d1bb9c234074" absoluteBounds="9, 7, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/DisneyDataDataContext/RoomAttributes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a88c7ecb-c45b-4eb9-8d37-d468797c726e" absoluteBounds="9.015, 7.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="25357fb2-c125-452c-906d-c158e86b3acf" absoluteBounds="11.75, 9.875, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/DisneyDataDataContext/RoomAttributesDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="19b20ff1-838d-4993-971e-b11ed8e6ad2e" absoluteBounds="11.765, 10.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="15f5bbf7-f7cb-4733-a330-e7ed3bd8e7e6" absoluteBounds="17.25, 10.25, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/DisneyDataDataContext/RoomOrder" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d456f73b-36bf-4954-a4c6-8b43a4e0b59c" absoluteBounds="17.265, 10.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4b0d624-7678-4e26-96bd-0c2767cd83e7" absoluteBounds="11.75, 6.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DisneyDataDataContext/RoomOrderDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b231ee1-89ce-42ed-9238-6ba2af90d4dc" absoluteBounds="11.765, 6.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e6001afe-ddf3-4191-99b1-bbbc25dcb2b6" absoluteBounds="6.25, 9.375, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/DisneyDataDataContext/RoomSeries" />
+      <nestedChildShapes>
+        <elementListCompartment Id="57f188be-0497-4891-bd0f-31bca14243b8" absoluteBounds="6.265, 9.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="330e3a7e-7a4c-41f4-a14b-92837eaa21fd" absoluteBounds="11.75, 3.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DisneyDataDataContext/RoomService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae43c6ee-35fb-42f5-9c94-c73dc0ef2618" absoluteBounds="11.765, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cc200b28-00e1-4cc6-93dd-ca490ebab361" absoluteBounds="14.5, 4.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DisneyDataDataContext/RoomServiceRecord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47cfd526-5581-42f2-b4ab-fe3a1d0bae10" absoluteBounds="14.515, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f081af82-b3c0-43be-b6d3-ce488033187c" absoluteBounds="6.25, 16, 2, 1.1939925130208362">
+      <DataClassMoniker Name="/DisneyDataDataContext/RoomStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="01f1ba85-3e75-44d0-9439-3668af0409ab" absoluteBounds="6.265, 16.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="617583a6-6566-4b62-887a-e2b9eb11e070" absoluteBounds="3.5, 9.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DisneyDataDataContext/SuitesLevel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="678b5dc3-b1fb-4fc7-9e2f-093d808e017f" absoluteBounds="3.515, 10.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ced39e2b-f23a-47ca-b371-a7ae644b30c2" absoluteBounds="8.75, 21, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DisneyDataDataContext/ThemePark" />
+      <nestedChildShapes>
+        <elementListCompartment Id="802e022b-ffdb-4b7c-858f-b67845e3a8c5" absoluteBounds="8.765, 21.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1c4aca51-274c-4287-a34f-1411d46ab0ac" absoluteBounds="9, 3.625, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/DisneyDataDataContext/Ticket" />
+      <nestedChildShapes>
+        <elementListCompartment Id="974e4202-8786-4391-89c2-e35edd64095e" absoluteBounds="9.015, 4.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6ea53159-86ab-4c3c-9416-20eaaa884934" absoluteBounds="0.75, 14.5, 2, 1.5785953776041666">
       <DataClassMoniker Name="/DisneyDataDataContext/TrafficMethod" />
       <nestedChildShapes>
-        <elementListCompartment Id="a320967c-fc06-4bf8-9bdd-a0d43679a5da" absoluteBounds="8.765, 15.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d7271059-796f-4957-9242-ce4cc6a00937" absoluteBounds="0.765, 14.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(16.75 : 2.34699625651042); (17.5 : 2.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 19.9719962565104); (3.5 : 19.9719962565104)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/AdProvider/AdProvider_Advertise" />
       <nodes>
-        <classShapeMoniker Id="e391a3b4-42c2-4a5d-8b9d-33e69c765248" />
-        <classShapeMoniker Id="8a9c764d-b88b-4425-acd4-bcc29229540f" />
+        <classShapeMoniker Id="028594e8-977a-40dc-bee2-45f87838463b" />
+        <classShapeMoniker Id="89b09cb0-4bcc-4c9f-82b3-024701ec9ca8" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.5 : 21.0729484049479); (14.25 : 21.0729484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(1.75 : 4.5); (1.75 : 1.53929768880208); (3.5 : 1.53929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DisneyDataDataContext/Authority/Authority_AuthorityDetail" />
+      <nodes>
+        <classShapeMoniker Id="e3e10bfc-dc74-446c-85bc-e13f67e39832" />
+        <classShapeMoniker Id="b7d6d9c0-b129-4531-af28-6c35c0a9a245" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13.5 : 20.6979484049479); (14.25 : 20.6979484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/Attractions/Attractions_BusinessSchedule" />
       <nodes>
-        <classShapeMoniker Id="07fb05ce-f658-4f99-85a5-9b0cbda99a7f" />
-        <classShapeMoniker Id="768f8856-588e-4a6d-a562-f5381d7870a2" />
+        <classShapeMoniker Id="1be73e62-2eaf-486c-8f98-14078258d309" />
+        <classShapeMoniker Id="056d5dba-d4bc-413e-8f59-aad27f7f1e68" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.5 : 20.625); (12.5 : 18.2892976888021); (14.25 : 18.2892976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12.5 : 20.25); (12.5 : 17.9142976888021); (14.25 : 17.9142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/Attractions/Attractions_DramaSchedule" />
       <nodes>
-        <classShapeMoniker Id="07fb05ce-f658-4f99-85a5-9b0cbda99a7f" />
-        <classShapeMoniker Id="a624be83-54aa-4278-806c-445856e7829b" />
+        <classShapeMoniker Id="1be73e62-2eaf-486c-8f98-14078258d309" />
+        <classShapeMoniker Id="0952dd49-ef56-4b7c-b962-a9abb79034ea" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.72199625651042); (3.5 : 4.72199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.59699625651042); (3.16666666666667 : 7.59699625651042 : JumpStart); (3.33333333333333 : 7.59699625651042 : JumpEnd); (3.5 : 7.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/Group/Group_Account" />
       <nodes>
-        <classShapeMoniker Id="ff8b0910-c716-4e85-84a0-a7c64e447093" />
-        <classShapeMoniker Id="50df0352-e578-41af-934f-7f5a18dcf3f5" />
+        <classShapeMoniker Id="24c640df-8121-4311-994b-a392c3f0b923" />
+        <classShapeMoniker Id="a34afac4-e85e-407d-9a24-eda590e44002" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.75); (3.125 : 6.375); (3.125 : 5.44595211393229); (3.5 : 5.44595211393229)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 7.00091745577925); (3.125 : 6.62591745577925); (3.125 : 1.96519853320312); (3.5 : 1.96519853320312)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DisneyDataDataContext/Group/Group_AuthorityDetail" />
+      <nodes>
+        <classShapeMoniker Id="24c640df-8121-4311-994b-a392c3f0b923" />
+        <classShapeMoniker Id="b7d6d9c0-b129-4531-af28-6c35c0a9a245" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.5); (3.25 : 9); (3.25 : 6.82974612825521); (3.5 : 6.82974612825521)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/Hotel/Hotel_Account" />
       <nodes>
-        <classShapeMoniker Id="26dca050-3b18-442e-bed6-558c384606b2" />
-        <classShapeMoniker Id="50df0352-e578-41af-934f-7f5a18dcf3f5" />
+        <classShapeMoniker Id="c97b469a-b22c-4966-b1fc-3bdf0c931452" />
+        <classShapeMoniker Id="a34afac4-e85e-407d-9a24-eda590e44002" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.69314697265625); (6.25 : 4.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 7.56814697265625); (6.25 : 7.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/Account/Account_LogRecord" />
       <nodes>
-        <classShapeMoniker Id="50df0352-e578-41af-934f-7f5a18dcf3f5" />
-        <classShapeMoniker Id="a545ff96-41bc-4918-abb7-d58fc040d88f" />
+        <classShapeMoniker Id="a34afac4-e85e-407d-9a24-eda590e44002" />
+        <classShapeMoniker Id="0577d962-477b-43bd-aba5-5fef5afd9a6e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.5 : 23.0585034179688); (14.25 : 23.0585034179688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.5 : 22.6835034179688); (14.25 : 22.6835034179688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/Attractions/Attractions_MaintenanceSchedule" />
       <nodes>
-        <classShapeMoniker Id="07fb05ce-f658-4f99-85a5-9b0cbda99a7f" />
-        <classShapeMoniker Id="83bd1f81-f571-4751-8fda-37dc538d3139" />
+        <classShapeMoniker Id="1be73e62-2eaf-486c-8f98-14078258d309" />
+        <classShapeMoniker Id="dc4b441f-a13b-42d5-8af8-e683790ca6a3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 3.375); (5.875 : 3); (5.875 : 1.73159912109375); (6.25 : 1.73159912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 6.125); (5.875 : 5.75); (5.875 : 4.48159912109375); (6.25 : 4.48159912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/Account/Account_Order" />
       <nodes>
-        <classShapeMoniker Id="50df0352-e578-41af-934f-7f5a18dcf3f5" />
-        <classShapeMoniker Id="f7cb66c9-5b24-4dad-b4f8-6eca65c57fb2" />
+        <classShapeMoniker Id="a34afac4-e85e-407d-9a24-eda590e44002" />
+        <classShapeMoniker Id="23261f35-2208-400e-afeb-e9335490b17f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.21759724934896); (5.79166666666667 : 2.21759724934896 : JumpStart); (5.95833333333333 : 2.21759724934896 : JumpEnd); (6.25 : 2.21759724934896)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 4.96759724934896); (5.79166666666667 : 4.96759724934896 : JumpStart); (5.95833333333333 : 4.96759724934896 : JumpEnd); (6.25 : 4.96759724934896)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/PaymentMethod/PaymentMethod_Order" />
       <nodes>
-        <classShapeMoniker Id="a199fbd7-eedf-4ce3-a235-99c8e6bc9a26" />
-        <classShapeMoniker Id="f7cb66c9-5b24-4dad-b4f8-6eca65c57fb2" />
+        <classShapeMoniker Id="e383c13a-0282-446b-87b0-78f8e0a4749c" />
+        <classShapeMoniker Id="23261f35-2208-400e-afeb-e9335490b17f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.5 : 23.7420068359375); (12.5 : 25.8565991210938); (14.25 : 25.8565991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12.5 : 23.3670068359375); (12.5 : 25.4815991210938); (14.25 : 25.4815991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/Attractions/Attractions_QueueRecord" />
       <nodes>
-        <classShapeMoniker Id="07fb05ce-f658-4f99-85a5-9b0cbda99a7f" />
-        <classShapeMoniker Id="2d516be6-7804-4025-97e8-5036ecee5b35" />
+        <classShapeMoniker Id="1be73e62-2eaf-486c-8f98-14078258d309" />
+        <classShapeMoniker Id="0ac0b583-7909-41cc-8962-fd3afa5fcaa6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 14.46875); (10.90625 : 14.46875); (10.90625 : 8.7131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/DisneyDataDataContext/RoomAttributes/RoomAttributes_Room" />
+    <associationConnector edgePoints="[(11 : 10.5681469726562); (11.75 : 10.5681469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DisneyDataDataContext/Room/Room_RoomAttributesDetail" />
       <nodes>
-        <classShapeMoniker Id="cda1b443-8aaa-45c6-949b-7fbf8ad2a51f" />
-        <classShapeMoniker Id="e4d27af0-e179-448e-ac02-d44e142ef990" />
+        <classShapeMoniker Id="dde9a496-bad3-464d-8786-7fef4dcd40e0" />
+        <classShapeMoniker Id="25357fb2-c125-452c-906d-c158e86b3acf" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(16.5 : 14.2604484049479); (18.25 : 14.2604484049479); (18.25 : 12.1458968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11 : 8.19399251302083); (11.375 : 8.56899251302083); (11.375 : 10.1903214863281); (11.75 : 10.1903214863281)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DisneyDataDataContext/RoomAttributes/RoomAttributes_RoomAttributesDetail" />
+      <nodes>
+        <classShapeMoniker Id="5a89354c-5127-4f21-b091-d1bb9c234074" />
+        <classShapeMoniker Id="25357fb2-c125-452c-906d-c158e86b3acf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.5 : 14.1354484049479); (18.25 : 14.1354484049479); (18.25 : 12.0208968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/Coupon/Coupon_RoomOrder" />
       <nodes>
-        <classShapeMoniker Id="bb391427-7c04-48a3-b8e8-2683a48179df" />
-        <classShapeMoniker Id="f784d2de-3f63-4e97-8db3-6e2070727910" />
+        <classShapeMoniker Id="85c981e1-1630-4c3c-b54b-6eb730565c48" />
+        <classShapeMoniker Id="15f5bbf7-f7cb-4733-a330-e7ed3bd8e7e6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(16.5 : 11.2604484049479); (17.25 : 11.2604484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(16.5 : 11.1354484049479); (17.25 : 11.1354484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/Guest/Guest_RoomOrder" />
       <nodes>
-        <classShapeMoniker Id="be235763-750c-414d-b76e-d89ddebe84a4" />
-        <classShapeMoniker Id="f784d2de-3f63-4e97-8db3-6e2070727910" />
+        <classShapeMoniker Id="33e0273d-084a-4933-b279-b763dee7b3a5" />
+        <classShapeMoniker Id="15f5bbf7-f7cb-4733-a330-e7ed3bd8e7e6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.75 : 8.30370198567708); (14.5 : 8.30370198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.75 : 8.11620198567708); (14.5 : 8.11620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/RoomOrderDetail/RoomOrderDetail_CheckInRecord" />
       <nodes>
-        <classShapeMoniker Id="5ce18709-e797-4f76-95a5-9d0928317f81" />
-        <classShapeMoniker Id="6f7c712a-3419-4215-a89e-3d5c70d8cb23" />
+        <classShapeMoniker Id="f4b0d624-7678-4e26-96bd-0c2767cd83e7" />
+        <classShapeMoniker Id="20dd6d30-4f16-4537-a959-70d6e4517b20" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.75 : 9.10740397135417); (12.75 : 11.2700512695312); (14.5 : 11.2700512695312)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.75 : 8.85740397135417); (14.125 : 9.23240397135417); (14.125 : 11.1450512695312); (14.5 : 11.1450512695312)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/RoomOrderDetail/RoomOrderDetail_Guest" />
       <nodes>
-        <classShapeMoniker Id="5ce18709-e797-4f76-95a5-9d0928317f81" />
-        <classShapeMoniker Id="be235763-750c-414d-b76e-d89ddebe84a4" />
+        <classShapeMoniker Id="f4b0d624-7678-4e26-96bd-0c2767cd83e7" />
+        <classShapeMoniker Id="33e0273d-084a-4933-b279-b763dee7b3a5" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(11 : 7.73159912109375); (11.75 : 7.73159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11 : 9.6862992741887); (11.3160744349011 : 9.37022483928758 : JumpStart); (11.4339255650989 : 9.25237370908982 : JumpEnd); (11.5625 : 9.1237992741887); (11.5625 : 7.49120198567708); (11.75 : 7.49120198567708)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/Room/Room_RoomOrderDetail" />
       <nodes>
-        <classShapeMoniker Id="e4d27af0-e179-448e-ac02-d44e142ef990" />
-        <classShapeMoniker Id="5ce18709-e797-4f76-95a5-9d0928317f81" />
+        <classShapeMoniker Id="dde9a496-bad3-464d-8786-7fef4dcd40e0" />
+        <classShapeMoniker Id="f4b0d624-7678-4e26-96bd-0c2767cd83e7" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(18.25 : 10.375); (18.25 : 7.03929768880208); (13.75 : 7.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(18.25 : 10.25); (18.25 : 6.85179768880208); (13.75 : 6.85179768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/RoomOrder/RoomOrder_RoomOrderDetail" />
       <nodes>
-        <classShapeMoniker Id="f784d2de-3f63-4e97-8db3-6e2070727910" />
-        <classShapeMoniker Id="5ce18709-e797-4f76-95a5-9d0928317f81" />
+        <classShapeMoniker Id="15f5bbf7-f7cb-4733-a330-e7ed3bd8e7e6" />
+        <classShapeMoniker Id="f4b0d624-7678-4e26-96bd-0c2767cd83e7" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 7.73159912109375); (8.41666666666667 : 7.73159912109375 : JumpStart); (8.58333333333333 : 7.73159912109375 : JumpEnd); (9 : 7.73159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 10.5104484049479); (8.54166666666667 : 10.5104484049479 : JumpStart); (8.70833333333333 : 10.5104484049479 : JumpEnd); (9 : 10.5104484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/RoomSeries/RoomSeries_Room" />
       <nodes>
-        <classShapeMoniker Id="15398b9c-ff1b-458d-858d-95b2f82d6c19" />
-        <classShapeMoniker Id="e4d27af0-e179-448e-ac02-d44e142ef990" />
+        <classShapeMoniker Id="e6001afe-ddf3-4191-99b1-bbbc25dcb2b6" />
+        <classShapeMoniker Id="dde9a496-bad3-464d-8786-7fef4dcd40e0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.75 : 5.19314697265625); (14.5 : 5.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(13.75 : 5.00564697265625); (14.5 : 5.00564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/RoomService/RoomService_RoomServiceRecord" />
       <nodes>
-        <classShapeMoniker Id="8d5f3887-0c9d-4f1f-a452-8aa46584702b" />
-        <classShapeMoniker Id="2e8fbc64-4f6e-4887-a541-7c41e222f51d" />
+        <classShapeMoniker Id="330e3a7e-7a4c-41f4-a14b-92837eaa21fd" />
+        <classShapeMoniker Id="cc200b28-00e1-4cc6-93dd-ca490ebab361" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(13.75 : 6.375); (14.125 : 6); (14.125 : 6.95359537760417); (14.5 : 6.57859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(13.75 : 6.125); (14.125 : 5.75); (14.125 : 6.70359537760417); (14.5 : 6.32859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DisneyDataDataContext/RoomOrderDetail/RoomOrderDetail_RoomServiceRecord" />
       <nodes>
-        <classShapeMoniker Id="5ce18709-e797-4f76-95a5-9d0928317f81" />
-        <classShapeMoniker Id="2e8fbc64-4f6e-4887-a541-7c41e222f51d" />
+        <classShapeMoniker Id="f4b0d624-7678-4e26-96bd-0c2767cd83e7" />
+        <classShapeMoniker Id="cc200b28-00e1-4cc6-93dd-ca490ebab361" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 16.9175439453125); (10.8749975 : 16.9175439453125); (10.8749975 : 8.7131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 16.5969962565104); (10.90625 : 16.5969962565104); (10.90625 : 11.3958968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/RoomStatus/RoomStatus_Room" />
       <nodes>
-        <classShapeMoniker Id="5f0cfe96-ea1f-4b44-b36b-51c75bcbf1a7" />
-        <classShapeMoniker Id="e4d27af0-e179-448e-ac02-d44e142ef990" />
+        <classShapeMoniker Id="f081af82-b3c0-43be-b6d3-ce488033187c" />
+        <classShapeMoniker Id="dde9a496-bad3-464d-8786-7fef4dcd40e0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 7.78929768880208); (6.25 : 7.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 10.5392976888021); (6.25 : 10.5392976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/SuitesLevel/SuitesLevel_RoomSeries" />
       <nodes>
-        <classShapeMoniker Id="f1fcd265-4bd7-4a96-81bb-4dc6b382c710" />
-        <classShapeMoniker Id="15398b9c-ff1b-458d-858d-95b2f82d6c19" />
+        <classShapeMoniker Id="617583a6-6566-4b62-887a-e2b9eb11e070" />
+        <classShapeMoniker Id="e6001afe-ddf3-4191-99b1-bbbc25dcb2b6" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.78929768880208); (3.5 : 7.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 10.5392976888021); (3.5 : 10.5392976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/Hotel/Hotel_SuitesLevel" />
       <nodes>
-        <classShapeMoniker Id="26dca050-3b18-442e-bed6-558c384606b2" />
-        <classShapeMoniker Id="f1fcd265-4bd7-4a96-81bb-4dc6b382c710" />
+        <classShapeMoniker Id="c97b469a-b22c-4966-b1fc-3bdf0c931452" />
+        <classShapeMoniker Id="617583a6-6566-4b62-887a-e2b9eb11e070" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.75 : 22.1642976888021); (11.5 : 22.1642976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.75 : 21.7892976888021); (11.5 : 21.7892976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/ThemePark/ThemePark_Attractions" />
       <nodes>
-        <classShapeMoniker Id="9fb5410f-c356-4081-a57f-bb3cabd09794" />
-        <classShapeMoniker Id="07fb05ce-f658-4f99-85a5-9b0cbda99a7f" />
+        <classShapeMoniker Id="ced39e2b-f23a-47ca-b371-a7ae644b30c2" />
+        <classShapeMoniker Id="1be73e62-2eaf-486c-8f98-14078258d309" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 1.76044840494792); (9 : 1.76044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 4.51044840494792); (9 : 4.51044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/Order/Order_Ticket" />
       <nodes>
-        <classShapeMoniker Id="f7cb66c9-5b24-4dad-b4f8-6eca65c57fb2" />
-        <classShapeMoniker Id="c66add63-8c07-4f88-9421-5b4286ab69d7" />
+        <classShapeMoniker Id="23261f35-2208-400e-afeb-e9335490b17f" />
+        <classShapeMoniker Id="1c4aca51-274c-4287-a34f-1411d46ab0ac" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.25 : 11.5); (7.25 : 9.09780110677083); (8.5 : 9.09780110677083); (8.5 : 2.23442460742187); (9 : 2.23442460742187)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 12.5); (8.625 : 12.125); (8.625 : 4.98442460742187); (9 : 4.98442460742187)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/DisneyDataDataContext/TicketOffer/TicketOffer_Ticket" />
       <nodes>
-        <classShapeMoniker Id="8a032d3d-c94e-47d0-968c-b98259b98ce1" />
-        <classShapeMoniker Id="c66add63-8c07-4f88-9421-5b4286ab69d7" />
+        <classShapeMoniker Id="3cbf3205-a757-4dac-bbb2-496e22407219" />
+        <classShapeMoniker Id="1c4aca51-274c-4287-a34f-1411d46ab0ac" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

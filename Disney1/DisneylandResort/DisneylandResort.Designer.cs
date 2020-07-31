@@ -31,6 +31,7 @@
             this.picThemePark = new System.Windows.Forms.PictureBox();
             this.lblThemeParkInfo = new System.Windows.Forms.Label();
             this.cboThemePark = new System.Windows.Forms.ComboBox();
+            this.lblHoliday = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picThemePark)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,10 +61,20 @@
             this.cboThemePark.TabIndex = 3;
             this.cboThemePark.SelectedIndexChanged += new System.EventHandler(this.cboThemePark_SelectedIndexChanged);
             // 
+            // lblHoliday
+            // 
+            this.lblHoliday.AutoSize = true;
+            this.lblHoliday.Location = new System.Drawing.Point(87, 44);
+            this.lblHoliday.Name = "lblHoliday";
+            this.lblHoliday.Size = new System.Drawing.Size(211, 16);
+            this.lblHoliday.TabIndex = 6;
+            this.lblHoliday.Text = "The theme party of this month is";
+            // 
             // DisneylandResort
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblHoliday);
             this.Controls.Add(this.picThemePark);
             this.Controls.Add(this.lblThemeParkInfo);
             this.Controls.Add(this.cboThemePark);
@@ -74,6 +85,7 @@
             this.Load += new System.EventHandler(this.DisneylandResort_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picThemePark)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -82,5 +94,6 @@
         private System.Windows.Forms.PictureBox picThemePark;
         private System.Windows.Forms.Label lblThemeParkInfo;
         private System.Windows.Forms.ComboBox cboThemePark;
+        private System.Windows.Forms.Label lblHoliday;
     }
 }

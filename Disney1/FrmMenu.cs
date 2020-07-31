@@ -72,7 +72,6 @@ namespace Disney1
                     LoginTime = DateTime.Now
                 });
                 db.SubmitChanges();
-                lblUserInfo.Text = $"Welcome {user.Name}\nYou are {user.Group.GroupName}";
                 gpbLogin.Enabled = false;
                 gpbLogin.Visible = false;
                 panelMenu.Visible = true;

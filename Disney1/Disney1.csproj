@@ -135,6 +135,12 @@
       <DependentUpon>GeneralResort.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="Manage\Admin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manage\Manager\AttractionsStatistics.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     </Compile>
     <Compile Include="TouristData.cs" />
     <Compile Include="WeatherData.cs" />
+    <None Include="DisneyData.dbml.layout">
+      <DependentUpon>DisneyData.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="DisneylandResort\AttractionsInfo.resx">
       <DependentUpon>AttractionsInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GeneralResort.resx">
       <DependentUpon>GeneralResort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\Manager\AttractionsStatistics.resx">
       <DependentUpon>AttractionsStatistics.cs</DependentUpon>
@@ -284,9 +296,6 @@
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DisneyData.dbml.layout">
-      <DependentUpon>DisneyData.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +330,7 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Manage\Admin\" />
     <Folder Include="Manage\Member\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
