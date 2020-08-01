@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Disney1.Manage;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -149,7 +150,8 @@ namespace Disney1
             switch (Global.User.GroupNo)
             {
                 case 1:
-                    
+                    administrator1.DataRefresh();
+                    administrator1.BringToFront();
                     break;
                 case 2:
                     resortManager1.DataRefresh();

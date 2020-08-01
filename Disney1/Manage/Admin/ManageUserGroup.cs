@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Disney1.Manage
+namespace Disney1.Manage.Admin
 {
-    public partial class Admin : UserControl
+    public partial class ManageUserGroup : UserControl
     {
-        public Admin()
+        public ManageUserGroup()
         {
             InitializeComponent();
         }

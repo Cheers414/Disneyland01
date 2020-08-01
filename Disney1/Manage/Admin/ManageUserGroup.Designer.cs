@@ -1,6 +1,6 @@
-﻿namespace Disney1.Manage
+﻿namespace Disney1.Manage.Admin
 {
-    partial class Admin
+    partial class ManageUserGroup
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Admin
+            // ManageUserGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Admin";
-            this.Size = new System.Drawing.Size(1031, 681);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "ManageUserGroup";
+            this.Size = new System.Drawing.Size(1031, 657);
             this.ResumeLayout(false);
 
         }

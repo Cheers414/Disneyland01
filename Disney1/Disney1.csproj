@@ -135,11 +135,29 @@
       <DependentUpon>GeneralResort.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
-    <Compile Include="Manage\Admin.cs">
+    <Compile Include="Manage\Administrator.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Manage\Admin.Designer.cs">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <Compile Include="Manage\Administrator.Designer.cs">
+      <DependentUpon>Administrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Admin\ManageAuthority.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Admin\ManageAuthority.Designer.cs">
+      <DependentUpon>ManageAuthority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Admin\ManageUserGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Admin\ManageUserGroup.Designer.cs">
+      <DependentUpon>ManageUserGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageAccount.Designer.cs">
+      <DependentUpon>ManageAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Manage\Manager\AttractionsStatistics.cs">
       <SubType>UserControl</SubType>
@@ -257,8 +275,17 @@
     <EmbeddedResource Include="GeneralResort.resx">
       <DependentUpon>GeneralResort.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manage\Admin.resx">
-      <DependentUpon>Admin.cs</DependentUpon>
+    <EmbeddedResource Include="Manage\Administrator.resx">
+      <DependentUpon>Administrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Admin\ManageAuthority.resx">
+      <DependentUpon>ManageAuthority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Admin\ManageUserGroup.resx">
+      <DependentUpon>ManageUserGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageAccount.resx">
+      <DependentUpon>ManageAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\Manager\AttractionsStatistics.resx">
       <DependentUpon>AttractionsStatistics.cs</DependentUpon>
@@ -330,7 +357,6 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Manage\Admin\" />
     <Folder Include="Manage\Member\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -36,12 +36,6 @@ namespace Disney1
     partial void InsertTicketOffer(TicketOffer instance);
     partial void UpdateTicketOffer(TicketOffer instance);
     partial void DeleteTicketOffer(TicketOffer instance);
-    partial void InsertAdProvider(AdProvider instance);
-    partial void UpdateAdProvider(AdProvider instance);
-    partial void DeleteAdProvider(AdProvider instance);
-    partial void InsertAdvertise(Advertise instance);
-    partial void UpdateAdvertise(Advertise instance);
-    partial void DeleteAdvertise(Advertise instance);
     partial void InsertAttractions(Attractions instance);
     partial void UpdateAttractions(Attractions instance);
     partial void DeleteAttractions(Attractions instance);
@@ -177,22 +171,6 @@ namespace Disney1
 			get
 			{
 				return this.GetTable<TicketOffer>();
-			}
-		}
-		
-		public System.Data.Linq.Table<AdProvider> AdProvider
-		{
-			get
-			{
-				return this.GetTable<AdProvider>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Advertise> Advertise
-		{
-			get
-			{
-				return this.GetTable<Advertise>();
 			}
 		}
 		
@@ -1060,415 +1038,6 @@ namespace Disney1
 		{
 			this.SendPropertyChanging();
 			entity.TicketOffer = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AdProvider")]
-	public partial class AdProvider : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _AdProviderId;
-		
-		private string _AdproviderName;
-		
-		private EntitySet<Advertise> _Advertise;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnAdProviderIdChanging(string value);
-    partial void OnAdProviderIdChanged();
-    partial void OnAdproviderNameChanging(string value);
-    partial void OnAdproviderNameChanged();
-    #endregion
-		
-		public AdProvider()
-		{
-			this._Advertise = new EntitySet<Advertise>(new Action<Advertise>(this.attach_Advertise), new Action<Advertise>(this.detach_Advertise));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdProviderId", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string AdProviderId
-		{
-			get
-			{
-				return this._AdProviderId;
-			}
-			set
-			{
-				if ((this._AdProviderId != value))
-				{
-					this.OnAdProviderIdChanging(value);
-					this.SendPropertyChanging();
-					this._AdProviderId = value;
-					this.SendPropertyChanged("AdProviderId");
-					this.OnAdProviderIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdproviderName", DbType="NVarChar(100)")]
-		public string AdproviderName
-		{
-			get
-			{
-				return this._AdproviderName;
-			}
-			set
-			{
-				if ((this._AdproviderName != value))
-				{
-					this.OnAdproviderNameChanging(value);
-					this.SendPropertyChanging();
-					this._AdproviderName = value;
-					this.SendPropertyChanged("AdproviderName");
-					this.OnAdproviderNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AdProvider_Advertise", Storage="_Advertise", ThisKey="AdProviderId", OtherKey="AdProviderId")]
-		public EntitySet<Advertise> Advertise
-		{
-			get
-			{
-				return this._Advertise;
-			}
-			set
-			{
-				this._Advertise.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Advertise(Advertise entity)
-		{
-			this.SendPropertyChanging();
-			entity.AdProvider = this;
-		}
-		
-		private void detach_Advertise(Advertise entity)
-		{
-			this.SendPropertyChanging();
-			entity.AdProvider = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Advertise")]
-	public partial class Advertise : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _AdvertiseNo;
-		
-		private string _AdProviderId;
-		
-		private string _Title;
-		
-		private string _Text;
-		
-		private System.DateTime _StartTime;
-		
-		private System.DateTime _EndTime;
-		
-		private int _TimeViewed;
-		
-		private string _Photo;
-		
-		private string _Video;
-		
-		private EntityRef<AdProvider> _AdProvider;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnAdvertiseNoChanging(int value);
-    partial void OnAdvertiseNoChanged();
-    partial void OnAdProviderIdChanging(string value);
-    partial void OnAdProviderIdChanged();
-    partial void OnTitleChanging(string value);
-    partial void OnTitleChanged();
-    partial void OnTextChanging(string value);
-    partial void OnTextChanged();
-    partial void OnStartTimeChanging(System.DateTime value);
-    partial void OnStartTimeChanged();
-    partial void OnEndTimeChanging(System.DateTime value);
-    partial void OnEndTimeChanged();
-    partial void OnTimeViewedChanging(int value);
-    partial void OnTimeViewedChanged();
-    partial void OnPhotoChanging(string value);
-    partial void OnPhotoChanged();
-    partial void OnVideoChanging(string value);
-    partial void OnVideoChanged();
-    #endregion
-		
-		public Advertise()
-		{
-			this._AdProvider = default(EntityRef<AdProvider>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdvertiseNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int AdvertiseNo
-		{
-			get
-			{
-				return this._AdvertiseNo;
-			}
-			set
-			{
-				if ((this._AdvertiseNo != value))
-				{
-					this.OnAdvertiseNoChanging(value);
-					this.SendPropertyChanging();
-					this._AdvertiseNo = value;
-					this.SendPropertyChanged("AdvertiseNo");
-					this.OnAdvertiseNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AdProviderId", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string AdProviderId
-		{
-			get
-			{
-				return this._AdProviderId;
-			}
-			set
-			{
-				if ((this._AdProviderId != value))
-				{
-					if (this._AdProvider.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnAdProviderIdChanging(value);
-					this.SendPropertyChanging();
-					this._AdProviderId = value;
-					this.SendPropertyChanged("AdProviderId");
-					this.OnAdProviderIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Title", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Title
-		{
-			get
-			{
-				return this._Title;
-			}
-			set
-			{
-				if ((this._Title != value))
-				{
-					this.OnTitleChanging(value);
-					this.SendPropertyChanging();
-					this._Title = value;
-					this.SendPropertyChanged("Title");
-					this.OnTitleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Text", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
-		public string Text
-		{
-			get
-			{
-				return this._Text;
-			}
-			set
-			{
-				if ((this._Text != value))
-				{
-					this.OnTextChanging(value);
-					this.SendPropertyChanging();
-					this._Text = value;
-					this.SendPropertyChanged("Text");
-					this.OnTextChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartTime", DbType="DateTime NOT NULL")]
-		public System.DateTime StartTime
-		{
-			get
-			{
-				return this._StartTime;
-			}
-			set
-			{
-				if ((this._StartTime != value))
-				{
-					this.OnStartTimeChanging(value);
-					this.SendPropertyChanging();
-					this._StartTime = value;
-					this.SendPropertyChanged("StartTime");
-					this.OnStartTimeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndTime", DbType="DateTime NOT NULL")]
-		public System.DateTime EndTime
-		{
-			get
-			{
-				return this._EndTime;
-			}
-			set
-			{
-				if ((this._EndTime != value))
-				{
-					this.OnEndTimeChanging(value);
-					this.SendPropertyChanging();
-					this._EndTime = value;
-					this.SendPropertyChanged("EndTime");
-					this.OnEndTimeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimeViewed", DbType="Int NOT NULL")]
-		public int TimeViewed
-		{
-			get
-			{
-				return this._TimeViewed;
-			}
-			set
-			{
-				if ((this._TimeViewed != value))
-				{
-					this.OnTimeViewedChanging(value);
-					this.SendPropertyChanging();
-					this._TimeViewed = value;
-					this.SendPropertyChanged("TimeViewed");
-					this.OnTimeViewedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Photo", DbType="NVarChar(100)")]
-		public string Photo
-		{
-			get
-			{
-				return this._Photo;
-			}
-			set
-			{
-				if ((this._Photo != value))
-				{
-					this.OnPhotoChanging(value);
-					this.SendPropertyChanging();
-					this._Photo = value;
-					this.SendPropertyChanged("Photo");
-					this.OnPhotoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Video", DbType="NVarChar(100)")]
-		public string Video
-		{
-			get
-			{
-				return this._Video;
-			}
-			set
-			{
-				if ((this._Video != value))
-				{
-					this.OnVideoChanging(value);
-					this.SendPropertyChanging();
-					this._Video = value;
-					this.SendPropertyChanged("Video");
-					this.OnVideoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="AdProvider_Advertise", Storage="_AdProvider", ThisKey="AdProviderId", OtherKey="AdProviderId", IsForeignKey=true)]
-		public AdProvider AdProvider
-		{
-			get
-			{
-				return this._AdProvider.Entity;
-			}
-			set
-			{
-				AdProvider previousValue = this._AdProvider.Entity;
-				if (((previousValue != value) 
-							|| (this._AdProvider.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._AdProvider.Entity = null;
-						previousValue.Advertise.Remove(this);
-					}
-					this._AdProvider.Entity = value;
-					if ((value != null))
-					{
-						value.Advertise.Add(this);
-						this._AdProviderId = value.AdProviderId;
-					}
-					else
-					{
-						this._AdProviderId = default(string);
-					}
-					this.SendPropertyChanged("AdProvider");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 	
@@ -4645,6 +4214,8 @@ namespace Disney1
 		
 		private EntitySet<Order> _Order;
 		
+		private EntitySet<RoomOrder> _RoomOrder;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -4662,6 +4233,7 @@ namespace Disney1
 		public PaymentMethod()
 		{
 			this._Order = new EntitySet<Order>(new Action<Order>(this.attach_Order), new Action<Order>(this.detach_Order));
+			this._RoomOrder = new EntitySet<RoomOrder>(new Action<RoomOrder>(this.attach_RoomOrder), new Action<RoomOrder>(this.detach_RoomOrder));
 			OnCreated();
 		}
 		
@@ -4758,6 +4330,19 @@ namespace Disney1
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PaymentMethod_RoomOrder", Storage="_RoomOrder", ThisKey="PaymentMethodNo", OtherKey="PaymentMethodNo")]
+		public EntitySet<RoomOrder> RoomOrder
+		{
+			get
+			{
+				return this._RoomOrder;
+			}
+			set
+			{
+				this._RoomOrder.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -4785,6 +4370,18 @@ namespace Disney1
 		}
 		
 		private void detach_Order(Order entity)
+		{
+			this.SendPropertyChanging();
+			entity.PaymentMethod = null;
+		}
+		
+		private void attach_RoomOrder(RoomOrder entity)
+		{
+			this.SendPropertyChanging();
+			entity.PaymentMethod = this;
+		}
+		
+		private void detach_RoomOrder(RoomOrder entity)
 		{
 			this.SendPropertyChanging();
 			entity.PaymentMethod = null;
@@ -5632,11 +5229,15 @@ namespace Disney1
 		
 		private string _CouponId;
 		
+		private int _PaymentMethodNo;
+		
 		private EntitySet<RoomOrderDetail> _RoomOrderDetail;
 		
 		private EntityRef<Coupon> _Coupon;
 		
 		private EntityRef<Guest> _Guest;
+		
+		private EntityRef<PaymentMethod> _PaymentMethod;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5652,6 +5253,8 @@ namespace Disney1
     partial void OnStatusChanged();
     partial void OnCouponIdChanging(string value);
     partial void OnCouponIdChanged();
+    partial void OnPaymentMethodNoChanging(int value);
+    partial void OnPaymentMethodNoChanged();
     #endregion
 		
 		public RoomOrder()
@@ -5659,6 +5262,7 @@ namespace Disney1
 			this._RoomOrderDetail = new EntitySet<RoomOrderDetail>(new Action<RoomOrderDetail>(this.attach_RoomOrderDetail), new Action<RoomOrderDetail>(this.detach_RoomOrderDetail));
 			this._Coupon = default(EntityRef<Coupon>);
 			this._Guest = default(EntityRef<Guest>);
+			this._PaymentMethod = default(EntityRef<PaymentMethod>);
 			OnCreated();
 		}
 		
@@ -5770,6 +5374,30 @@ namespace Disney1
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentMethodNo", DbType="Int NOT NULL")]
+		public int PaymentMethodNo
+		{
+			get
+			{
+				return this._PaymentMethodNo;
+			}
+			set
+			{
+				if ((this._PaymentMethodNo != value))
+				{
+					if (this._PaymentMethod.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnPaymentMethodNoChanging(value);
+					this.SendPropertyChanging();
+					this._PaymentMethodNo = value;
+					this.SendPropertyChanged("PaymentMethodNo");
+					this.OnPaymentMethodNoChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomOrder_RoomOrderDetail", Storage="_RoomOrderDetail", ThisKey="RoomOrderNo", OtherKey="RoomOrderNo")]
 		public EntitySet<RoomOrderDetail> RoomOrderDetail
 		{
@@ -5847,6 +5475,40 @@ namespace Disney1
 						this._GuestNo = default(int);
 					}
 					this.SendPropertyChanged("Guest");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PaymentMethod_RoomOrder", Storage="_PaymentMethod", ThisKey="PaymentMethodNo", OtherKey="PaymentMethodNo", IsForeignKey=true)]
+		public PaymentMethod PaymentMethod
+		{
+			get
+			{
+				return this._PaymentMethod.Entity;
+			}
+			set
+			{
+				PaymentMethod previousValue = this._PaymentMethod.Entity;
+				if (((previousValue != value) 
+							|| (this._PaymentMethod.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PaymentMethod.Entity = null;
+						previousValue.RoomOrder.Remove(this);
+					}
+					this._PaymentMethod.Entity = value;
+					if ((value != null))
+					{
+						value.RoomOrder.Add(this);
+						this._PaymentMethodNo = value.PaymentMethodNo;
+					}
+					else
+					{
+						this._PaymentMethodNo = default(int);
+					}
+					this.SendPropertyChanged("PaymentMethod");
 				}
 			}
 		}

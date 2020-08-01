@@ -29,27 +29,6 @@
       <Association Name="TicketOffer_Ticket" Member="Ticket" ThisKey="TicketOfferNo" OtherKey="TicketOfferNo" Type="Ticket" />
     </Type>
   </Table>
-  <Table Name="dbo.AdProvider" Member="AdProvider">
-    <Type Name="AdProvider">
-      <Column Name="AdProviderId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="AdproviderName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="AdProvider_Advertise" Member="Advertise" ThisKey="AdProviderId" OtherKey="AdProviderId" Type="Advertise" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Advertise" Member="Advertise">
-    <Type Name="Advertise">
-      <Column Name="AdvertiseNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="AdProviderId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Title" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Text" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
-      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="TimeViewed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Video" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="AdProvider_Advertise" Member="AdProvider" ThisKey="AdProviderId" OtherKey="AdProviderId" Type="AdProvider" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Attractions" Member="Attractions">
     <Type Name="Attractions">
       <Column Name="AttractionsNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -215,6 +194,7 @@
       <Column Name="Discount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="isUsable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="PaymentMethod_Order" Member="Order" ThisKey="PaymentMethodNo" OtherKey="PaymentMethodNo" Type="Order" />
+      <Association Name="PaymentMethod_RoomOrder" Member="RoomOrder" ThisKey="PaymentMethodNo" OtherKey="PaymentMethodNo" Type="RoomOrder" />
     </Type>
   </Table>
   <Table Name="dbo.QueueRecord" Member="QueueRecord">
@@ -264,9 +244,11 @@
       <Column Name="GuestNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CouponId" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PaymentMethodNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="RoomOrder_RoomOrderDetail" Member="RoomOrderDetail" ThisKey="RoomOrderNo" OtherKey="RoomOrderNo" Type="RoomOrderDetail" />
       <Association Name="Coupon_RoomOrder" Member="Coupon" ThisKey="CouponId" OtherKey="CouponId" Type="Coupon" IsForeignKey="true" />
       <Association Name="Guest_RoomOrder" Member="Guest" ThisKey="GuestNo" OtherKey="GuestNo" Type="Guest" IsForeignKey="true" />
+      <Association Name="PaymentMethod_RoomOrder" Member="PaymentMethod" ThisKey="PaymentMethodNo" OtherKey="PaymentMethodNo" Type="PaymentMethod" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.RoomOrderDetail" Member="RoomOrderDetail">
