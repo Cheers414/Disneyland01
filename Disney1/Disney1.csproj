@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActiveRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ActiveRecord.Designer.cs">
+      <DependentUpon>ActiveRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="DisneyData.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -239,6 +245,9 @@
     <None Include="DisneyData.dbml.layout">
       <DependentUpon>DisneyData.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="ActiveRecord.resx">
+      <DependentUpon>ActiveRecord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DisneylandResort\AttractionsInfo.resx">
       <DependentUpon>AttractionsInfo.cs</DependentUpon>
     </EmbeddedResource>

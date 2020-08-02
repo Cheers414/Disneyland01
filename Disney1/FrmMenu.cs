@@ -171,5 +171,11 @@ namespace Disney1
                     break;
             }
         }
+
+        private void btnActive_Click(object sender, EventArgs e)
+        {
+            activeRecord1.DataRefresh();
+            activeRecord1.BringToFront();
+        }
     }
 }
