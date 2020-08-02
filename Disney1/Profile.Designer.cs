@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnSave = new System.Windows.Forms.Button();
-            this.cboHotel = new System.Windows.Forms.ComboBox();
             this.cboGroup = new System.Windows.Forms.ComboBox();
             this.rbFemale = new System.Windows.Forms.RadioButton();
             this.rbMen = new System.Windows.Forms.RadioButton();
@@ -38,7 +37,6 @@
             this.txtCitizenship = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPwd = new System.Windows.Forms.TextBox();
-            this.lblHotel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -62,15 +60,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // cboHotel
-            // 
-            this.cboHotel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboHotel.FormattingEnabled = true;
-            this.cboHotel.Location = new System.Drawing.Point(427, 500);
-            this.cboHotel.Name = "cboHotel";
-            this.cboHotel.Size = new System.Drawing.Size(249, 24);
-            this.cboHotel.TabIndex = 30;
-            // 
             // cboGroup
             // 
             this.cboGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -79,7 +68,6 @@
             this.cboGroup.Name = "cboGroup";
             this.cboGroup.Size = new System.Drawing.Size(249, 24);
             this.cboGroup.TabIndex = 29;
-            this.cboGroup.SelectedIndexChanged += new System.EventHandler(this.cboGroup_SelectedIndexChanged);
             // 
             // rbFemale
             // 
@@ -139,15 +127,6 @@
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(249, 27);
             this.txtPwd.TabIndex = 22;
-            // 
-            // lblHotel
-            // 
-            this.lblHotel.AutoSize = true;
-            this.lblHotel.Location = new System.Drawing.Point(347, 503);
-            this.lblHotel.Name = "lblHotel";
-            this.lblHotel.Size = new System.Drawing.Size(42, 16);
-            this.lblHotel.TabIndex = 19;
-            this.lblHotel.Text = "Hotel";
             // 
             // label9
             // 
@@ -258,7 +237,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.cboHotel);
             this.Controls.Add(this.cboGroup);
             this.Controls.Add(this.rbFemale);
             this.Controls.Add(this.rbMen);
@@ -267,7 +245,6 @@
             this.Controls.Add(this.txtCitizenship);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtPwd);
-            this.Controls.Add(this.lblHotel);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -288,7 +265,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ComboBox cboHotel;
         private System.Windows.Forms.ComboBox cboGroup;
         private System.Windows.Forms.RadioButton rbFemale;
         private System.Windows.Forms.RadioButton rbMen;
@@ -297,7 +273,6 @@
         private System.Windows.Forms.TextBox txtCitizenship;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtPwd;
-        private System.Windows.Forms.Label lblHotel;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

@@ -25,8 +25,6 @@ namespace Disney1
 
             cboGroup.DataSource = db.Group;
             cboGroup.DisplayMember = "GroupName";
-            cboHotel.DataSource = db.Hotel;
-            cboHotel.DisplayMember = "HotelName";
             dtpBirthday.MaxDate = DateTime.Today;
 
             var user = Global.User;
@@ -37,27 +35,7 @@ namespace Disney1
             txtPwd.Text = user.Password;
             dtpBirthday.Value = user.Birthday;
             (user.Gender == "M" ? rbMen : rbFemale).Checked = true;
-            cboGroup.SelectedIndex = user.GroupNo - 1;
-            if (user.GroupNo == 5 || user.GroupNo == 6)
-            {
-                cboHotel.SelectedIndex = (int)user.HotelNo - 1;
-            }
-        }
-
-        private void cboGroup_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Show or hide hotel selections
-            var group = (Group)cboGroup.SelectedItem;
-            if (group.GroupNo == 5 || group.GroupNo == 6)
-            {
-                lblHotel.Visible = true;
-                cboHotel.Visible = true;
-            }
-            else
-            {
-                lblHotel.Visible = false;
-                cboHotel.Visible = false;
-            }
+            cboGroup.SelectedIndex = db.Group.ToList().FindIndex(x => x.GroupNo == user.GroupNo);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -71,7 +49,6 @@ namespace Disney1
             {
                 var account = db.Account.FirstOrDefault(x => x.AccountId == lblAccount.Text);
                 var group = (Group)cboGroup.SelectedItem;
-                var hotel = (Hotel)cboHotel.SelectedItem;
 
                 if (txtCitizenship.Text == "" || txtEmail.Text == "" || txtName.Text == "" || txtPwd.Text == "")
                 {
@@ -88,14 +65,6 @@ namespace Disney1
                 account.Email = txtEmail.Text;
                 account.LastTimeChangePwd = DateTime.Now;
                 account.GroupNo = group.GroupNo;
-                if (group.GroupNo == 5 || group.GroupNo == 6)
-                {
-                    account.HotelNo = hotel.HotelNo;
-                }
-                else
-                {
-                    account.HotelNo = null;
-                }
                 db.SubmitChanges();
                 Global.User = account;
                 MessageBox.Show("Save successfully.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);

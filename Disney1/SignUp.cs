@@ -36,26 +36,6 @@ namespace Disney1
             rbMen.Checked = true;
             cboGroup.DataSource = db.Group;
             cboGroup.DisplayMember = "GroupName";
-            cboHotel.DataSource = db.Hotel;
-            cboHotel.DisplayMember = "HotelName";
-            cboHotel.Visible = false;
-            lblHotel.Visible = false;
-        }
-
-        private void cboGroup_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Show or hide hotel selections
-            var group = (Group)cboGroup.SelectedItem;
-            if (group.GroupNo == 5 || group.GroupNo == 6)
-            {
-                lblHotel.Visible = true;
-                cboHotel.Visible = true;
-            }
-            else
-            {
-                lblHotel.Visible = false;
-                cboHotel.Visible = false;
-            }
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -65,7 +45,6 @@ namespace Disney1
                 var account = db.Account.FirstOrDefault(x => x.AccountId == txtAccount.Text);
                 var groupName = db.Group.ToList().Where(x => x.GroupName == txtName.Text);
                 var group = (Group)cboGroup.SelectedItem;
-                var hotel = (Hotel)cboHotel.SelectedItem;
 
                 if (account != null)
                 {
@@ -73,7 +52,7 @@ namespace Disney1
                     return;
                 }
 
-                if(groupName != null)
+                if (groupName != null)
                 {
                     MessageBox.Show("The name cannot be used", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -85,40 +64,19 @@ namespace Disney1
                     return;
                 }
 
-                if (group.GroupNo == 5 || group.GroupNo == 6)
+                //create resort manager or member account
+                db.Account.InsertOnSubmit(new Account()
                 {
-                    //create hotel manager account
-                    db.Account.InsertOnSubmit(new Account()
-                    {
-                        AccountId = txtAccount.Text,
-                        Password = txtPwd.Text,
-                        Name = txtName.Text,
-                        Birthday = dtpBirthday.Value,
-                        Gender = rbMen.Checked ? "M" : "F",
-                        Citizenship = txtCitizenship.Text,
-                        Email = txtEmail.Text,
-                        GroupNo = group.GroupNo,
-                        HotelNo = hotel.HotelNo,
-                        LastTimeChangePwd = DateTime.Now
-                    });
-                }
-                else
-                {
-                    //create resort manager or member account
-                    db.Account.InsertOnSubmit(new Account()
-                    {
-                        AccountId = txtAccount.Text,
-                        Password = txtPwd.Text,
-                        Name = txtName.Text,
-                        Birthday = dtpBirthday.Value,
-                        Gender = rbMen.Checked ? "M" : "F",
-                        Citizenship = txtCitizenship.Text,
-                        Email = txtEmail.Text,
-                        GroupNo = group.GroupNo,
-                        HotelNo = null,
-                        LastTimeChangePwd = DateTime.Now
-                    });
-                }
+                    AccountId = txtAccount.Text,
+                    Password = txtPwd.Text,
+                    Name = txtName.Text,
+                    Birthday = dtpBirthday.Value,
+                    Gender = rbMen.Checked ? "M" : "F",
+                    Citizenship = txtCitizenship.Text,
+                    Email = txtEmail.Text,
+                    GroupNo = group.GroupNo,
+                    LastTimeChangePwd = DateTime.Now
+                });
                 db.SubmitChanges();
                 MessageBox.Show("Create Accout successfully.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DataRefresh();

@@ -437,8 +437,6 @@ namespace Disney1
 		
 		private int _GroupNo;
 		
-		private System.Nullable<int> _HotelNo;
-		
 		private System.DateTime _LastTimeChangePwd;
 		
 		private EntitySet<LogRecord> _LogRecord;
@@ -446,8 +444,6 @@ namespace Disney1
 		private EntitySet<Order> _Order;
 		
 		private EntityRef<Group> _Group;
-		
-		private EntityRef<Hotel> _Hotel;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -469,8 +465,6 @@ namespace Disney1
     partial void OnEmailChanged();
     partial void OnGroupNoChanging(int value);
     partial void OnGroupNoChanged();
-    partial void OnHotelNoChanging(System.Nullable<int> value);
-    partial void OnHotelNoChanged();
     partial void OnLastTimeChangePwdChanging(System.DateTime value);
     partial void OnLastTimeChangePwdChanged();
     #endregion
@@ -480,7 +474,6 @@ namespace Disney1
 			this._LogRecord = new EntitySet<LogRecord>(new Action<LogRecord>(this.attach_LogRecord), new Action<LogRecord>(this.detach_LogRecord));
 			this._Order = new EntitySet<Order>(new Action<Order>(this.attach_Order), new Action<Order>(this.detach_Order));
 			this._Group = default(EntityRef<Group>);
-			this._Hotel = default(EntityRef<Hotel>);
 			OnCreated();
 		}
 		
@@ -648,30 +641,6 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HotelNo", DbType="Int")]
-		public System.Nullable<int> HotelNo
-		{
-			get
-			{
-				return this._HotelNo;
-			}
-			set
-			{
-				if ((this._HotelNo != value))
-				{
-					if (this._Hotel.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnHotelNoChanging(value);
-					this.SendPropertyChanging();
-					this._HotelNo = value;
-					this.SendPropertyChanged("HotelNo");
-					this.OnHotelNoChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastTimeChangePwd", DbType="Date NOT NULL")]
 		public System.DateTime LastTimeChangePwd
 		{
@@ -748,40 +717,6 @@ namespace Disney1
 						this._GroupNo = default(int);
 					}
 					this.SendPropertyChanged("Group");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hotel_Account", Storage="_Hotel", ThisKey="HotelNo", OtherKey="HotelNo", IsForeignKey=true)]
-		public Hotel Hotel
-		{
-			get
-			{
-				return this._Hotel.Entity;
-			}
-			set
-			{
-				Hotel previousValue = this._Hotel.Entity;
-				if (((previousValue != value) 
-							|| (this._Hotel.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Hotel.Entity = null;
-						previousValue.Account.Remove(this);
-					}
-					this._Hotel.Entity = value;
-					if ((value != null))
-					{
-						value.Account.Add(this);
-						this._HotelNo = value.HotelNo;
-					}
-					else
-					{
-						this._HotelNo = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Hotel");
 				}
 			}
 		}
@@ -3336,8 +3271,6 @@ namespace Disney1
 		
 		private string _PhoneNumber;
 		
-		private EntitySet<Account> _Account;
-		
 		private EntitySet<SuitesLevel> _SuitesLevel;
 		
     #region Extensibility Method Definitions
@@ -3360,7 +3293,6 @@ namespace Disney1
 		
 		public Hotel()
 		{
-			this._Account = new EntitySet<Account>(new Action<Account>(this.attach_Account), new Action<Account>(this.detach_Account));
 			this._SuitesLevel = new EntitySet<SuitesLevel>(new Action<SuitesLevel>(this.attach_SuitesLevel), new Action<SuitesLevel>(this.detach_SuitesLevel));
 			OnCreated();
 		}
@@ -3485,19 +3417,6 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hotel_Account", Storage="_Account", ThisKey="HotelNo", OtherKey="HotelNo")]
-		public EntitySet<Account> Account
-		{
-			get
-			{
-				return this._Account;
-			}
-			set
-			{
-				this._Account.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Hotel_SuitesLevel", Storage="_SuitesLevel", ThisKey="HotelNo", OtherKey="HotelNo")]
 		public EntitySet<SuitesLevel> SuitesLevel
 		{
@@ -3529,18 +3448,6 @@ namespace Disney1
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Account(Account entity)
-		{
-			this.SendPropertyChanging();
-			entity.Hotel = this;
-		}
-		
-		private void detach_Account(Account entity)
-		{
-			this.SendPropertyChanging();
-			entity.Hotel = null;
 		}
 		
 		private void attach_SuitesLevel(SuitesLevel entity)
