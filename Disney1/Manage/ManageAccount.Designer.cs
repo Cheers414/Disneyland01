@@ -32,6 +32,7 @@
             this.manageUserGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageGroupAuthorityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageAuthority1 = new Disney1.Manage.Admin.ManageAuthority();
+            this.manageUserGroup1 = new Disney1.Manage.Admin.ManageUserGroup();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,10 +72,21 @@
             this.manageAuthority1.Size = new System.Drawing.Size(1031, 657);
             this.manageAuthority1.TabIndex = 1;
             // 
+            // manageUserGroup1
+            // 
+            this.manageUserGroup1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.manageUserGroup1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.manageUserGroup1.Location = new System.Drawing.Point(0, 24);
+            this.manageUserGroup1.Margin = new System.Windows.Forms.Padding(4);
+            this.manageUserGroup1.Name = "manageUserGroup1";
+            this.manageUserGroup1.Size = new System.Drawing.Size(1031, 657);
+            this.manageUserGroup1.TabIndex = 2;
+            // 
             // ManageAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.manageUserGroup1);
             this.Controls.Add(this.manageAuthority1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -94,5 +106,6 @@
         private System.Windows.Forms.ToolStripMenuItem manageUserGroupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageGroupAuthorityToolStripMenuItem;
         private Admin.ManageAuthority manageAuthority1;
+        private Admin.ManageUserGroup manageUserGroup1;
     }
 }

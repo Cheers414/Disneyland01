@@ -19,12 +19,13 @@ namespace Disney1.Manage
 
         public void DataRefresh()
         {
-
+            manageUserGroupToolStripMenuItem_Click(null, null);
         }
 
         private void manageUserGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            manageUserGroup1.DataRefresh();
+            manageUserGroup1.BringToFront();
         }
 
         private void manageGroupAuthorityToolStripMenuItem_Click(object sender, EventArgs e)
