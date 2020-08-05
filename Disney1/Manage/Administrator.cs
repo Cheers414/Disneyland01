@@ -19,12 +19,38 @@ namespace Disney1.Manage
 
         public void DataRefresh()
         {
-            btnAccount.Visible = true;
-            btnHotel.Visible = true;
-            btnResort.Visible = true;
+            HideButton();
+            Global.User.Group.AuthorityDetail.ToList().ForEach(x =>
+            {
+                switch (x.AuthorityNo)
+                {
+                    case 1:
+                        if (x.isAllow)
+                        {
+                            btnAccount.Visible = true;
+                        }
+                        break;
+
+                    case 2:
+                        if (x.isAllow)
+                        {
+                            btnResort.Visible = true;
+                        }
+                        break;
+
+                    case 3:
+                        if (x.isAllow)
+                        {
+                            btnHotel.Visible = true;
+                        }
+                        break;
+                }
+            });
+
 
             manageAccount1.Visible = false;
             resortManager1.Visible = false;
+            hotelManagement1.Visible = false;
         }
 
         private void HideButton()
@@ -50,6 +76,8 @@ namespace Disney1.Manage
 
         private void btnHotel_Click(object sender, EventArgs e)
         {
+            hotelManagement1.DataRefresh();
+            hotelManagement1.Visible = true;
             HideButton();
         }
     }

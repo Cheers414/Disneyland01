@@ -41,7 +41,7 @@ namespace Disney1
         private void btnCreate_Click(object sender, EventArgs e)
         {
             try
-            {
+            {                 
                 var account = db.Account.FirstOrDefault(x => x.AccountId == txtAccount.Text);
                 var groupName = db.Group.ToList().Where(x => x.GroupName == txtName.Text);
                 var group = (Group)cboGroup.SelectedItem;

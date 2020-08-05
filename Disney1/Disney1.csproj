@@ -159,11 +159,29 @@
     <Compile Include="Manage\Admin\ManageUserGroup.Designer.cs">
       <DependentUpon>ManageUserGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manage\HotelManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\HotelManagement.Designer.cs">
+      <DependentUpon>HotelManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manage\ManageAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Manage\ManageAccount.Designer.cs">
       <DependentUpon>ManageAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\BookingRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\BookingRoom.Designer.cs">
+      <DependentUpon>BookingRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\SearchRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\SearchRoom.Designer.cs">
+      <DependentUpon>SearchRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="Manage\Manager\AttractionsStatistics.cs">
       <SubType>UserControl</SubType>
@@ -293,8 +311,17 @@
     <EmbeddedResource Include="Manage\Admin\ManageUserGroup.resx">
       <DependentUpon>ManageUserGroup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manage\HotelManagement.resx">
+      <DependentUpon>HotelManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manage\ManageAccount.resx">
       <DependentUpon>ManageAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\BookingRoom.resx">
+      <DependentUpon>BookingRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\SearchRoom.resx">
+      <DependentUpon>SearchRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\Manager\AttractionsStatistics.resx">
       <DependentUpon>AttractionsStatistics.cs</DependentUpon>

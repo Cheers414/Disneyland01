@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ShanghaiDisneyland01" Class="DisneyDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=ShanghaiDisneyland01;Integrated Security=True" SettingsObjectName="Disney1.Properties.Settings" SettingsPropertyName="ShanghaiDisneyland01ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TrafficMethod" Member="TrafficMethod">
+    <Type Name="TrafficMethod">
+      <Column Name="TrafficMethodNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Method" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TrafficContent" Type="System.String" DbType="NVarChar(3000) NOT NULL" CanBeNull="false" />
+      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Account" Member="Account">
     <Type Name="Account">
       <Column Name="AccountId" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -14,17 +22,6 @@
       <Association Name="Account_LogRecord" Member="LogRecord" ThisKey="AccountId" OtherKey="AccountId" Type="LogRecord" />
       <Association Name="Account_Order" Member="Order" ThisKey="AccountId" OtherKey="AccountId" Type="Order" />
       <Association Name="Group_Account" Member="Group" ThisKey="GroupNo" OtherKey="GroupNo" Type="Group" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TicketOffer" Member="TicketOffer">
-    <Type Name="TicketOffer">
-      <Column Name="TicketOfferNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TicketName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Discount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Association Name="TicketOffer_Ticket" Member="Ticket" ThisKey="TicketOfferNo" OtherKey="TicketOfferNo" Type="Ticket" />
     </Type>
   </Table>
   <Table Name="dbo.Attractions" Member="Attractions">
@@ -129,6 +126,7 @@
       <Column Name="Citizenship" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="RoomOrderDetailNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="isMain" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="isVIP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="Guest_RoomOrder" Member="RoomOrder" ThisKey="GuestNo" OtherKey="GuestNo" Type="RoomOrder" />
       <Association Name="RoomOrderDetail_Guest" Member="RoomOrderDetail" ThisKey="RoomOrderDetailNo" OtherKey="RoomOrderDetailNo" Type="RoomOrderDetail" IsForeignKey="true" />
     </Type>
@@ -239,7 +237,6 @@
       <Column Name="RoomOrderNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="OrderDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="GuestNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CouponId" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
       <Column Name="PaymentMethodNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="RoomOrder_RoomOrderDetail" Member="RoomOrderDetail" ThisKey="RoomOrderNo" OtherKey="RoomOrderNo" Type="RoomOrderDetail" />
@@ -255,8 +252,6 @@
       <Column Name="RoomNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="StartDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="EndDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="needBreakfast" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="LuggageStorage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="GuestNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ChildrenNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
@@ -336,12 +331,15 @@
       <Association Name="TicketOffer_Ticket" Member="TicketOffer" ThisKey="TicketOfferNo" OtherKey="TicketOfferNo" Type="TicketOffer" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TrafficMethod" Member="TrafficMethod">
-    <Type Name="TrafficMethod">
-      <Column Name="TrafficMethodNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Method" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="TrafficContent" Type="System.String" DbType="NVarChar(3000) NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.TicketOffer" Member="TicketOffer">
+    <Type Name="TicketOffer">
+      <Column Name="TicketOfferNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TicketName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Discount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
       <Column Name="Photo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="TicketOffer_Ticket" Member="Ticket" ThisKey="TicketOfferNo" OtherKey="TicketOfferNo" Type="Ticket" />
     </Type>
   </Table>
 </Database>

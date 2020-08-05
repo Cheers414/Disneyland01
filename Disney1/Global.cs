@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -14,8 +16,20 @@ namespace Disney1
     {
         public static Account User;
 
-        public static void ExportReport(DataGridView dgv , string filename)
-        { 
+        public static BindingList<Room> BookRooms = new BindingList<Room>();
+
+        public static bool TimeIsOverlapping(DateTime Start, DateTime End, DateTime x, DateTime y)
+        {
+            // 取得開始時間轉換成總天數 當作起點(只有 TimeSpan 能取得總天數)
+            // 取得開始時間到結束時間中間的天數 當作寬度(DateTime - DateTime = TimeSpan)
+            Rectangle rec1 = new Rectangle(Convert.ToInt32(TimeSpan.FromTicks(Start.Ticks).TotalDays), 0, Convert.ToInt32((End - Start).TotalDays), 0);
+            Rectangle rec2 = new Rectangle(Convert.ToInt32(TimeSpan.FromTicks(x.Ticks).TotalDays), 0, Convert.ToInt32((y-x).TotalDays), 0);
+            Rectangle result = Rectangle.Intersect(rec1, rec2);
+            return result.Width != 0;
+        }
+
+        public static void ExportReport(DataGridView dgv, string filename)
+        {
             var wordApp = new word.Application();
             wordApp.Visible = false;
             var wordDoc = wordApp.Documents.Add();

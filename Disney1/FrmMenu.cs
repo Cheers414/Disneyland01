@@ -28,12 +28,11 @@ namespace Disney1
         public void DataRefresh()
         {
             Global.User = null;
-            gpbLogin.Enabled = true;
             gpbLogin.Visible = true;
+            btnLogout.Visible = false;
             txtAccount.Text = "";
             txtPwd.Text = "";
             panelMenu.Visible = false;
-            panelMenu.Enabled = false;
             btnResort_Click(null, null);
         }
 
@@ -73,10 +72,13 @@ namespace Disney1
                     LoginTime = DateTime.Now
                 });
                 db.SubmitChanges();
-                gpbLogin.Enabled = false;
                 gpbLogin.Visible = false;
                 panelMenu.Visible = true;
-                panelMenu.Enabled = true;
+                btnLogout.Visible = true;
+                if (user.GroupNo == 3 || user.GroupNo == 4)
+                {
+                    btnManage.Visible = false;
+                }
                 MessageBox.Show("Login successfully.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 TimeSpan ts = DateTime.Now - user.LastTimeChangePwd;
                 if (ts.TotalDays > changePwdDay)
@@ -121,6 +123,10 @@ namespace Disney1
         {
             this.DataRefresh();
             this.btnResort_Click(null, null);
+
+            //Enter account
+            txtAccount.Text = "000001";
+            txtPwd.Text = "000001";
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
@@ -147,29 +153,8 @@ namespace Disney1
 
         private void btnManage_Click(object sender, EventArgs e)
         {
-            switch (Global.User.GroupNo)
-            {
-                case 1:
-                    administrator1.DataRefresh();
-                    administrator1.BringToFront();
-                    break;
-                case 2:
-                    resortManager1.DataRefresh();
-                    resortManager1.BringToFront();
-                    break;
-                case 3:
-                    resortMember1.BringToFront();
-                    break;
-                case 4:
-
-                    break;
-                case 5:
-
-                    break;
-                case 6:
-
-                    break;
-            }
+            administrator1.DataRefresh();
+            administrator1.BringToFront();
         }
 
         private void btnActive_Click(object sender, EventArgs e)
