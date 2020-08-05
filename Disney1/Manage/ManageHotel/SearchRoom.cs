@@ -23,6 +23,8 @@ namespace Disney1.Manage.ManageHotel
 
         public void DataRefresh()
         {
+            bookingRoom1.Visible = false;
+
             db = new DisneyDataDataContext();
             cboHotel.DataSource = db.Hotel;
             cboHotel.DisplayMember = "HotelName";
@@ -106,10 +108,10 @@ namespace Disney1.Manage.ManageHotel
                     int hotelId = x.RoomSeries.SuitesLevel.HotelNo;
                     int roomId = Convert.ToInt32(x.RoomId);
                     string lastId = (roomId - 1).ToString().PadLeft(4, '0');
-                    string nextId = (roomId + 1).ToString().PadLeft(4,'0');
-                    if(!rooms.Any(r=>
-                    (r.RoomId == lastId && r.RoomSeries.SuitesLevel.HotelNo == hotelId) || 
-                    (r.RoomId == nextId && r.RoomSeries.SuitesLevel.HotelNo == hotelId)))
+                    string nextId = (roomId + 1).ToString().PadLeft(4, '0');
+                    if (!rooms.Any(r =>
+                     (r.RoomId == lastId && r.RoomSeries.SuitesLevel.HotelNo == hotelId) ||
+                     (r.RoomId == nextId && r.RoomSeries.SuitesLevel.HotelNo == hotelId)))
                     {
                         singleRooms.Add(x);
                     }
@@ -184,7 +186,17 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnBook_Click(object sender, EventArgs e)
         {
+            if (Global.BookRooms.Count == 0)
+            {
+                MessageBox.Show("No room reserved", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            Global.CheckIn = dtpIn.Value;
+            Global.CheckOut = dtpOut.Value;
+
+            bookingRoom1.DataRefresh();
+            bookingRoom1.Visible = true;
         }
     }
 }

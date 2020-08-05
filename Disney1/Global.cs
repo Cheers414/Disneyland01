@@ -18,6 +18,15 @@ namespace Disney1
 
         public static BindingList<Room> BookRooms = new BindingList<Room>();
 
+        public static DateTime CheckIn;
+
+        public static DateTime CheckOut;
+
+        public static List<RoomOrderDetail> lstOrderDetail;
+
+        public static bool Breakfast;
+        public static bool Storage;
+
         public static bool TimeIsOverlapping(DateTime Start, DateTime End, DateTime x, DateTime y)
         {
             // 取得開始時間轉換成總天數 當作起點(只有 TimeSpan 能取得總天數)

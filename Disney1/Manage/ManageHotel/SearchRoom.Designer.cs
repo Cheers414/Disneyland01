@@ -50,6 +50,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBook = new System.Windows.Forms.Button();
+            this.bookingRoom1 = new Disney1.Manage.ManageHotel.BookingRoom();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatus)).BeginInit();
             this.SuspendLayout();
@@ -278,10 +279,22 @@
             this.btnBook.UseVisualStyleBackColor = true;
             this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
+            // bookingRoom1
+            // 
+            this.bookingRoom1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bookingRoom1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.bookingRoom1.Location = new System.Drawing.Point(0, 0);
+            this.bookingRoom1.Margin = new System.Windows.Forms.Padding(4);
+            this.bookingRoom1.Name = "bookingRoom1";
+            this.bookingRoom1.Size = new System.Drawing.Size(1031, 657);
+            this.bookingRoom1.TabIndex = 18;
+            this.bookingRoom1.Visible = false;
+            // 
             // SearchRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.bookingRoom1);
             this.Controls.Add(this.btnBook);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
@@ -337,5 +350,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBook;
+        private BookingRoom bookingRoom1;
     }
 }

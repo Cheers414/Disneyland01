@@ -31,9 +31,9 @@
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnResort = new System.Windows.Forms.Button();
             this.btnHotel = new System.Windows.Forms.Button();
+            this.hotelManagement1 = new Disney1.Manage.HotelManagement();
             this.resortManager1 = new Disney1.Manage.ResortManager();
             this.manageAccount1 = new Disney1.Manage.ManageAccount();
-            this.hotelManagement1 = new Disney1.Manage.HotelManagement();
             this.SuspendLayout();
             // 
             // btnAccount
@@ -41,7 +41,7 @@
             this.btnAccount.Location = new System.Drawing.Point(365, 242);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(313, 23);
-            this.btnAccount.TabIndex = 0;
+            this.btnAccount.TabIndex = 1;
             this.btnAccount.Text = "Account Management";
             this.btnAccount.UseVisualStyleBackColor = true;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
@@ -51,7 +51,7 @@
             this.btnResort.Location = new System.Drawing.Point(365, 290);
             this.btnResort.Name = "btnResort";
             this.btnResort.Size = new System.Drawing.Size(313, 23);
-            this.btnResort.TabIndex = 0;
+            this.btnResort.TabIndex = 2;
             this.btnResort.Text = "Resort Management";
             this.btnResort.UseVisualStyleBackColor = true;
             this.btnResort.Click += new System.EventHandler(this.btnResort_Click);
@@ -61,10 +61,20 @@
             this.btnHotel.Location = new System.Drawing.Point(365, 338);
             this.btnHotel.Name = "btnHotel";
             this.btnHotel.Size = new System.Drawing.Size(313, 23);
-            this.btnHotel.TabIndex = 0;
+            this.btnHotel.TabIndex = 3;
             this.btnHotel.Text = "Hotel Management";
             this.btnHotel.UseVisualStyleBackColor = true;
             this.btnHotel.Click += new System.EventHandler(this.btnHotel_Click);
+            // 
+            // hotelManagement1
+            // 
+            this.hotelManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hotelManagement1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.hotelManagement1.Location = new System.Drawing.Point(0, 0);
+            this.hotelManagement1.Margin = new System.Windows.Forms.Padding(4);
+            this.hotelManagement1.Name = "hotelManagement1";
+            this.hotelManagement1.Size = new System.Drawing.Size(1031, 681);
+            this.hotelManagement1.TabIndex = 3;
             // 
             // resortManager1
             // 
@@ -85,16 +95,6 @@
             this.manageAccount1.Name = "manageAccount1";
             this.manageAccount1.Size = new System.Drawing.Size(1031, 681);
             this.manageAccount1.TabIndex = 2;
-            // 
-            // hotelManagement1
-            // 
-            this.hotelManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hotelManagement1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.hotelManagement1.Location = new System.Drawing.Point(0, 0);
-            this.hotelManagement1.Margin = new System.Windows.Forms.Padding(4);
-            this.hotelManagement1.Name = "hotelManagement1";
-            this.hotelManagement1.Size = new System.Drawing.Size(1031, 681);
-            this.hotelManagement1.TabIndex = 3;
             // 
             // Administrator
             // 

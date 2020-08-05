@@ -30,12 +30,12 @@ namespace Disney1
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertTrafficMethod(TrafficMethod instance);
-    partial void UpdateTrafficMethod(TrafficMethod instance);
-    partial void DeleteTrafficMethod(TrafficMethod instance);
     partial void InsertAccount(Account instance);
     partial void UpdateAccount(Account instance);
     partial void DeleteAccount(Account instance);
+    partial void InsertTrafficMethod(TrafficMethod instance);
+    partial void UpdateTrafficMethod(TrafficMethod instance);
+    partial void DeleteTrafficMethod(TrafficMethod instance);
     partial void InsertAttractions(Attractions instance);
     partial void UpdateAttractions(Attractions instance);
     partial void DeleteAttractions(Attractions instance);
@@ -158,19 +158,19 @@ namespace Disney1
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<TrafficMethod> TrafficMethod
-		{
-			get
-			{
-				return this.GetTable<TrafficMethod>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Account> Account
 		{
 			get
 			{
 				return this.GetTable<Account>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TrafficMethod> TrafficMethod
+		{
+			get
+			{
+				return this.GetTable<TrafficMethod>();
 			}
 		}
 		
@@ -411,140 +411,6 @@ namespace Disney1
 			get
 			{
 				return this.GetTable<TicketOffer>();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TrafficMethod")]
-	public partial class TrafficMethod : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _TrafficMethodNo;
-		
-		private string _Method;
-		
-		private string _TrafficContent;
-		
-		private string _Photo;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTrafficMethodNoChanging(int value);
-    partial void OnTrafficMethodNoChanged();
-    partial void OnMethodChanging(string value);
-    partial void OnMethodChanged();
-    partial void OnTrafficContentChanging(string value);
-    partial void OnTrafficContentChanged();
-    partial void OnPhotoChanging(string value);
-    partial void OnPhotoChanged();
-    #endregion
-		
-		public TrafficMethod()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrafficMethodNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int TrafficMethodNo
-		{
-			get
-			{
-				return this._TrafficMethodNo;
-			}
-			set
-			{
-				if ((this._TrafficMethodNo != value))
-				{
-					this.OnTrafficMethodNoChanging(value);
-					this.SendPropertyChanging();
-					this._TrafficMethodNo = value;
-					this.SendPropertyChanged("TrafficMethodNo");
-					this.OnTrafficMethodNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Method", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Method
-		{
-			get
-			{
-				return this._Method;
-			}
-			set
-			{
-				if ((this._Method != value))
-				{
-					this.OnMethodChanging(value);
-					this.SendPropertyChanging();
-					this._Method = value;
-					this.SendPropertyChanged("Method");
-					this.OnMethodChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrafficContent", DbType="NVarChar(3000) NOT NULL", CanBeNull=false)]
-		public string TrafficContent
-		{
-			get
-			{
-				return this._TrafficContent;
-			}
-			set
-			{
-				if ((this._TrafficContent != value))
-				{
-					this.OnTrafficContentChanging(value);
-					this.SendPropertyChanging();
-					this._TrafficContent = value;
-					this.SendPropertyChanged("TrafficContent");
-					this.OnTrafficContentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Photo", DbType="NVarChar(100)")]
-		public string Photo
-		{
-			get
-			{
-				return this._Photo;
-			}
-			set
-			{
-				if ((this._Photo != value))
-				{
-					this.OnPhotoChanging(value);
-					this.SendPropertyChanging();
-					this._Photo = value;
-					this.SendPropertyChanged("Photo");
-					this.OnPhotoChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -897,6 +763,140 @@ namespace Disney1
 		{
 			this.SendPropertyChanging();
 			entity.Account = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TrafficMethod")]
+	public partial class TrafficMethod : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _TrafficMethodNo;
+		
+		private string _Method;
+		
+		private string _TrafficContent;
+		
+		private string _Photo;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTrafficMethodNoChanging(int value);
+    partial void OnTrafficMethodNoChanged();
+    partial void OnMethodChanging(string value);
+    partial void OnMethodChanged();
+    partial void OnTrafficContentChanging(string value);
+    partial void OnTrafficContentChanged();
+    partial void OnPhotoChanging(string value);
+    partial void OnPhotoChanged();
+    #endregion
+		
+		public TrafficMethod()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrafficMethodNo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int TrafficMethodNo
+		{
+			get
+			{
+				return this._TrafficMethodNo;
+			}
+			set
+			{
+				if ((this._TrafficMethodNo != value))
+				{
+					this.OnTrafficMethodNoChanging(value);
+					this.SendPropertyChanging();
+					this._TrafficMethodNo = value;
+					this.SendPropertyChanged("TrafficMethodNo");
+					this.OnTrafficMethodNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Method", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Method
+		{
+			get
+			{
+				return this._Method;
+			}
+			set
+			{
+				if ((this._Method != value))
+				{
+					this.OnMethodChanging(value);
+					this.SendPropertyChanging();
+					this._Method = value;
+					this.SendPropertyChanged("Method");
+					this.OnMethodChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrafficContent", DbType="NVarChar(3000) NOT NULL", CanBeNull=false)]
+		public string TrafficContent
+		{
+			get
+			{
+				return this._TrafficContent;
+			}
+			set
+			{
+				if ((this._TrafficContent != value))
+				{
+					this.OnTrafficContentChanging(value);
+					this.SendPropertyChanging();
+					this._TrafficContent = value;
+					this.SendPropertyChanged("TrafficContent");
+					this.OnTrafficContentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Photo", DbType="NVarChar(100)")]
+		public string Photo
+		{
+			get
+			{
+				return this._Photo;
+			}
+			set
+			{
+				if ((this._Photo != value))
+				{
+					this.OnPhotoChanging(value);
+					this.SendPropertyChanging();
+					this._Photo = value;
+					this.SendPropertyChanged("Photo");
+					this.OnPhotoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 	
@@ -2716,15 +2716,9 @@ namespace Disney1
 		
 		private string _Citizenship;
 		
-		private int _RoomOrderDetailNo;
-		
-		private bool _isMain;
-		
 		private bool _isVIP;
 		
 		private EntitySet<RoomOrder> _RoomOrder;
-		
-		private EntityRef<RoomOrderDetail> _RoomOrderDetail;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2744,10 +2738,6 @@ namespace Disney1
     partial void OnIdentityNoChanged();
     partial void OnCitizenshipChanging(string value);
     partial void OnCitizenshipChanged();
-    partial void OnRoomOrderDetailNoChanging(int value);
-    partial void OnRoomOrderDetailNoChanged();
-    partial void OnisMainChanging(bool value);
-    partial void OnisMainChanged();
     partial void OnisVIPChanging(bool value);
     partial void OnisVIPChanged();
     #endregion
@@ -2755,7 +2745,6 @@ namespace Disney1
 		public Guest()
 		{
 			this._RoomOrder = new EntitySet<RoomOrder>(new Action<RoomOrder>(this.attach_RoomOrder), new Action<RoomOrder>(this.detach_RoomOrder));
-			this._RoomOrderDetail = default(EntityRef<RoomOrderDetail>);
 			OnCreated();
 		}
 		
@@ -2899,50 +2888,6 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomOrderDetailNo", DbType="Int NOT NULL")]
-		public int RoomOrderDetailNo
-		{
-			get
-			{
-				return this._RoomOrderDetailNo;
-			}
-			set
-			{
-				if ((this._RoomOrderDetailNo != value))
-				{
-					if (this._RoomOrderDetail.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnRoomOrderDetailNoChanging(value);
-					this.SendPropertyChanging();
-					this._RoomOrderDetailNo = value;
-					this.SendPropertyChanged("RoomOrderDetailNo");
-					this.OnRoomOrderDetailNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isMain", DbType="Bit NOT NULL")]
-		public bool isMain
-		{
-			get
-			{
-				return this._isMain;
-			}
-			set
-			{
-				if ((this._isMain != value))
-				{
-					this.OnisMainChanging(value);
-					this.SendPropertyChanging();
-					this._isMain = value;
-					this.SendPropertyChanged("isMain");
-					this.OnisMainChanged();
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isVIP", DbType="Bit NOT NULL")]
 		public bool isVIP
 		{
@@ -2973,40 +2918,6 @@ namespace Disney1
 			set
 			{
 				this._RoomOrder.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomOrderDetail_Guest", Storage="_RoomOrderDetail", ThisKey="RoomOrderDetailNo", OtherKey="RoomOrderDetailNo", IsForeignKey=true)]
-		public RoomOrderDetail RoomOrderDetail
-		{
-			get
-			{
-				return this._RoomOrderDetail.Entity;
-			}
-			set
-			{
-				RoomOrderDetail previousValue = this._RoomOrderDetail.Entity;
-				if (((previousValue != value) 
-							|| (this._RoomOrderDetail.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._RoomOrderDetail.Entity = null;
-						previousValue.Guest.Remove(this);
-					}
-					this._RoomOrderDetail.Entity = value;
-					if ((value != null))
-					{
-						value.Guest.Add(this);
-						this._RoomOrderDetailNo = value.RoomOrderDetailNo;
-					}
-					else
-					{
-						this._RoomOrderDetailNo = default(int);
-					}
-					this.SendPropertyChanged("RoomOrderDetail");
-				}
 			}
 		}
 		
@@ -5082,7 +4993,7 @@ namespace Disney1
 		
 		private string _CouponId;
 		
-		private int _PaymentMethodNo;
+		private System.Nullable<int> _PaymentMethodNo;
 		
 		private EntitySet<RoomOrderDetail> _RoomOrderDetail;
 		
@@ -5104,7 +5015,7 @@ namespace Disney1
     partial void OnGuestNoChanged();
     partial void OnCouponIdChanging(string value);
     partial void OnCouponIdChanged();
-    partial void OnPaymentMethodNoChanging(int value);
+    partial void OnPaymentMethodNoChanging(System.Nullable<int> value);
     partial void OnPaymentMethodNoChanged();
     #endregion
 		
@@ -5205,8 +5116,8 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentMethodNo", DbType="Int NOT NULL")]
-		public int PaymentMethodNo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaymentMethodNo", DbType="Int")]
+		public System.Nullable<int> PaymentMethodNo
 		{
 			get
 			{
@@ -5337,7 +5248,7 @@ namespace Disney1
 					}
 					else
 					{
-						this._PaymentMethodNo = default(int);
+						this._PaymentMethodNo = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("PaymentMethod");
 				}
@@ -5397,11 +5308,11 @@ namespace Disney1
 		
 		private int _ChildrenNum;
 		
+		private string _MainGuest;
+		
 		private string _Note;
 		
 		private EntitySet<CheckInRecord> _CheckInRecord;
-		
-		private EntitySet<Guest> _Guest;
 		
 		private EntitySet<RoomServiceRecord> _RoomServiceRecord;
 		
@@ -5427,6 +5338,8 @@ namespace Disney1
     partial void OnGuestNumChanged();
     partial void OnChildrenNumChanging(int value);
     partial void OnChildrenNumChanged();
+    partial void OnMainGuestChanging(string value);
+    partial void OnMainGuestChanged();
     partial void OnNoteChanging(string value);
     partial void OnNoteChanged();
     #endregion
@@ -5434,7 +5347,6 @@ namespace Disney1
 		public RoomOrderDetail()
 		{
 			this._CheckInRecord = new EntitySet<CheckInRecord>(new Action<CheckInRecord>(this.attach_CheckInRecord), new Action<CheckInRecord>(this.detach_CheckInRecord));
-			this._Guest = new EntitySet<Guest>(new Action<Guest>(this.attach_Guest), new Action<Guest>(this.detach_Guest));
 			this._RoomServiceRecord = new EntitySet<RoomServiceRecord>(new Action<RoomServiceRecord>(this.attach_RoomServiceRecord), new Action<RoomServiceRecord>(this.detach_RoomServiceRecord));
 			this._Room = default(EntityRef<Room>);
 			this._RoomOrder = default(EntityRef<RoomOrder>);
@@ -5589,6 +5501,26 @@ namespace Disney1
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MainGuest", DbType="NVarChar(100)")]
+		public string MainGuest
+		{
+			get
+			{
+				return this._MainGuest;
+			}
+			set
+			{
+				if ((this._MainGuest != value))
+				{
+					this.OnMainGuestChanging(value);
+					this.SendPropertyChanging();
+					this._MainGuest = value;
+					this.SendPropertyChanged("MainGuest");
+					this.OnMainGuestChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Note", DbType="NVarChar(200)")]
 		public string Note
 		{
@@ -5619,19 +5551,6 @@ namespace Disney1
 			set
 			{
 				this._CheckInRecord.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomOrderDetail_Guest", Storage="_Guest", ThisKey="RoomOrderDetailNo", OtherKey="RoomOrderDetailNo")]
-		public EntitySet<Guest> Guest
-		{
-			get
-			{
-				return this._Guest;
-			}
-			set
-			{
-				this._Guest.Assign(value);
 			}
 		}
 		
@@ -5743,18 +5662,6 @@ namespace Disney1
 		}
 		
 		private void detach_CheckInRecord(CheckInRecord entity)
-		{
-			this.SendPropertyChanging();
-			entity.RoomOrderDetail = null;
-		}
-		
-		private void attach_Guest(Guest entity)
-		{
-			this.SendPropertyChanging();
-			entity.RoomOrderDetail = this;
-		}
-		
-		private void detach_Guest(Guest entity)
 		{
 			this.SendPropertyChanging();
 			entity.RoomOrderDetail = null;
