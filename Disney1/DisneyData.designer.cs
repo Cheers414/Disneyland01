@@ -2718,6 +2718,8 @@ namespace Disney1
 		
 		private bool _isVIP;
 		
+		private System.DateTime _RecordDateTime;
+		
 		private EntitySet<RoomOrder> _RoomOrder;
 		
     #region Extensibility Method Definitions
@@ -2740,6 +2742,8 @@ namespace Disney1
     partial void OnCitizenshipChanged();
     partial void OnisVIPChanging(bool value);
     partial void OnisVIPChanged();
+    partial void OnRecordDateTimeChanging(System.DateTime value);
+    partial void OnRecordDateTimeChanged();
     #endregion
 		
 		public Guest()
@@ -2904,6 +2908,26 @@ namespace Disney1
 					this._isVIP = value;
 					this.SendPropertyChanged("isVIP");
 					this.OnisVIPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordDateTime", DbType="DateTime NOT NULL")]
+		public System.DateTime RecordDateTime
+		{
+			get
+			{
+				return this._RecordDateTime;
+			}
+			set
+			{
+				if ((this._RecordDateTime != value))
+				{
+					this.OnRecordDateTimeChanging(value);
+					this.SendPropertyChanging();
+					this._RecordDateTime = value;
+					this.SendPropertyChanged("RecordDateTime");
+					this.OnRecordDateTimeChanged();
 				}
 			}
 		}

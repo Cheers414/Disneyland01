@@ -39,12 +39,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMain = new System.Windows.Forms.TextBox();
-            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.guestRecord1 = new Disney1.Manage.ManageHotel.GuestRecord();
             ((System.ComponentModel.ISupportInitialize)(this.nudGuest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudChildren)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -81,9 +82,19 @@
             // nudGuest
             // 
             this.nudGuest.Location = new System.Drawing.Point(150, 31);
+            this.nudGuest.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudGuest.Name = "nudGuest";
             this.nudGuest.Size = new System.Drawing.Size(90, 27);
-            this.nudGuest.TabIndex = 2;
+            this.nudGuest.TabIndex = 1;
+            this.nudGuest.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // nudChildren
             // 
@@ -108,7 +119,7 @@
             this.cbStorage.Location = new System.Drawing.Point(35, 144);
             this.cbStorage.Name = "cbStorage";
             this.cbStorage.Size = new System.Drawing.Size(133, 20);
-            this.cbStorage.TabIndex = 3;
+            this.cbStorage.TabIndex = 4;
             this.cbStorage.Text = "Luggage Storage";
             this.cbStorage.UseVisualStyleBackColor = true;
             // 
@@ -119,7 +130,7 @@
             this.txtSpecial.Name = "txtSpecial";
             this.txtSpecial.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtSpecial.Size = new System.Drawing.Size(418, 177);
-            this.txtSpecial.TabIndex = 4;
+            this.txtSpecial.TabIndex = 6;
             // 
             // label3
             // 
@@ -144,17 +155,17 @@
             this.txtMain.Location = new System.Drawing.Point(118, 182);
             this.txtMain.Name = "txtMain";
             this.txtMain.Size = new System.Drawing.Size(173, 27);
-            this.txtMain.TabIndex = 6;
+            this.txtMain.TabIndex = 5;
             // 
-            // btnConfirm
+            // btnNext
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(870, 535);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(118, 52);
-            this.btnConfirm.TabIndex = 7;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            this.btnNext.Location = new System.Drawing.Point(870, 535);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(118, 52);
+            this.btnNext.TabIndex = 7;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnBack
             // 
@@ -216,14 +227,26 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Book Rooms";
             // 
+            // guestRecord1
+            // 
+            this.guestRecord1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guestRecord1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.guestRecord1.Location = new System.Drawing.Point(0, 0);
+            this.guestRecord1.Margin = new System.Windows.Forms.Padding(4);
+            this.guestRecord1.Name = "guestRecord1";
+            this.guestRecord1.Size = new System.Drawing.Size(1031, 657);
+            this.guestRecord1.TabIndex = 10;
+            this.guestRecord1.Visible = false;
+            // 
             // BookingRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.guestRecord1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lstRooms);
             this.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -251,11 +274,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMain;
-        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label5;
+        private GuestRecord guestRecord1;
     }
 }

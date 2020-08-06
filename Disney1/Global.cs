@@ -22,10 +22,15 @@ namespace Disney1
 
         public static DateTime CheckOut;
 
-        public static List<RoomOrderDetail> lstOrderDetail;
+        public static List<RoomOrderDetail> OrderDetails;
 
-        public static bool Breakfast;
-        public static bool Storage;
+        public static List<bool> Breakfast;
+
+        public static List<bool> Storage;
+
+        public static List<Guest> Guests;
+
+        public static Guest OrderGuest;
 
         public static bool TimeIsOverlapping(DateTime Start, DateTime End, DateTime x, DateTime y)
         {

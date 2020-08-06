@@ -35,7 +35,6 @@ namespace Disney1.Manage.ManageHotel
 
             dtpIn.MinDate = DateTime.Today;
             dtpIn.Value = DateTime.Today;
-            //dtpIn_ValueChanged_1(null, null);
 
             int totalGuest = db.RoomOrderDetail.ToList()
                 .Where(x => x.StartDate <= DateTime.Today && x.EndDate >= DateTime.Today)

@@ -125,6 +125,7 @@
       <Column Name="IdentityNo" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="Citizenship" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="isVIP" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="RecordDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="Guest_RoomOrder" Member="RoomOrder" ThisKey="GuestNo" OtherKey="GuestNo" Type="RoomOrder" />
     </Type>
   </Table>

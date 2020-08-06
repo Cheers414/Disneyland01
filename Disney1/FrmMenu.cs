@@ -79,6 +79,7 @@ namespace Disney1
                 {
                     btnManage.Visible = false;
                 }
+                btnResort_Click(null, null);
                 MessageBox.Show("Login successfully.", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 TimeSpan ts = DateTime.Now - user.LastTimeChangePwd;
                 if (ts.TotalDays > changePwdDay)

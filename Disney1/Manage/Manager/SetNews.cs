@@ -96,7 +96,9 @@ namespace Disney1.Manage.Manager
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            newsData.NewsList.ToList().RemoveAt(dgv.CurrentCell.RowIndex);
+            var lstNews = newsData.NewsList.ToList();
+            lstNews.RemoveAt(dgv.CurrentCell.RowIndex);
+            newsData.NewsList = lstNews.ToArray();
         }
     }
 }

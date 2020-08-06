@@ -176,7 +176,7 @@
             this.cbConnecting.Name = "cbConnecting";
             this.cbConnecting.Size = new System.Drawing.Size(147, 20);
             this.cbConnecting.TabIndex = 10;
-            this.cbConnecting.Text = "Connceting Rooms";
+            this.cbConnecting.Text = "Connecting Rooms";
             this.cbConnecting.UseVisualStyleBackColor = true;
             this.cbConnecting.CheckedChanged += new System.EventHandler(this.cbAdjacent_CheckedChanged);
             // 

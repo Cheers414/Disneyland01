@@ -19,26 +19,32 @@ namespace Disney1.Manage.ManageHotel
             InitializeComponent();
         }
 
-        List<RoomOrderDetail> orderDetail = new List<RoomOrderDetail>();
+        List<RoomOrderDetail> lstOrderDetail = new List<RoomOrderDetail>();
+        List<bool> lstBreakfast = new List<bool>();
+        List<bool> lstStorage = new List<bool>();
         RoomOrderDetail detail;
-        bool breakfast = false;
-        bool storage = false;
+        bool breakfast;
+        bool storage;
 
         public void DataRefresh()
         {
-            orderDetail.Clear();
+            guestRecord1.Visible = false;
+
+            lstOrderDetail.Clear();
             Global.BookRooms.ToList().ForEach(x =>
             {
-                orderDetail.Add(new RoomOrderDetail
+                lstOrderDetail.Add(new RoomOrderDetail
                 {
-                    RoomNo = x.RoomNo,
+                    Room = x,
                     StartDate = Global.CheckIn,
                     EndDate = Global.CheckOut,
-                    GuestNum = 0,
+                    GuestNum = 1,
                     ChildrenNum = 0,
                     MainGuest = "",
                     Note = ""
                 });
+                lstBreakfast.Add(false);
+                lstStorage.Add(false);
             });
 
             lstRooms.DataSource = Global.BookRooms;
@@ -47,7 +53,9 @@ namespace Disney1.Manage.ManageHotel
 
         private void lstRooms_SelectedIndexChanged(object sender, EventArgs e)
         {
-            detail = orderDetail[lstRooms.SelectedIndex];
+            detail = lstOrderDetail[lstRooms.SelectedIndex];
+            breakfast = lstBreakfast[lstRooms.SelectedIndex];
+            storage = lstStorage[lstRooms.SelectedIndex];
 
             nudGuest.Value = detail.GuestNum;
             nudChildren.Value = detail.ChildrenNum;
@@ -73,6 +81,7 @@ namespace Disney1.Manage.ManageHotel
             detail.Note = txtSpecial.Text;
             breakfast = cbBreakfast.Checked;
             storage = cbStorage.Checked;
+            MessageBox.Show("Save successfully", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -85,11 +94,13 @@ namespace Disney1.Manage.ManageHotel
             this.Visible = false;
         }
 
-        private void btnConfirm_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
-            Global.lstOrderDetail = orderDetail;
-            Global.Breakfast = breakfast;
-            Global.Storage = storage;
+            Global.OrderDetails = lstOrderDetail;
+            Global.Breakfast = lstBreakfast;
+            Global.Storage = lstStorage;
+            guestRecord1.DataRefresh();
+            guestRecord1.Visible = true;
         }
     }
 }
