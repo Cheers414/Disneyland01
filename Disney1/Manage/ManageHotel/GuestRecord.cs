@@ -24,6 +24,8 @@ namespace Disney1.Manage.ManageHotel
 
         public void DataRefresh()
         {
+            reserveRoom1.Visible = false;
+
             lstGuestName.DataSource = lstGuests;
             lstGuestName.DisplayMember = "Name";
 
@@ -32,6 +34,11 @@ namespace Disney1.Manage.ManageHotel
 
         private void lstGuest_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (lstGuestName.SelectedIndex == -1)
+            {
+                btnNew_Click(null, null);
+                return;
+            }
             mode = 0;
             txtId.Enabled = false;
             var gst = (Guest)lstGuestName.SelectedItem;
@@ -131,6 +138,7 @@ namespace Disney1.Manage.ManageHotel
             }
 
             MessageBox.Show("Add successfully", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            lstGuestName.SelectedIndex = lstGuests.Count - 1;
             lstGuest_SelectedIndexChanged(null, null);
         }
 
@@ -208,7 +216,9 @@ namespace Disney1.Manage.ManageHotel
                 return;
             }
             Global.Guests = lstGuests.ToList();
-        }
 
+            reserveRoom1.DataRefresh();
+            reserveRoom1.Visible = true;
+        }
     }
 }

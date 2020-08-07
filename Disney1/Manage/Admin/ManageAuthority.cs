@@ -56,6 +56,7 @@ namespace Disney1.Manage.Admin
         {
             db.AuthorityDetail.ToList().Single(x => x.AuthorityDetailNo == authority.AuthorityDetailNo).isAllow = cbAllow.Checked;
             db.SubmitChanges();
+            Global.User = db.Account.ToList().Single(x => x.AccountId == Global.User.AccountId);
         }
     }
 }

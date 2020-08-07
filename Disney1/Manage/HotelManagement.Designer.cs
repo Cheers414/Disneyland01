@@ -48,8 +48,8 @@
             // searchRoomToolStripMenuItem
             // 
             this.searchRoomToolStripMenuItem.Name = "searchRoomToolStripMenuItem";
-            this.searchRoomToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
-            this.searchRoomToolStripMenuItem.Text = "Search Room";
+            this.searchRoomToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.searchRoomToolStripMenuItem.Text = "Reserve Room";
             this.searchRoomToolStripMenuItem.Click += new System.EventHandler(this.searchRoomToolStripMenuItem_Click);
             // 
             // searchRoom1

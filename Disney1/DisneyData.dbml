@@ -91,10 +91,10 @@
   <Table Name="dbo.Coupon" Member="Coupon">
     <Type Name="Coupon">
       <Column Name="CouponId" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="StartDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="EndDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Discount" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="GenerateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Discount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="GenerateDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Association Name="Coupon_RoomOrder" Member="RoomOrder" ThisKey="CouponId" OtherKey="CouponId" Type="RoomOrder" />
     </Type>
   </Table>
@@ -236,11 +236,13 @@
       <Column Name="OrderDateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="GuestNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CouponId" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TicketId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="PaymentMethodNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="RoomOrder_RoomOrderDetail" Member="RoomOrderDetail" ThisKey="RoomOrderNo" OtherKey="RoomOrderNo" Type="RoomOrderDetail" />
       <Association Name="Coupon_RoomOrder" Member="Coupon" ThisKey="CouponId" OtherKey="CouponId" Type="Coupon" IsForeignKey="true" />
       <Association Name="Guest_RoomOrder" Member="Guest" ThisKey="GuestNo" OtherKey="GuestNo" Type="Guest" IsForeignKey="true" />
       <Association Name="PaymentMethod_RoomOrder" Member="PaymentMethod" ThisKey="PaymentMethodNo" OtherKey="PaymentMethodNo" Type="PaymentMethod" IsForeignKey="true" />
+      <Association Name="Ticket_RoomOrder" Member="Ticket" ThisKey="TicketId" OtherKey="TicketId" Type="Ticket" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.RoomOrderDetail" Member="RoomOrderDetail">
@@ -325,6 +327,7 @@
       <Column Name="TicketOfferNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="EffectiveDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Status" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Ticket_RoomOrder" Member="RoomOrder" ThisKey="TicketId" OtherKey="TicketId" Type="RoomOrder" />
       <Association Name="Order_Ticket" Member="Order" ThisKey="OrderNo" OtherKey="OrderNo" Type="Order" IsForeignKey="true" />
       <Association Name="TicketOffer_Ticket" Member="TicketOffer" ThisKey="TicketOfferNo" OtherKey="TicketOfferNo" Type="TicketOffer" IsForeignKey="true" />
     </Type>

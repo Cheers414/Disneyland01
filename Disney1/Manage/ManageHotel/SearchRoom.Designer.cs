@@ -51,6 +51,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnBook = new System.Windows.Forms.Button();
             this.bookingRoom1 = new Disney1.Manage.ManageHotel.BookingRoom();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatus)).BeginInit();
             this.SuspendLayout();
@@ -290,11 +291,21 @@
             this.bookingRoom1.TabIndex = 18;
             this.bookingRoom1.Visible = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(86, 35);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(197, 16);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "6-3-1-1.Search Vacant Rooms";
+            // 
             // SearchRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.bookingRoom1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnBook);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
@@ -351,5 +362,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnBook;
         private BookingRoom bookingRoom1;
+        private System.Windows.Forms.Label label7;
     }
 }

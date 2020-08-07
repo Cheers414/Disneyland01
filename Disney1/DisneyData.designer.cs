@@ -2201,13 +2201,13 @@ namespace Disney1
 		
 		private string _CouponId;
 		
-		private System.Nullable<System.DateTime> _StartDate;
+		private System.DateTime _StartDate;
 		
-		private System.Nullable<System.DateTime> _EndDate;
+		private System.DateTime _EndDate;
 		
-		private System.Nullable<double> _Discount;
+		private double _Discount;
 		
-		private System.Nullable<System.DateTime> _GenerateDate;
+		private System.DateTime _GenerateDate;
 		
 		private EntitySet<RoomOrder> _RoomOrder;
 		
@@ -2217,13 +2217,13 @@ namespace Disney1
     partial void OnCreated();
     partial void OnCouponIdChanging(string value);
     partial void OnCouponIdChanged();
-    partial void OnStartDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnStartDateChanging(System.DateTime value);
     partial void OnStartDateChanged();
-    partial void OnEndDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnEndDateChanging(System.DateTime value);
     partial void OnEndDateChanged();
-    partial void OnDiscountChanging(System.Nullable<double> value);
+    partial void OnDiscountChanging(double value);
     partial void OnDiscountChanged();
-    partial void OnGenerateDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnGenerateDateChanging(System.DateTime value);
     partial void OnGenerateDateChanged();
     #endregion
 		
@@ -2253,8 +2253,8 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="Date")]
-		public System.Nullable<System.DateTime> StartDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="Date NOT NULL")]
+		public System.DateTime StartDate
 		{
 			get
 			{
@@ -2273,8 +2273,8 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="Date")]
-		public System.Nullable<System.DateTime> EndDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="Date NOT NULL")]
+		public System.DateTime EndDate
 		{
 			get
 			{
@@ -2293,8 +2293,8 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discount", DbType="Float")]
-		public System.Nullable<double> Discount
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Discount", DbType="Float NOT NULL")]
+		public double Discount
 		{
 			get
 			{
@@ -2313,8 +2313,8 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GenerateDate", DbType="Date")]
-		public System.Nullable<System.DateTime> GenerateDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GenerateDate", DbType="Date NOT NULL")]
+		public System.DateTime GenerateDate
 		{
 			get
 			{
@@ -5017,6 +5017,8 @@ namespace Disney1
 		
 		private string _CouponId;
 		
+		private string _TicketId;
+		
 		private System.Nullable<int> _PaymentMethodNo;
 		
 		private EntitySet<RoomOrderDetail> _RoomOrderDetail;
@@ -5026,6 +5028,8 @@ namespace Disney1
 		private EntityRef<Guest> _Guest;
 		
 		private EntityRef<PaymentMethod> _PaymentMethod;
+		
+		private EntityRef<Ticket> _Ticket;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -5039,6 +5043,8 @@ namespace Disney1
     partial void OnGuestNoChanged();
     partial void OnCouponIdChanging(string value);
     partial void OnCouponIdChanged();
+    partial void OnTicketIdChanging(string value);
+    partial void OnTicketIdChanged();
     partial void OnPaymentMethodNoChanging(System.Nullable<int> value);
     partial void OnPaymentMethodNoChanged();
     #endregion
@@ -5049,6 +5055,7 @@ namespace Disney1
 			this._Coupon = default(EntityRef<Coupon>);
 			this._Guest = default(EntityRef<Guest>);
 			this._PaymentMethod = default(EntityRef<PaymentMethod>);
+			this._Ticket = default(EntityRef<Ticket>);
 			OnCreated();
 		}
 		
@@ -5136,6 +5143,30 @@ namespace Disney1
 					this._CouponId = value;
 					this.SendPropertyChanged("CouponId");
 					this.OnCouponIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TicketId", DbType="NVarChar(50)")]
+		public string TicketId
+		{
+			get
+			{
+				return this._TicketId;
+			}
+			set
+			{
+				if ((this._TicketId != value))
+				{
+					if (this._Ticket.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTicketIdChanging(value);
+					this.SendPropertyChanging();
+					this._TicketId = value;
+					this.SendPropertyChanged("TicketId");
+					this.OnTicketIdChanged();
 				}
 			}
 		}
@@ -5275,6 +5306,40 @@ namespace Disney1
 						this._PaymentMethodNo = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("PaymentMethod");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Ticket_RoomOrder", Storage="_Ticket", ThisKey="TicketId", OtherKey="TicketId", IsForeignKey=true)]
+		public Ticket Ticket
+		{
+			get
+			{
+				return this._Ticket.Entity;
+			}
+			set
+			{
+				Ticket previousValue = this._Ticket.Entity;
+				if (((previousValue != value) 
+							|| (this._Ticket.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Ticket.Entity = null;
+						previousValue.RoomOrder.Remove(this);
+					}
+					this._Ticket.Entity = value;
+					if ((value != null))
+					{
+						value.RoomOrder.Add(this);
+						this._TicketId = value.TicketId;
+					}
+					else
+					{
+						this._TicketId = default(string);
+					}
+					this.SendPropertyChanged("Ticket");
 				}
 			}
 		}
@@ -6852,6 +6917,8 @@ namespace Disney1
 		
 		private bool _Status;
 		
+		private EntitySet<RoomOrder> _RoomOrder;
+		
 		private EntityRef<Order> _Order;
 		
 		private EntityRef<TicketOffer> _TicketOffer;
@@ -6874,6 +6941,7 @@ namespace Disney1
 		
 		public Ticket()
 		{
+			this._RoomOrder = new EntitySet<RoomOrder>(new Action<RoomOrder>(this.attach_RoomOrder), new Action<RoomOrder>(this.detach_RoomOrder));
 			this._Order = default(EntityRef<Order>);
 			this._TicketOffer = default(EntityRef<TicketOffer>);
 			OnCreated();
@@ -6987,6 +7055,19 @@ namespace Disney1
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Ticket_RoomOrder", Storage="_RoomOrder", ThisKey="TicketId", OtherKey="TicketId")]
+		public EntitySet<RoomOrder> RoomOrder
+		{
+			get
+			{
+				return this._RoomOrder;
+			}
+			set
+			{
+				this._RoomOrder.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Ticket", Storage="_Order", ThisKey="OrderNo", OtherKey="OrderNo", IsForeignKey=true)]
 		public Order Order
 		{
@@ -7073,6 +7154,18 @@ namespace Disney1
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_RoomOrder(RoomOrder entity)
+		{
+			this.SendPropertyChanging();
+			entity.Ticket = this;
+		}
+		
+		private void detach_RoomOrder(RoomOrder entity)
+		{
+			this.SendPropertyChanging();
+			entity.Ticket = null;
 		}
 	}
 	

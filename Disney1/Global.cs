@@ -32,6 +32,11 @@ namespace Disney1
 
         public static Guest OrderGuest;
 
+        public static int GetToatlPrice()
+        {
+            return 0;
+        }
+
         public static bool TimeIsOverlapping(DateTime Start, DateTime End, DateTime x, DateTime y)
         {
             // 取得開始時間轉換成總天數 當作起點(只有 TimeSpan 能取得總天數)

@@ -52,6 +52,8 @@
             this.btnChange = new System.Windows.Forms.Button();
             this.txtTemp = new System.Windows.Forms.TextBox();
             this.cbOrderGuest = new System.Windows.Forms.CheckBox();
+            this.reserveRoom1 = new Disney1.Manage.ManageHotel.ReserveRoom();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picGuest)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +82,7 @@
             this.btnDelete.Location = new System.Drawing.Point(16, 459);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 12;
+            this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -90,7 +92,7 @@
             this.btnNew.Location = new System.Drawing.Point(108, 459);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 23);
-            this.btnNew.TabIndex = 12;
+            this.btnNew.TabIndex = 9;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -100,7 +102,7 @@
             this.btnAdd.Location = new System.Drawing.Point(200, 459);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 12;
+            this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -110,7 +112,7 @@
             this.btnSave.Location = new System.Drawing.Point(292, 459);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 12;
+            this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -275,7 +277,7 @@
             this.btnChange.Location = new System.Drawing.Point(142, 413);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(203, 23);
-            this.btnChange.TabIndex = 12;
+            this.btnChange.TabIndex = 7;
             this.btnChange.Text = "Change Photo";
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
@@ -297,10 +299,31 @@
             this.cbOrderGuest.Text = "Is Order Guest";
             this.cbOrderGuest.UseVisualStyleBackColor = true;
             // 
+            // reserveRoom1
+            // 
+            this.reserveRoom1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reserveRoom1.Font = new System.Drawing.Font("PMingLiU", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.reserveRoom1.Location = new System.Drawing.Point(0, 0);
+            this.reserveRoom1.Margin = new System.Windows.Forms.Padding(4);
+            this.reserveRoom1.Name = "reserveRoom1";
+            this.reserveRoom1.Size = new System.Drawing.Size(1031, 657);
+            this.reserveRoom1.TabIndex = 19;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(106, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(150, 16);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "6-3-1-4.Record Guests";
+            // 
             // GuestRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.reserveRoom1);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnNext);
@@ -344,5 +367,7 @@
         private System.Windows.Forms.TextBox txtTemp;
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.CheckBox cbOrderGuest;
+        private ReserveRoom reserveRoom1;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -51,6 +51,7 @@ namespace Disney1.Manage.Admin
             var account = db.Account.ToList().Single(x => x.AccountId == ((Account)lstUser.SelectedItem).AccountId);
             account.GroupNo = ((Group)cboGroup.SelectedItem).GroupNo;
             db.SubmitChanges();
+            Global.User = db.Account.ToList().Single(x => x.AccountId == Global.User.AccountId);
         }
     }
 }

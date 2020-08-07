@@ -31,6 +31,8 @@ namespace Disney1.Manage.ManageHotel
             guestRecord1.Visible = false;
 
             lstOrderDetail.Clear();
+            lstBreakfast.Clear();
+            lstStorage.Clear();
             Global.BookRooms.ToList().ForEach(x =>
             {
                 lstOrderDetail.Add(new RoomOrderDetail
@@ -53,16 +55,23 @@ namespace Disney1.Manage.ManageHotel
 
         private void lstRooms_SelectedIndexChanged(object sender, EventArgs e)
         {
-            detail = lstOrderDetail[lstRooms.SelectedIndex];
-            breakfast = lstBreakfast[lstRooms.SelectedIndex];
-            storage = lstStorage[lstRooms.SelectedIndex];
+            try
+            {
+                detail = lstOrderDetail[lstRooms.SelectedIndex];
+                breakfast = lstBreakfast[lstRooms.SelectedIndex];
+                storage = lstStorage[lstRooms.SelectedIndex];
 
-            nudGuest.Value = detail.GuestNum;
-            nudChildren.Value = detail.ChildrenNum;
-            cbBreakfast.Checked = breakfast;
-            cbStorage.Checked = storage;
-            txtMain.Text = detail.MainGuest;
-            txtSpecial.Text = detail.Note;
+                nudGuest.Value = detail.GuestNum;
+                nudChildren.Value = detail.ChildrenNum;
+                cbBreakfast.Checked = breakfast;
+                cbStorage.Checked = storage;
+                txtMain.Text = detail.MainGuest;
+                txtSpecial.Text = detail.Note;
+            }
+            catch (Exception)
+            {
+                return;
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -79,8 +88,8 @@ namespace Disney1.Manage.ManageHotel
             detail.ChildrenNum = Convert.ToInt32(nudChildren.Value);
             detail.MainGuest = txtMain.Text;
             detail.Note = txtSpecial.Text;
-            breakfast = cbBreakfast.Checked;
-            storage = cbStorage.Checked;
+            lstBreakfast[lstRooms.SelectedIndex] = cbBreakfast.Checked;
+            lstStorage[lstRooms.SelectedIndex] = cbStorage.Checked;
             MessageBox.Show("Save successfully", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

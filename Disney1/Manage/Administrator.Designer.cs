@@ -42,7 +42,7 @@
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(313, 23);
             this.btnAccount.TabIndex = 1;
-            this.btnAccount.Text = "Account Management";
+            this.btnAccount.Text = "6-1.Account Management";
             this.btnAccount.UseVisualStyleBackColor = true;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
@@ -52,7 +52,7 @@
             this.btnResort.Name = "btnResort";
             this.btnResort.Size = new System.Drawing.Size(313, 23);
             this.btnResort.TabIndex = 2;
-            this.btnResort.Text = "Resort Management";
+            this.btnResort.Text = "6-2.Resort Management";
             this.btnResort.UseVisualStyleBackColor = true;
             this.btnResort.Click += new System.EventHandler(this.btnResort_Click);
             // 
@@ -62,7 +62,7 @@
             this.btnHotel.Name = "btnHotel";
             this.btnHotel.Size = new System.Drawing.Size(313, 23);
             this.btnHotel.TabIndex = 3;
-            this.btnHotel.Text = "Hotel Management";
+            this.btnHotel.Text = "6-3.Hotel Management";
             this.btnHotel.UseVisualStyleBackColor = true;
             this.btnHotel.Click += new System.EventHandler(this.btnHotel_Click);
             // 

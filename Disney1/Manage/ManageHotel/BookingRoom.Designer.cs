@@ -46,6 +46,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.guestRecord1 = new Disney1.Manage.ManageHotel.GuestRecord();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudGuest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudChildren)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -238,11 +239,21 @@
             this.guestRecord1.TabIndex = 10;
             this.guestRecord1.Visible = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(101, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(182, 16);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "6-3-1-2.Book Rooms Detail";
+            // 
             // BookingRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guestRecord1);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnBack);
@@ -281,5 +292,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label5;
         private GuestRecord guestRecord1;
+        private System.Windows.Forms.Label label7;
     }
 }
