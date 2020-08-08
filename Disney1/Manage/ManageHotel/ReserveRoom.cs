@@ -39,7 +39,7 @@ namespace Disney1.Manage.ManageHotel
             txtCoupon.Text = "";
             txtTicket.Text = "";
 
-            lblDuring.Text = $"During Residence: {Global.CheckIn.ToString("yyyy/MM/dd")} - {Global.CheckOut.ToString("yyyy/MM/dd")}";
+            lblDuring.Text = $"Stay Time: {Global.CheckIn.ToString("yyyy/MM/dd")} - {Global.CheckOut.ToString("yyyy/MM/dd")}";
             lblPrice.Text = $"Total Price: ${GetPrice()}";
 
             //Show order detail
@@ -135,6 +135,15 @@ namespace Disney1.Manage.ManageHotel
                 db.SubmitChanges();
 
                 MessageBox.Show("Reserve successfully", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Global.BookRooms = new BindingList<Room>();
+                Global.CheckIn = new DateTime();
+                Global.CheckOut = new DateTime();
+                Global.OrderDetails = new List<RoomOrderDetail>();
+                Global.Breakfast = new List<bool>();
+                Global.Storage = new List<bool>();
+                Global.OrderGuest = new Guest();
+
                 btnReserve.Enabled = false;
                 btnBack.Enabled = false;
             }
@@ -158,7 +167,7 @@ namespace Disney1.Manage.ManageHotel
                 }
                 else
                 {
-                    MessageBox.Show("Value is empty", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ticket ID invalid", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -177,7 +186,7 @@ namespace Disney1.Manage.ManageHotel
                 }
                 else
                 {
-                    MessageBox.Show("Value is empty", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Coupon iD invalid", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }

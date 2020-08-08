@@ -32,6 +32,10 @@ namespace Disney1
 
         public static Guest OrderGuest;
 
+        public static RoomOrder OrderRecord;
+
+        public static RoomOrderDetail OrderDetailRecord;
+
         public static int GetToatlPrice()
         {
             return 0;

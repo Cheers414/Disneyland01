@@ -161,6 +161,7 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            //Add reserve room
             if (dgvRooms.SelectedRows.Count != 1)
             {
                 return;
@@ -173,6 +174,7 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            //Cancel reserve room
             if (lstBook.SelectedIndex == -1)
             {
                 return;

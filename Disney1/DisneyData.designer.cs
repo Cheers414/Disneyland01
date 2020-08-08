@@ -30,9 +30,6 @@ namespace Disney1
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertAccount(Account instance);
-    partial void UpdateAccount(Account instance);
-    partial void DeleteAccount(Account instance);
     partial void InsertTrafficMethod(TrafficMethod instance);
     partial void UpdateTrafficMethod(TrafficMethod instance);
     partial void DeleteTrafficMethod(TrafficMethod instance);
@@ -126,6 +123,9 @@ namespace Disney1
     partial void InsertTicketOffer(TicketOffer instance);
     partial void UpdateTicketOffer(TicketOffer instance);
     partial void DeleteTicketOffer(TicketOffer instance);
+    partial void InsertAccount(Account instance);
+    partial void UpdateAccount(Account instance);
+    partial void DeleteAccount(Account instance);
     #endregion
 		
 		public DisneyDataDataContext() : 
@@ -156,14 +156,6 @@ namespace Disney1
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<Account> Account
-		{
-			get
-			{
-				return this.GetTable<Account>();
-			}
 		}
 		
 		public System.Data.Linq.Table<TrafficMethod> TrafficMethod
@@ -413,356 +405,13 @@ namespace Disney1
 				return this.GetTable<TicketOffer>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Account")]
-	public partial class Account : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _AccountId;
-		
-		private string _Password;
-		
-		private string _Name;
-		
-		private System.DateTime _Birthday;
-		
-		private string _Gender;
-		
-		private string _Citizenship;
-		
-		private string _Email;
-		
-		private int _GroupNo;
-		
-		private System.DateTime _LastTimeChangePwd;
-		
-		private EntitySet<LogRecord> _LogRecord;
-		
-		private EntitySet<Order> _Order;
-		
-		private EntityRef<Group> _Group;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnAccountIdChanging(string value);
-    partial void OnAccountIdChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnBirthdayChanging(System.DateTime value);
-    partial void OnBirthdayChanged();
-    partial void OnGenderChanging(string value);
-    partial void OnGenderChanged();
-    partial void OnCitizenshipChanging(string value);
-    partial void OnCitizenshipChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnGroupNoChanging(int value);
-    partial void OnGroupNoChanged();
-    partial void OnLastTimeChangePwdChanging(System.DateTime value);
-    partial void OnLastTimeChangePwdChanged();
-    #endregion
-		
-		public Account()
-		{
-			this._LogRecord = new EntitySet<LogRecord>(new Action<LogRecord>(this.attach_LogRecord), new Action<LogRecord>(this.detach_LogRecord));
-			this._Order = new EntitySet<Order>(new Action<Order>(this.attach_Order), new Action<Order>(this.detach_Order));
-			this._Group = default(EntityRef<Group>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountId", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string AccountId
+		public System.Data.Linq.Table<Account> Account
 		{
 			get
 			{
-				return this._AccountId;
+				return this.GetTable<Account>();
 			}
-			set
-			{
-				if ((this._AccountId != value))
-				{
-					this.OnAccountIdChanging(value);
-					this.SendPropertyChanging();
-					this._AccountId = value;
-					this.SendPropertyChanged("AccountId");
-					this.OnAccountIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Birthday", DbType="Date NOT NULL")]
-		public System.DateTime Birthday
-		{
-			get
-			{
-				return this._Birthday;
-			}
-			set
-			{
-				if ((this._Birthday != value))
-				{
-					this.OnBirthdayChanging(value);
-					this.SendPropertyChanging();
-					this._Birthday = value;
-					this.SendPropertyChanged("Birthday");
-					this.OnBirthdayChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string Gender
-		{
-			get
-			{
-				return this._Gender;
-			}
-			set
-			{
-				if ((this._Gender != value))
-				{
-					this.OnGenderChanging(value);
-					this.SendPropertyChanging();
-					this._Gender = value;
-					this.SendPropertyChanged("Gender");
-					this.OnGenderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Citizenship", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Citizenship
-		{
-			get
-			{
-				return this._Citizenship;
-			}
-			set
-			{
-				if ((this._Citizenship != value))
-				{
-					this.OnCitizenshipChanging(value);
-					this.SendPropertyChanging();
-					this._Citizenship = value;
-					this.SendPropertyChanged("Citizenship");
-					this.OnCitizenshipChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupNo", DbType="Int NOT NULL")]
-		public int GroupNo
-		{
-			get
-			{
-				return this._GroupNo;
-			}
-			set
-			{
-				if ((this._GroupNo != value))
-				{
-					if (this._Group.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnGroupNoChanging(value);
-					this.SendPropertyChanging();
-					this._GroupNo = value;
-					this.SendPropertyChanged("GroupNo");
-					this.OnGroupNoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastTimeChangePwd", DbType="Date NOT NULL")]
-		public System.DateTime LastTimeChangePwd
-		{
-			get
-			{
-				return this._LastTimeChangePwd;
-			}
-			set
-			{
-				if ((this._LastTimeChangePwd != value))
-				{
-					this.OnLastTimeChangePwdChanging(value);
-					this.SendPropertyChanging();
-					this._LastTimeChangePwd = value;
-					this.SendPropertyChanged("LastTimeChangePwd");
-					this.OnLastTimeChangePwdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_LogRecord", Storage="_LogRecord", ThisKey="AccountId", OtherKey="AccountId")]
-		public EntitySet<LogRecord> LogRecord
-		{
-			get
-			{
-				return this._LogRecord;
-			}
-			set
-			{
-				this._LogRecord.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Order", Storage="_Order", ThisKey="AccountId", OtherKey="AccountId")]
-		public EntitySet<Order> Order
-		{
-			get
-			{
-				return this._Order;
-			}
-			set
-			{
-				this._Order.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_Account", Storage="_Group", ThisKey="GroupNo", OtherKey="GroupNo", IsForeignKey=true)]
-		public Group Group
-		{
-			get
-			{
-				return this._Group.Entity;
-			}
-			set
-			{
-				Group previousValue = this._Group.Entity;
-				if (((previousValue != value) 
-							|| (this._Group.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Group.Entity = null;
-						previousValue.Account.Remove(this);
-					}
-					this._Group.Entity = value;
-					if ((value != null))
-					{
-						value.Account.Add(this);
-						this._GroupNo = value.GroupNo;
-					}
-					else
-					{
-						this._GroupNo = default(int);
-					}
-					this.SendPropertyChanged("Group");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_LogRecord(LogRecord entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_LogRecord(LogRecord entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
-		}
-		
-		private void attach_Order(Order entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = this;
-		}
-		
-		private void detach_Order(Order entity)
-		{
-			this.SendPropertyChanging();
-			entity.Account = null;
 		}
 	}
 	
@@ -2002,7 +1651,7 @@ namespace Disney1
 		
 		private int _CheckInRecordNo;
 		
-		private int _RoomOrderDetailNo;
+		private int _RoomOrderNo;
 		
 		private System.Nullable<System.DateTime> _CheckInDateTime;
 		
@@ -2010,7 +1659,7 @@ namespace Disney1
 		
 		private string _Note;
 		
-		private EntityRef<RoomOrderDetail> _RoomOrderDetail;
+		private EntityRef<RoomOrder> _RoomOrder;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2018,8 +1667,8 @@ namespace Disney1
     partial void OnCreated();
     partial void OnCheckInRecordNoChanging(int value);
     partial void OnCheckInRecordNoChanged();
-    partial void OnRoomOrderDetailNoChanging(int value);
-    partial void OnRoomOrderDetailNoChanged();
+    partial void OnRoomOrderNoChanging(int value);
+    partial void OnRoomOrderNoChanged();
     partial void OnCheckInDateTimeChanging(System.Nullable<System.DateTime> value);
     partial void OnCheckInDateTimeChanged();
     partial void OnCheckOutDateTimeChanging(System.Nullable<System.DateTime> value);
@@ -2030,7 +1679,7 @@ namespace Disney1
 		
 		public CheckInRecord()
 		{
-			this._RoomOrderDetail = default(EntityRef<RoomOrderDetail>);
+			this._RoomOrder = default(EntityRef<RoomOrder>);
 			OnCreated();
 		}
 		
@@ -2054,26 +1703,26 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomOrderDetailNo", DbType="Int NOT NULL")]
-		public int RoomOrderDetailNo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RoomOrderNo", DbType="Int NOT NULL")]
+		public int RoomOrderNo
 		{
 			get
 			{
-				return this._RoomOrderDetailNo;
+				return this._RoomOrderNo;
 			}
 			set
 			{
-				if ((this._RoomOrderDetailNo != value))
+				if ((this._RoomOrderNo != value))
 				{
-					if (this._RoomOrderDetail.HasLoadedOrAssignedValue)
+					if (this._RoomOrder.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnRoomOrderDetailNoChanging(value);
+					this.OnRoomOrderNoChanging(value);
 					this.SendPropertyChanging();
-					this._RoomOrderDetailNo = value;
-					this.SendPropertyChanged("RoomOrderDetailNo");
-					this.OnRoomOrderDetailNoChanged();
+					this._RoomOrderNo = value;
+					this.SendPropertyChanged("RoomOrderNo");
+					this.OnRoomOrderNoChanged();
 				}
 			}
 		}
@@ -2138,36 +1787,36 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomOrderDetail_CheckInRecord", Storage="_RoomOrderDetail", ThisKey="RoomOrderDetailNo", OtherKey="RoomOrderDetailNo", IsForeignKey=true)]
-		public RoomOrderDetail RoomOrderDetail
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomOrder_CheckInRecord", Storage="_RoomOrder", ThisKey="RoomOrderNo", OtherKey="RoomOrderNo", IsForeignKey=true)]
+		public RoomOrder RoomOrder
 		{
 			get
 			{
-				return this._RoomOrderDetail.Entity;
+				return this._RoomOrder.Entity;
 			}
 			set
 			{
-				RoomOrderDetail previousValue = this._RoomOrderDetail.Entity;
+				RoomOrder previousValue = this._RoomOrder.Entity;
 				if (((previousValue != value) 
-							|| (this._RoomOrderDetail.HasLoadedOrAssignedValue == false)))
+							|| (this._RoomOrder.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._RoomOrderDetail.Entity = null;
+						this._RoomOrder.Entity = null;
 						previousValue.CheckInRecord.Remove(this);
 					}
-					this._RoomOrderDetail.Entity = value;
+					this._RoomOrder.Entity = value;
 					if ((value != null))
 					{
 						value.CheckInRecord.Add(this);
-						this._RoomOrderDetailNo = value.RoomOrderDetailNo;
+						this._RoomOrderNo = value.RoomOrderNo;
 					}
 					else
 					{
-						this._RoomOrderDetailNo = default(int);
+						this._RoomOrderNo = default(int);
 					}
-					this.SendPropertyChanged("RoomOrderDetail");
+					this.SendPropertyChanged("RoomOrder");
 				}
 			}
 		}
@@ -2209,6 +1858,8 @@ namespace Disney1
 		
 		private System.DateTime _GenerateDate;
 		
+		private bool _isEnable;
+		
 		private EntitySet<RoomOrder> _RoomOrder;
 		
     #region Extensibility Method Definitions
@@ -2225,6 +1876,8 @@ namespace Disney1
     partial void OnDiscountChanged();
     partial void OnGenerateDateChanging(System.DateTime value);
     partial void OnGenerateDateChanged();
+    partial void OnisEnableChanging(bool value);
+    partial void OnisEnableChanged();
     #endregion
 		
 		public Coupon()
@@ -2329,6 +1982,26 @@ namespace Disney1
 					this._GenerateDate = value;
 					this.SendPropertyChanged("GenerateDate");
 					this.OnGenerateDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_isEnable", DbType="Bit NOT NULL")]
+		public bool isEnable
+		{
+			get
+			{
+				return this._isEnable;
+			}
+			set
+			{
+				if ((this._isEnable != value))
+				{
+					this.OnisEnableChanging(value);
+					this.SendPropertyChanging();
+					this._isEnable = value;
+					this.SendPropertyChanged("isEnable");
+					this.OnisEnableChanged();
 				}
 			}
 		}
@@ -2564,9 +2237,9 @@ namespace Disney1
 		
 		private string _GroupName;
 		
-		private EntitySet<Account> _Account;
-		
 		private EntitySet<AuthorityDetail> _AuthorityDetail;
+		
+		private EntitySet<Account> _Account;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2580,8 +2253,8 @@ namespace Disney1
 		
 		public Group()
 		{
-			this._Account = new EntitySet<Account>(new Action<Account>(this.attach_Account), new Action<Account>(this.detach_Account));
 			this._AuthorityDetail = new EntitySet<AuthorityDetail>(new Action<AuthorityDetail>(this.attach_AuthorityDetail), new Action<AuthorityDetail>(this.detach_AuthorityDetail));
+			this._Account = new EntitySet<Account>(new Action<Account>(this.attach_Account), new Action<Account>(this.detach_Account));
 			OnCreated();
 		}
 		
@@ -2625,19 +2298,6 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_Account", Storage="_Account", ThisKey="GroupNo", OtherKey="GroupNo")]
-		public EntitySet<Account> Account
-		{
-			get
-			{
-				return this._Account;
-			}
-			set
-			{
-				this._Account.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_AuthorityDetail", Storage="_AuthorityDetail", ThisKey="GroupNo", OtherKey="GroupNo")]
 		public EntitySet<AuthorityDetail> AuthorityDetail
 		{
@@ -2648,6 +2308,19 @@ namespace Disney1
 			set
 			{
 				this._AuthorityDetail.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_Account", Storage="_Account", ThisKey="GroupNo", OtherKey="GroupNo")]
+		public EntitySet<Account> Account
+		{
+			get
+			{
+				return this._Account;
+			}
+			set
+			{
+				this._Account.Assign(value);
 			}
 		}
 		
@@ -2671,18 +2344,6 @@ namespace Disney1
 			}
 		}
 		
-		private void attach_Account(Account entity)
-		{
-			this.SendPropertyChanging();
-			entity.Group = this;
-		}
-		
-		private void detach_Account(Account entity)
-		{
-			this.SendPropertyChanging();
-			entity.Group = null;
-		}
-		
 		private void attach_AuthorityDetail(AuthorityDetail entity)
 		{
 			this.SendPropertyChanging();
@@ -2690,6 +2351,18 @@ namespace Disney1
 		}
 		
 		private void detach_AuthorityDetail(AuthorityDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.Group = null;
+		}
+		
+		private void attach_Account(Account entity)
+		{
+			this.SendPropertyChanging();
+			entity.Group = this;
+		}
+		
+		private void detach_Account(Account entity)
 		{
 			this.SendPropertyChanging();
 			entity.Group = null;
@@ -3716,9 +3389,9 @@ namespace Disney1
 		
 		private EntitySet<Ticket> _Ticket;
 		
-		private EntityRef<Account> _Account;
-		
 		private EntityRef<PaymentMethod> _PaymentMethod;
+		
+		private EntityRef<Account> _Account;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -3741,8 +3414,8 @@ namespace Disney1
 		public Order()
 		{
 			this._Ticket = new EntitySet<Ticket>(new Action<Ticket>(this.attach_Ticket), new Action<Ticket>(this.detach_Ticket));
-			this._Account = default(EntityRef<Account>);
 			this._PaymentMethod = default(EntityRef<PaymentMethod>);
+			this._Account = default(EntityRef<Account>);
 			OnCreated();
 		}
 		
@@ -3887,40 +3560,6 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Order", Storage="_Account", ThisKey="AccountId", OtherKey="AccountId", IsForeignKey=true)]
-		public Account Account
-		{
-			get
-			{
-				return this._Account.Entity;
-			}
-			set
-			{
-				Account previousValue = this._Account.Entity;
-				if (((previousValue != value) 
-							|| (this._Account.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Account.Entity = null;
-						previousValue.Order.Remove(this);
-					}
-					this._Account.Entity = value;
-					if ((value != null))
-					{
-						value.Order.Add(this);
-						this._AccountId = value.AccountId;
-					}
-					else
-					{
-						this._AccountId = default(string);
-					}
-					this.SendPropertyChanged("Account");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PaymentMethod_Order", Storage="_PaymentMethod", ThisKey="PaymentMethodNo", OtherKey="PaymentMethodNo", IsForeignKey=true)]
 		public PaymentMethod PaymentMethod
 		{
@@ -3951,6 +3590,40 @@ namespace Disney1
 						this._PaymentMethodNo = default(int);
 					}
 					this.SendPropertyChanged("PaymentMethod");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Order", Storage="_Account", ThisKey="AccountId", OtherKey="AccountId", IsForeignKey=true)]
+		public Account Account
+		{
+			get
+			{
+				return this._Account.Entity;
+			}
+			set
+			{
+				Account previousValue = this._Account.Entity;
+				if (((previousValue != value) 
+							|| (this._Account.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Account.Entity = null;
+						previousValue.Order.Remove(this);
+					}
+					this._Account.Entity = value;
+					if ((value != null))
+					{
+						value.Order.Add(this);
+						this._AccountId = value.AccountId;
+					}
+					else
+					{
+						this._AccountId = default(string);
+					}
+					this.SendPropertyChanged("Account");
 				}
 			}
 		}
@@ -5021,6 +4694,10 @@ namespace Disney1
 		
 		private System.Nullable<int> _PaymentMethodNo;
 		
+		private string _InvoiceNo;
+		
+		private EntitySet<CheckInRecord> _CheckInRecord;
+		
 		private EntitySet<RoomOrderDetail> _RoomOrderDetail;
 		
 		private EntityRef<Coupon> _Coupon;
@@ -5047,10 +4724,13 @@ namespace Disney1
     partial void OnTicketIdChanged();
     partial void OnPaymentMethodNoChanging(System.Nullable<int> value);
     partial void OnPaymentMethodNoChanged();
+    partial void OnInvoiceNoChanging(string value);
+    partial void OnInvoiceNoChanged();
     #endregion
 		
 		public RoomOrder()
 		{
+			this._CheckInRecord = new EntitySet<CheckInRecord>(new Action<CheckInRecord>(this.attach_CheckInRecord), new Action<CheckInRecord>(this.detach_CheckInRecord));
 			this._RoomOrderDetail = new EntitySet<RoomOrderDetail>(new Action<RoomOrderDetail>(this.attach_RoomOrderDetail), new Action<RoomOrderDetail>(this.detach_RoomOrderDetail));
 			this._Coupon = default(EntityRef<Coupon>);
 			this._Guest = default(EntityRef<Guest>);
@@ -5192,6 +4872,39 @@ namespace Disney1
 					this.SendPropertyChanged("PaymentMethodNo");
 					this.OnPaymentMethodNoChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_InvoiceNo", DbType="NVarChar(10)")]
+		public string InvoiceNo
+		{
+			get
+			{
+				return this._InvoiceNo;
+			}
+			set
+			{
+				if ((this._InvoiceNo != value))
+				{
+					this.OnInvoiceNoChanging(value);
+					this.SendPropertyChanging();
+					this._InvoiceNo = value;
+					this.SendPropertyChanged("InvoiceNo");
+					this.OnInvoiceNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomOrder_CheckInRecord", Storage="_CheckInRecord", ThisKey="RoomOrderNo", OtherKey="RoomOrderNo")]
+		public EntitySet<CheckInRecord> CheckInRecord
+		{
+			get
+			{
+				return this._CheckInRecord;
+			}
+			set
+			{
+				this._CheckInRecord.Assign(value);
 			}
 		}
 		
@@ -5364,6 +5077,18 @@ namespace Disney1
 			}
 		}
 		
+		private void attach_CheckInRecord(CheckInRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.RoomOrder = this;
+		}
+		
+		private void detach_CheckInRecord(CheckInRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.RoomOrder = null;
+		}
+		
 		private void attach_RoomOrderDetail(RoomOrderDetail entity)
 		{
 			this.SendPropertyChanging();
@@ -5401,8 +5126,6 @@ namespace Disney1
 		
 		private string _Note;
 		
-		private EntitySet<CheckInRecord> _CheckInRecord;
-		
 		private EntitySet<RoomServiceRecord> _RoomServiceRecord;
 		
 		private EntityRef<Room> _Room;
@@ -5435,7 +5158,6 @@ namespace Disney1
 		
 		public RoomOrderDetail()
 		{
-			this._CheckInRecord = new EntitySet<CheckInRecord>(new Action<CheckInRecord>(this.attach_CheckInRecord), new Action<CheckInRecord>(this.detach_CheckInRecord));
 			this._RoomServiceRecord = new EntitySet<RoomServiceRecord>(new Action<RoomServiceRecord>(this.attach_RoomServiceRecord), new Action<RoomServiceRecord>(this.detach_RoomServiceRecord));
 			this._Room = default(EntityRef<Room>);
 			this._RoomOrder = default(EntityRef<RoomOrder>);
@@ -5630,19 +5352,6 @@ namespace Disney1
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomOrderDetail_CheckInRecord", Storage="_CheckInRecord", ThisKey="RoomOrderDetailNo", OtherKey="RoomOrderDetailNo")]
-		public EntitySet<CheckInRecord> CheckInRecord
-		{
-			get
-			{
-				return this._CheckInRecord;
-			}
-			set
-			{
-				this._CheckInRecord.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="RoomOrderDetail_RoomServiceRecord", Storage="_RoomServiceRecord", ThisKey="RoomOrderDetailNo", OtherKey="RoomOrderDetailNo")]
 		public EntitySet<RoomServiceRecord> RoomServiceRecord
 		{
@@ -5742,18 +5451,6 @@ namespace Disney1
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_CheckInRecord(CheckInRecord entity)
-		{
-			this.SendPropertyChanging();
-			entity.RoomOrderDetail = this;
-		}
-		
-		private void detach_CheckInRecord(CheckInRecord entity)
-		{
-			this.SendPropertyChanging();
-			entity.RoomOrderDetail = null;
 		}
 		
 		private void attach_RoomServiceRecord(RoomServiceRecord entity)
@@ -7376,6 +7073,357 @@ namespace Disney1
 		{
 			this.SendPropertyChanging();
 			entity.TicketOffer = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Account")]
+	public partial class Account : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _AccountId;
+		
+		private string _Password;
+		
+		private string _Name;
+		
+		private System.DateTime _Birthday;
+		
+		private string _Gender;
+		
+		private string _Citizenship;
+		
+		private string _Email;
+		
+		private int _GroupNo;
+		
+		private System.DateTime _LastTimeChangePwd;
+		
+		private EntitySet<LogRecord> _LogRecord;
+		
+		private EntitySet<Order> _Order;
+		
+		private EntityRef<Group> _Group;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAccountIdChanging(string value);
+    partial void OnAccountIdChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnBirthdayChanging(System.DateTime value);
+    partial void OnBirthdayChanged();
+    partial void OnGenderChanging(string value);
+    partial void OnGenderChanged();
+    partial void OnCitizenshipChanging(string value);
+    partial void OnCitizenshipChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnGroupNoChanging(int value);
+    partial void OnGroupNoChanged();
+    partial void OnLastTimeChangePwdChanging(System.DateTime value);
+    partial void OnLastTimeChangePwdChanged();
+    #endregion
+		
+		public Account()
+		{
+			this._LogRecord = new EntitySet<LogRecord>(new Action<LogRecord>(this.attach_LogRecord), new Action<LogRecord>(this.detach_LogRecord));
+			this._Order = new EntitySet<Order>(new Action<Order>(this.attach_Order), new Action<Order>(this.detach_Order));
+			this._Group = default(EntityRef<Group>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountId", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string AccountId
+		{
+			get
+			{
+				return this._AccountId;
+			}
+			set
+			{
+				if ((this._AccountId != value))
+				{
+					this.OnAccountIdChanging(value);
+					this.SendPropertyChanging();
+					this._AccountId = value;
+					this.SendPropertyChanged("AccountId");
+					this.OnAccountIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Birthday", DbType="Date NOT NULL")]
+		public System.DateTime Birthday
+		{
+			get
+			{
+				return this._Birthday;
+			}
+			set
+			{
+				if ((this._Birthday != value))
+				{
+					this.OnBirthdayChanging(value);
+					this.SendPropertyChanging();
+					this._Birthday = value;
+					this.SendPropertyChanged("Birthday");
+					this.OnBirthdayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+			set
+			{
+				if ((this._Gender != value))
+				{
+					this.OnGenderChanging(value);
+					this.SendPropertyChanging();
+					this._Gender = value;
+					this.SendPropertyChanged("Gender");
+					this.OnGenderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Citizenship", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Citizenship
+		{
+			get
+			{
+				return this._Citizenship;
+			}
+			set
+			{
+				if ((this._Citizenship != value))
+				{
+					this.OnCitizenshipChanging(value);
+					this.SendPropertyChanging();
+					this._Citizenship = value;
+					this.SendPropertyChanged("Citizenship");
+					this.OnCitizenshipChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GroupNo", DbType="Int NOT NULL")]
+		public int GroupNo
+		{
+			get
+			{
+				return this._GroupNo;
+			}
+			set
+			{
+				if ((this._GroupNo != value))
+				{
+					if (this._Group.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnGroupNoChanging(value);
+					this.SendPropertyChanging();
+					this._GroupNo = value;
+					this.SendPropertyChanged("GroupNo");
+					this.OnGroupNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LastTimeChangePwd", DbType="Date NOT NULL")]
+		public System.DateTime LastTimeChangePwd
+		{
+			get
+			{
+				return this._LastTimeChangePwd;
+			}
+			set
+			{
+				if ((this._LastTimeChangePwd != value))
+				{
+					this.OnLastTimeChangePwdChanging(value);
+					this.SendPropertyChanging();
+					this._LastTimeChangePwd = value;
+					this.SendPropertyChanged("LastTimeChangePwd");
+					this.OnLastTimeChangePwdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_LogRecord", Storage="_LogRecord", ThisKey="AccountId", OtherKey="AccountId")]
+		public EntitySet<LogRecord> LogRecord
+		{
+			get
+			{
+				return this._LogRecord;
+			}
+			set
+			{
+				this._LogRecord.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Account_Order", Storage="_Order", ThisKey="AccountId", OtherKey="AccountId")]
+		public EntitySet<Order> Order
+		{
+			get
+			{
+				return this._Order;
+			}
+			set
+			{
+				this._Order.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Group_Account", Storage="_Group", ThisKey="GroupNo", OtherKey="GroupNo", IsForeignKey=true)]
+		public Group Group
+		{
+			get
+			{
+				return this._Group.Entity;
+			}
+			set
+			{
+				Group previousValue = this._Group.Entity;
+				if (((previousValue != value) 
+							|| (this._Group.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Group.Entity = null;
+						previousValue.Account.Remove(this);
+					}
+					this._Group.Entity = value;
+					if ((value != null))
+					{
+						value.Account.Add(this);
+						this._GroupNo = value.GroupNo;
+					}
+					else
+					{
+						this._GroupNo = default(int);
+					}
+					this.SendPropertyChanged("Group");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_LogRecord(LogRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_LogRecord(LogRecord entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
+		}
+		
+		private void attach_Order(Order entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = this;
+		}
+		
+		private void detach_Order(Order entity)
+		{
+			this.SendPropertyChanging();
+			entity.Account = null;
 		}
 	}
 }

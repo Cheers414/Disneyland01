@@ -27,5 +27,11 @@ namespace Disney1.Manage
             searchRoom1.DataRefresh();
             searchRoom1.BringToFront();
         }
+
+        private void orderRecordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            orderRecord1.DataRefresh();
+            orderRecord1.BringToFront();
+        }
     }
 }

@@ -197,6 +197,18 @@
     <Compile Include="Manage\ManageHotel\GuestRecord.Designer.cs">
       <DependentUpon>GuestRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manage\ManageHotel\HotelService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\HotelService.Designer.cs">
+      <DependentUpon>HotelService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\OrderRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\OrderRecord.Designer.cs">
+      <DependentUpon>OrderRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manage\ManageHotel\ReserveRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -348,6 +360,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\ManageHotel\GuestRecord.resx">
       <DependentUpon>GuestRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\HotelService.resx">
+      <DependentUpon>HotelService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\OrderRecord.resx">
+      <DependentUpon>OrderRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\ManageHotel\ReserveRoom.resx">
       <DependentUpon>ReserveRoom.cs</DependentUpon>

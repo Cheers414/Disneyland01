@@ -87,9 +87,9 @@
             this.lblDuring.AutoSize = true;
             this.lblDuring.Location = new System.Drawing.Point(87, 89);
             this.lblDuring.Name = "lblDuring";
-            this.lblDuring.Size = new System.Drawing.Size(124, 16);
+            this.lblDuring.Size = new System.Drawing.Size(75, 16);
             this.lblDuring.TabIndex = 11;
-            this.lblDuring.Text = "During Residence:";
+            this.lblDuring.Text = "Stay Time:";
             // 
             // label1
             // 
