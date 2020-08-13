@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Word;
+using Newtonsoft.Json;
+using CheckBox = System.Windows.Forms.CheckBox;
+using System.CodeDom;
 
 namespace Disney1.Manage.Manager
 {
@@ -28,7 +32,7 @@ namespace Disney1.Manage.Manager
             db = new DisneyDataDataContext();
 
             showMode = Properties.Settings.Default.ShowMode;
-            lstCarousel = Properties.Settings.Default.Carousel;
+            lstCarousel = Global.GetCarousel();
             lstText = db.CarouselText.ToList();
 
             txtCarouselText.Text = "";
@@ -37,41 +41,58 @@ namespace Disney1.Manage.Manager
 
             nudStayTime.Value = Properties.Settings.Default.StayTime;
 
-            for (int i = 0; i < lstCarousel.Count; i++)
+            List<System.Windows.Forms.CheckBox> checkBoxs = new List<System.Windows.Forms.CheckBox>();
+            foreach (Control control in this.Controls)
             {
-                if (lstCarousel[i] == false)
-                {
-                    continue;
-                }
-
-                switch (i)
-                {
-                    case 0:
-                        cbDisneylandResort.Checked = true;
-                        break;
-                    case 1:
-                        cbNews.Checked = true;
-                        break;
-                    case 2:
-                        cbWeather.Checked = true;
-                        break;
-                    case 3:
-                        cbTourist.Checked = true;
-                        break;
-                    case 4:
-                        cbAttraction.Checked = true;
-                        break;
-                    case 5:
-                        cbDrama.Checked = true;
-                        break;
-                    case 6:
-                        cbAttractionSchedule.Checked = true;
-                        break;
-                    case 7:
-                        cbMaintenance.Checked = true;
-                        break;
-                }
+                if (control is System.Windows.Forms.CheckBox)
+                    checkBoxs.Add((System.Windows.Forms.CheckBox)control);
             }
+
+            checkBoxs.Select((thisIsControl, goldCard) => new
+            {
+                Control = thisIsControl,
+                Fuck = goldCard
+            }).Where(x => x.Control.Checked = lstCarousel[x.Fuck])
+            .ToList().ForEach(x =>
+            {
+                x.Control.Visible = true;
+            });
+
+            //for (int i = 0; i < lstCarousel.Count; i++)
+            //{
+            //    if (lstCarousel[i] == false)
+            //    {
+            //        continue;
+            //    }
+
+            //    switch (i)
+            //    {
+            //        case 0:
+            //            cbDisneylandResort.Checked = true;
+            //            break;
+            //        case 1:
+            //            cbNews.Checked = true;
+            //            break;
+            //        case 2:
+            //            cbWeather.Checked = true;
+            //            break;
+            //        case 3:
+            //            cbTourist.Checked = true;
+            //            break;
+            //        case 4:
+            //            cbAttraction.Checked = true;
+            //            break;
+            //        case 5:
+            //            cbDrama.Checked = true;
+            //            break;
+            //        case 6:
+            //            cbAttractionSchedule.Checked = true;
+            //            break;
+            //        case 7:
+            //            cbMaintenance.Checked = true;
+            //            break;
+            //    }
+            //}
 
             dgvReset();
         }
@@ -89,38 +110,55 @@ namespace Disney1.Manage.Manager
 
                 Properties.Settings.Default.StayTime = (int)nudStayTime.Value;
 
-                List<bool> lstCarousel = new List<bool>(new bool[8]);
-                for (int i = 0; i < lstCarousel.Count; i++)
+                List<bool> lstCarousel = new List<bool>();
+                List<CheckBox> lstCb = new List<CheckBox>();
+                lstCb.Add(cbDisneylandResort);
+                lstCb.Add(cbNews);
+                lstCb.Add(cbWeather);
+                lstCb.Add(cbTourist);
+                lstCb.Add(cbAttraction);
+                lstCb.Add(cbDrama);
+                lstCb.Add(cbAttractionSchedule);
+                lstCb.Add(cbMaintenance);
+
+                lstCb.ForEach(x =>
                 {
-                    switch (i)
-                    {
-                        case 0:
-                            lstCarousel[i] = cbDisneylandResort.Checked;
-                            break;
-                        case 1:
-                            lstCarousel[i] = cbNews.Checked;
-                            break;
-                        case 2:
-                            lstCarousel[i] = cbWeather.Checked;
-                            break;
-                        case 3:
-                            lstCarousel[i] = cbTourist.Checked;
-                            break;
-                        case 4:
-                            lstCarousel[i] = cbAttraction.Checked;
-                            break;
-                        case 5:
-                            lstCarousel[i] = cbDrama.Checked;
-                            break;
-                        case 6:
-                            lstCarousel[i] = cbAttractionSchedule.Checked;
-                            break;
-                        case 7:
-                            lstCarousel[i] = cbMaintenance.Checked;
-                            break;
-                    }
-                }
-                Properties.Settings.Default.Carousel = lstCarousel;
+                    lstCarousel.Add(x.Checked ? true : false);
+                });
+
+                //List<bool> lstCarousel = new List<bool>(new bool[8]);
+                //for (int i = 0; i < lstCarousel.Count; i++)
+                //{
+                //    switch (i)
+                //    {
+                //        case 0:
+                //            lstCarousel[i] = cbDisneylandResort.Checked;
+                //            break;
+                //        case 1:
+                //            lstCarousel[i] = cbNews.Checked;
+                //            break;
+                //        case 2:
+                //            lstCarousel[i] = cbWeather.Checked;
+                //            break;
+                //        case 3:
+                //            lstCarousel[i] = cbTourist.Checked;
+                //            break;
+                //        case 4:
+                //            lstCarousel[i] = cbAttraction.Checked;
+                //            break;
+                //        case 5:
+                //            lstCarousel[i] = cbDrama.Checked;
+                //            break;
+                //        case 6:
+                //            lstCarousel[i] = cbAttractionSchedule.Checked;
+                //            break;
+                //        case 7:
+                //            lstCarousel[i] = cbMaintenance.Checked;
+                //            break;
+                //    }
+                //}
+
+                Properties.Settings.Default.carousel = JsonConvert.SerializeObject(lstCarousel);
                 Properties.Settings.Default.Save();
 
                 MessageBox.Show("Save successfully!", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);

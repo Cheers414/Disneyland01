@@ -52,6 +52,12 @@ namespace Disney1.Manage.ManageHotel
             }).ToList();
         }
 
+        public new void BringToFront()
+        {
+            this.DataRefresh();
+            base.BringToFront();
+        }
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -79,6 +85,12 @@ namespace Disney1.Manage.ManageHotel
                 };
                 db.RoomOrder.InsertOnSubmit(order);
                 db.SubmitChanges();
+
+                if (coupon != null)
+                {
+                    db.Coupon.Single(x => x.CouponId == coupon.CouponId).isEnable = false;
+                    db.SubmitChanges();
+                }
 
                 int i = 0;
                 lstOrderDetail.ForEach(x =>
@@ -149,7 +161,8 @@ namespace Disney1.Manage.ManageHotel
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Reserve error", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Reserve error", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -177,7 +190,7 @@ namespace Disney1.Manage.ManageHotel
             //Get coupon
             if (txtCoupon.Text != "")
             {
-                var c = db.Coupon.ToList().SingleOrDefault(x => x.CouponId == txtCoupon.Text);
+                var c = db.Coupon.ToList().SingleOrDefault(x => x.CouponId == txtCoupon.Text && x.isEnable);
                 if (c != null)
                 {
                     coupon = c;
@@ -203,6 +216,7 @@ namespace Disney1.Manage.ManageHotel
         {
             //Cancel coupon
             coupon = null;
+            db.Coupon.Single(x => x.CouponId == coupon.CouponId).isEnable = true;
             lblPrice.Text = $"Total Price: ${GetPrice()}";
             txtCoupon.Text = "";
         }

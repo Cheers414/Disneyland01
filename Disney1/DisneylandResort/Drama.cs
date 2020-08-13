@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Disney1.DisneylandResort
 {
-    public partial class Drama : UserControl
+    public partial class Drama : UserControl, IKumotoyureiUserControl
     {
         public Drama()
         {

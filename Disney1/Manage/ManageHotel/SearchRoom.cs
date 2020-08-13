@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
+using Disney1.Comparer;
 
 namespace Disney1.Manage.ManageHotel
 {
@@ -24,6 +25,8 @@ namespace Disney1.Manage.ManageHotel
         public void DataRefresh()
         {
             bookingRoom1.Visible = false;
+
+            Global.BookRooms = new BindingList<Room>();
 
             db = new DisneyDataDataContext();
             cboHotel.DataSource = db.Hotel;
@@ -67,9 +70,10 @@ namespace Disney1.Manage.ManageHotel
             rooms = db.Room.ToList();
             var reservedRooms = db.RoomOrderDetail.ToList()
                 .Where(x => Global.TimeIsOverlapping(checkIn, checkOut, x.StartDate, x.EndDate))
-                .GroupBy(x => new { x.Room })
-                .Select(x => x.Key.Room)
+                .GroupBy(x => x.Room.RoomNo)
+                .Select(x => x.First().Room)
                 .ToList();
+
             rooms = rooms.Except(reservedRooms).ToList();
 
             //Search room hotel
@@ -115,7 +119,7 @@ namespace Disney1.Manage.ManageHotel
                         singleRooms.Add(x);
                     }
                 });
-                rooms = rooms.Except(singleRooms).ToList();
+                rooms = rooms.Except(singleRooms, new RoomComparer()).ToList();
             }
 
             dgvRooms.DataSource = rooms.Select(x => new { x.RoomId, x.RoomSeries.SuitesName, x.RoomSeries.MaximumPerson, x.RoomStatus.Status }).ToList();

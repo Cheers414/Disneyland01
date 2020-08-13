@@ -99,6 +99,8 @@ namespace Disney1.Manage.Manager
             var lstNews = newsData.NewsList.ToList();
             lstNews.RemoveAt(dgv.CurrentCell.RowIndex);
             newsData.NewsList = lstNews.ToArray();
+            File.WriteAllText("NewsData.json", JsonConvert.SerializeObject(newsData));
+            dgvReset();
         }
     }
 }

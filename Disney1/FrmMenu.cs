@@ -27,6 +27,8 @@ namespace Disney1
 
         public void DataRefresh()
         {
+            string carousel = Properties.Settings.Default.carousel;
+
             Global.User = null;
             gpbLogin.Visible = true;
             btnLogout.Visible = false;

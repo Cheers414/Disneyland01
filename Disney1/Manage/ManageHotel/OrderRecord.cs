@@ -25,7 +25,9 @@ namespace Disney1.Manage.ManageHotel
 
         public void DataRefresh()
         {
+            checkOut1.Visible = false;
             db = new DisneyDataDataContext();
+            lstRoomId.DataSource = null;
             dgvOrder.DataSource = db.RoomOrder.ToList()
                 .Where(x => x.PaymentMethodNo == null)
                 .Select(x => new
@@ -33,7 +35,6 @@ namespace Disney1.Manage.ManageHotel
                     x.Guest.Name,
                     OrderTime = x.OrderDateTime.ToString("yyyy/MM/dd"),
                 }).ToList();
-
         }
 
         private void dgvOrder_SelectionChanged(object sender, EventArgs e)
@@ -51,11 +52,16 @@ namespace Disney1.Manage.ManageHotel
             if (checkRecord != null)
             {
                 btnCheckIn.Enabled = false;
+                btnCheckOut.Enabled = true;
             }
             else
             {
                 btnCheckIn.Enabled = true;
+                btnCheckOut.Enabled = false;
             }
+
+            txtTicket.Text = order.TicketId == null ? "" : order.TicketId;
+            txtCoupon.Text = order.CouponId == null ? "" : order.CouponId;
 
             Global.OrderRecord = order;
 
@@ -65,6 +71,10 @@ namespace Disney1.Manage.ManageHotel
 
         private void lstRoomId_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(lstRoomId.SelectedIndex == -1)
+            {
+                return;
+            }
             var detail = lstOrderDetail[lstRoomId.SelectedIndex];
             lblStayTime.Text = $"Stay Time: {detail.StartDate.ToString("yyyy/MM/dd")} - {detail.EndDate.ToString("yyyy/MM/dd")}";
             lblMainGuest.Text = $"Main Guest: {detail.MainGuest}";
@@ -100,12 +110,67 @@ namespace Disney1.Manage.ManageHotel
             db.SubmitChanges();
 
             MessageBox.Show("Check in successfully", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            btnCheckIn.Enabled = false;
+            dgvOrder_SelectionChanged(null, null);
         }
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
+            checkOut1.Visible = true;
+            checkOut1.DataRefresh();
+        }
 
+        private void btnCheckTicket_Click(object sender, EventArgs e)
+        {
+            if (txtTicket.Text != "")
+            {
+                var t = db.Ticket.ToList().SingleOrDefault(x => x.TicketId == txtTicket.Text);
+                if (t != null)
+                {
+                    order.Ticket = t;
+                    MessageBox.Show("Ticket ID valid", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ticket ID invalid", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            db.SubmitChanges();
+        }
+
+        private void btnCancel1_Click(object sender, EventArgs e)
+        {
+            order.Ticket = null;
+            db.SubmitChanges();
+            MessageBox.Show("Delete successfully", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            dgvOrder_SelectionChanged(null, null);
+        }
+
+        private void btnCheckCoupon_Click(object sender, EventArgs e)
+        {
+            if (txtCoupon.Text != "")
+            {
+                var c = db.Coupon.ToList().SingleOrDefault(x => x.CouponId == txtCoupon.Text && x.isEnable);
+                if (c != null)
+                {
+                    order.Coupon = c;
+                    c.isEnable = false;
+                    MessageBox.Show("Coupon ID valid", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Coupon iD invalid", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            db.SubmitChanges();
+        }
+
+        private void btnCancel2_Click(object sender, EventArgs e)
+        {
+            db.Coupon.Single(x => x.CouponId == order.CouponId).isEnable = true;
+            order.Coupon = null;
+            db.SubmitChanges();
+            MessageBox.Show("Delete successfully", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            dgvOrder_SelectionChanged(null, null);
         }
     }
 }

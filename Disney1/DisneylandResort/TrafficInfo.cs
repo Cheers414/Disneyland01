@@ -11,7 +11,7 @@ using System.IO;
 
 namespace Disney1.DisneylandResort
 {
-    public partial class TrafficInfo : UserControl
+    public partial class TrafficInfo : UserControl, IKumotoyureiUserControl
     {
         public TrafficInfo()
         {

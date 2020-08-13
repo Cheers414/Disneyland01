@@ -11,7 +11,7 @@ using System.Runtime.CompilerServices;
 
 namespace Disney1.DisneylandResort
 {
-    public partial class Maintenance : UserControl
+    public partial class Maintenance : UserControl, IKumotoyureiUserControl
     {
         public Maintenance()
         {
@@ -26,7 +26,7 @@ namespace Disney1.DisneylandResort
             lstMaintenance.DataSource = db.MaintenanceSchedule
                 .ToList()
                 .Where(x => DateTime.Now > x.StartDateTiime && DateTime.Now < x.EndDateTime)
-                .Select(x=>x.Attractions.AttractionsName)
+                .Select(x => x.Attractions.AttractionsName)
                 .ToList();
         }
 

@@ -50,8 +50,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBook = new System.Windows.Forms.Button();
-            this.bookingRoom1 = new Disney1.Manage.ManageHotel.BookingRoom();
             this.label7 = new System.Windows.Forms.Label();
+            this.bookingRoom1 = new Disney1.Manage.ManageHotel.BookingRoom();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRooms)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStatus)).BeginInit();
             this.SuspendLayout();
@@ -280,6 +280,15 @@
             this.btnBook.UseVisualStyleBackColor = true;
             this.btnBook.Click += new System.EventHandler(this.btnBook_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(86, 35);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(197, 16);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "6-3-1-1.Search Vacant Rooms";
+            // 
             // bookingRoom1
             // 
             this.bookingRoom1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -290,15 +299,6 @@
             this.bookingRoom1.Size = new System.Drawing.Size(1031, 657);
             this.bookingRoom1.TabIndex = 18;
             this.bookingRoom1.Visible = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(86, 35);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(197, 16);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "6-3-1-1.Search Vacant Rooms";
             // 
             // SearchRoom
             // 

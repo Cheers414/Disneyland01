@@ -12,7 +12,7 @@ using System.IO;
 
 namespace Disney1.DisneylandResort
 {
-    public partial class TicketInfo : UserControl
+    public partial class TicketInfo : UserControl, IKumotoyureiUserControl
     {
         public TicketInfo()
         {

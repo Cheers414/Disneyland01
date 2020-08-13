@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 
 namespace Disney1.DisneylandResort
 {
-    public partial class Weather : UserControl
+    public partial class Weather : UserControl, IKumotoyureiUserControl
     {
         public Weather()
         {

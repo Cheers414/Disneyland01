@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace Disney1.DisneylandResort
 {
-    public partial class News : UserControl
+    public partial class News : UserControl, IKumotoyureiUserControl
     {
         public News()
         {

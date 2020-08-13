@@ -47,6 +47,7 @@ namespace Disney1.Manage.ManageHotel
                 return;
             }
             mode = 0;
+            cboSerivce.Enabled = false;
             serviceRecord = db.RoomServiceRecord.ToList().Single(x => x.RoomServiceRecordNo == lstService[dgv.SelectedRows[0].Index].RoomServiceRecordNo);
             cboSerivce.SelectedIndex = db.RoomService.ToList().FindIndex(x=>x.RoomServiceNo == serviceRecord.RoomServiceNo);
             nudQty.Value = serviceRecord.Quantity;
@@ -63,6 +64,7 @@ namespace Disney1.Manage.ManageHotel
         private void btnNew_Click(object sender, EventArgs e)
         {
             mode = 1;
+            cboSerivce.Enabled = true;
             cboSerivce.SelectedIndex = -1;
             nudQty.Value = 1;
         }

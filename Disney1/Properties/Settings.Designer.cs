@@ -35,17 +35,6 @@ namespace Disney1.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::System.Collections.Generic.List<bool> Carousel {
-            get {
-                return ((global::System.Collections.Generic.List<bool>)(this["Carousel"]));
-            }
-            set {
-                this["Carousel"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2")]
         public int StayTime {
             get {
@@ -65,6 +54,18 @@ namespace Disney1.Properties {
             }
             set {
                 this["ShowMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("[1,1,1,1,1,1,1,1]")]
+        public string carousel {
+            get {
+                return ((string)(this["carousel"]));
+            }
+            set {
+                this["carousel"] = value;
             }
         }
     }

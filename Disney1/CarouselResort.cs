@@ -34,7 +34,7 @@ namespace Disney1
         {
             db = new DisneyDataDataContext();
 
-            lstCarousel = Properties.Settings.Default.Carousel;
+            lstCarousel = Global.GetCarousel();
             stayTime = Properties.Settings.Default.StayTime;
 
             this.Controls.Clear();
@@ -61,7 +61,7 @@ namespace Disney1
             flowlayout = new FlowLayoutPanel()
             {
                 Location = new Point(0, 0),
-                Size = new Size(1031 * carouselNum, 650),
+                Size = new Size(this.Width * carouselNum, this.Height - 30),
                 AutoScroll = false,
                 FlowDirection = FlowDirection.TopDown
             }; ;
@@ -73,64 +73,21 @@ namespace Disney1
         private void CreateCarousel(FlowLayoutPanel flow)
         {
             //Create Disneyland resort information
-            for (int i = 0; i < lstCarousel.Count; i++)
+            List<UserControl> userControls = new List<UserControl>();
+            userControls.Add(new DisneylandResort.DisneylandResort());
+            userControls.Add(new News());
+            userControls.Add(new Weather());
+            userControls.Add(new Tourist());
+            userControls.Add(new AttractionsInfo());
+            userControls.Add(new Drama());
+            userControls.Add(new AttractionsSchedule());
+            userControls.Add(new Maintenance());
+
+            userControls.Select((x, y) => new { Control = x, Index = y }).Where(x => lstCarousel[x.Index]).ToList().ForEach(x =>
             {
-                if (!lstCarousel[i])
-                {
-                    continue;
-                }
-
-                switch (i)
-                {
-                    case 0:
-                        DisneylandResort.DisneylandResort disneylandResort = new DisneylandResort.DisneylandResort();
-                        flow.Controls.Add(disneylandResort);
-                        disneylandResort.DataRefresh();
-                        break;
-
-                    case 1:
-                        DisneylandResort.News news = new DisneylandResort.News();
-                        flow.Controls.Add(news);
-                        news.DataRefresh();
-                        break;
-
-                    case 2:
-                        DisneylandResort.Weather weather = new DisneylandResort.Weather();
-                        flow.Controls.Add(weather);
-                        weather.DataRefresh();
-                        break;
-
-                    case 3:
-                        DisneylandResort.Tourist tourist = new Tourist();
-                        flow.Controls.Add(tourist);
-                        tourist.DataRefresh();
-                        break;
-
-                    case 4:
-                        DisneylandResort.AttractionsInfo attractionsInfo = new AttractionsInfo();
-                        flow.Controls.Add(attractionsInfo);
-                        attractionsInfo.DataRefresh();
-                        break;
-
-                    case 5:
-                        DisneylandResort.Drama drama = new Drama();
-                        flow.Controls.Add(drama);
-                        drama.DataRefresh();
-                        break;
-
-                    case 6:
-                        DisneylandResort.AttractionsSchedule attractionsSchedule = new AttractionsSchedule();
-                        flow.Controls.Add(attractionsSchedule);
-                        attractionsSchedule.DataRefresh();
-                        break;
-
-                    case 7:
-                        DisneylandResort.Maintenance maintenance = new Maintenance();
-                        flow.Controls.Add(maintenance);
-                        maintenance.DataRefresh();
-                        break;
-                }
-            }
+                flow.Controls.Add(x.Control);
+                ((IKumotoyureiUserControl)x.Control).DataRefresh();
+            });
         }
 
         private void CarouselResort_Load(object sender, EventArgs e)
@@ -149,7 +106,7 @@ namespace Disney1
             }
             else
             {
-                flowlayout.Left -= 1031;
+                flowlayout.Left -= this.Width;
             }
             timerStay.Start();
         }

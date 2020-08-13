@@ -12,7 +12,7 @@ using System.IO;
 
 namespace Disney1.DisneylandResort
 {
-    public partial class AttractionsInfo : UserControl
+    public partial class AttractionsInfo : UserControl, IKumotoyureiUserControl
     {
         public AttractionsInfo()
         {

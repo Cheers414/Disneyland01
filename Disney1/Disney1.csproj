@@ -68,6 +68,7 @@
     <Compile Include="ActiveRecord.Designer.cs">
       <DependentUpon>ActiveRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Comparer\RoomComparer.cs" />
     <Compile Include="DisneyData.cs">
       <DependentUpon>DisneyData.dbml</DependentUpon>
     </Compile>
@@ -100,6 +101,7 @@
     <Compile Include="DisneylandResort\Drama.Designer.cs">
       <DependentUpon>Drama.cs</DependentUpon>
     </Compile>
+    <Compile Include="DisneylandResort\IKumotoyureiUserControl.cs" />
     <Compile Include="DisneylandResort\Maintenance.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -190,6 +192,12 @@
     </Compile>
     <Compile Include="Manage\ManageHotel\BookingRoom.Designer.cs">
       <DependentUpon>BookingRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\CheckOut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\CheckOut.Designer.cs">
+      <DependentUpon>CheckOut.cs</DependentUpon>
     </Compile>
     <Compile Include="Manage\ManageHotel\GuestRecord.cs">
       <SubType>UserControl</SubType>
@@ -357,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\ManageHotel\BookingRoom.resx">
       <DependentUpon>BookingRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\CheckOut.resx">
+      <DependentUpon>CheckOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\ManageHotel\GuestRecord.resx">
       <DependentUpon>GuestRecord.cs</DependentUpon>

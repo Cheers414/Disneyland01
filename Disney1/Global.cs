@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -46,7 +47,7 @@ namespace Disney1
             // 取得開始時間轉換成總天數 當作起點(只有 TimeSpan 能取得總天數)
             // 取得開始時間到結束時間中間的天數 當作寬度(DateTime - DateTime = TimeSpan)
             Rectangle rec1 = new Rectangle(Convert.ToInt32(TimeSpan.FromTicks(Start.Ticks).TotalDays), 0, Convert.ToInt32((End - Start).TotalDays), 0);
-            Rectangle rec2 = new Rectangle(Convert.ToInt32(TimeSpan.FromTicks(x.Ticks).TotalDays), 0, Convert.ToInt32((y-x).TotalDays), 0);
+            Rectangle rec2 = new Rectangle(Convert.ToInt32(TimeSpan.FromTicks(x.Ticks).TotalDays), 0, Convert.ToInt32((y - x).TotalDays), 0);
             Rectangle result = Rectangle.Intersect(rec1, rec2);
             return result.Width != 0;
         }
@@ -73,6 +74,12 @@ namespace Disney1
             wordApp.Quit(false);
 
             System.Diagnostics.Process.Start(filename);
+        }
+
+        public static List<bool> GetCarousel()
+        {
+            string jsonStr = Properties.Settings.Default.carousel;
+            return JsonConvert.DeserializeObject<List<bool>>(jsonStr);
         }
     }
 }

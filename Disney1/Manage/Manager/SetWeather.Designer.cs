@@ -85,6 +85,7 @@
             this.dtp.Name = "dtp";
             this.dtp.Size = new System.Drawing.Size(262, 27);
             this.dtp.TabIndex = 7;
+            this.dtp.Value = new System.DateTime(2020, 8, 9, 15, 8, 43, 0);
             this.dtp.ValueChanged += new System.EventHandler(this.dtp_ValueChanged);
             // 
             // txtWeather

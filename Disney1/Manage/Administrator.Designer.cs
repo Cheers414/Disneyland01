@@ -38,9 +38,9 @@
             // 
             // btnAccount
             // 
-            this.btnAccount.Location = new System.Drawing.Point(365, 242);
+            this.btnAccount.Location = new System.Drawing.Point(378, 192);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Size = new System.Drawing.Size(313, 23);
+            this.btnAccount.Size = new System.Drawing.Size(282, 79);
             this.btnAccount.TabIndex = 1;
             this.btnAccount.Text = "6-1.Account Management";
             this.btnAccount.UseVisualStyleBackColor = true;
@@ -48,9 +48,9 @@
             // 
             // btnResort
             // 
-            this.btnResort.Location = new System.Drawing.Point(365, 290);
+            this.btnResort.Location = new System.Drawing.Point(378, 295);
             this.btnResort.Name = "btnResort";
-            this.btnResort.Size = new System.Drawing.Size(313, 23);
+            this.btnResort.Size = new System.Drawing.Size(286, 79);
             this.btnResort.TabIndex = 2;
             this.btnResort.Text = "6-2.Resort Management";
             this.btnResort.UseVisualStyleBackColor = true;
@@ -58,9 +58,9 @@
             // 
             // btnHotel
             // 
-            this.btnHotel.Location = new System.Drawing.Point(365, 338);
+            this.btnHotel.Location = new System.Drawing.Point(378, 394);
             this.btnHotel.Name = "btnHotel";
-            this.btnHotel.Size = new System.Drawing.Size(313, 23);
+            this.btnHotel.Size = new System.Drawing.Size(286, 79);
             this.btnHotel.TabIndex = 3;
             this.btnHotel.Text = "6-3.Hotel Management";
             this.btnHotel.UseVisualStyleBackColor = true;

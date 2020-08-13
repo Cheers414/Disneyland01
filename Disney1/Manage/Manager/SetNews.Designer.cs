@@ -37,7 +37,7 @@
             this.txtAuthor = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dtpPublished = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -134,15 +134,15 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnAdd
+            // btnNew
             // 
-            this.btnAdd.Location = new System.Drawing.Point(682, 568);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 23);
-            this.btnAdd.TabIndex = 6;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnNew.Location = new System.Drawing.Point(682, 568);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(150, 23);
+            this.btnNew.TabIndex = 6;
+            this.btnNew.Text = "New";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSave
             // 
@@ -167,7 +167,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dtpPublished);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtAuthor);
             this.Controls.Add(this.label4);
@@ -198,7 +198,7 @@
         private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DateTimePicker dtpPublished;
     }
