@@ -31,8 +31,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.searchRoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roomManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hotelRepotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guestManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderRecord1 = new Disney1.Manage.ManageHotel.OrderRecord();
             this.searchRoom1 = new Disney1.Manage.ManageHotel.SearchRoom();
+            this.roomManagement1 = new Disney1.Manage.ManageHotel.RoomManagement();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +46,11 @@
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.searchRoomToolStripMenuItem,
-            this.orderRecordToolStripMenuItem});
+            this.orderRecordToolStripMenuItem,
+            this.roomManagementToolStripMenuItem,
+            this.hotelRepotToolStripMenuItem,
+            this.guestManagementToolStripMenuItem,
+            this.bookTicketToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1031, 24);
@@ -61,6 +70,32 @@
             this.orderRecordToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
             this.orderRecordToolStripMenuItem.Text = "6-3-2.Order Record";
             this.orderRecordToolStripMenuItem.Click += new System.EventHandler(this.orderRecordToolStripMenuItem_Click);
+            // 
+            // roomManagementToolStripMenuItem
+            // 
+            this.roomManagementToolStripMenuItem.Name = "roomManagementToolStripMenuItem";
+            this.roomManagementToolStripMenuItem.Size = new System.Drawing.Size(156, 20);
+            this.roomManagementToolStripMenuItem.Text = "6-3-3.Room Management";
+            this.roomManagementToolStripMenuItem.Click += new System.EventHandler(this.roomManagementToolStripMenuItem_Click);
+            // 
+            // hotelRepotToolStripMenuItem
+            // 
+            this.hotelRepotToolStripMenuItem.Name = "hotelRepotToolStripMenuItem";
+            this.hotelRepotToolStripMenuItem.Size = new System.Drawing.Size(117, 20);
+            this.hotelRepotToolStripMenuItem.Text = "6-3-4.Hotel Report";
+            this.hotelRepotToolStripMenuItem.Click += new System.EventHandler(this.hotelRepotToolStripMenuItem_Click);
+            // 
+            // guestManagementToolStripMenuItem
+            // 
+            this.guestManagementToolStripMenuItem.Name = "guestManagementToolStripMenuItem";
+            this.guestManagementToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
+            this.guestManagementToolStripMenuItem.Text = "6-3-5.Guest Management";
+            // 
+            // bookTicketToolStripMenuItem
+            // 
+            this.bookTicketToolStripMenuItem.Name = "bookTicketToolStripMenuItem";
+            this.bookTicketToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.bookTicketToolStripMenuItem.Text = "6-3-6.Book Ticket";
             // 
             // orderRecord1
             // 
@@ -82,10 +117,21 @@
             this.searchRoom1.Size = new System.Drawing.Size(1031, 657);
             this.searchRoom1.TabIndex = 1;
             // 
+            // roomManagement1
+            // 
+            this.roomManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roomManagement1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomManagement1.Location = new System.Drawing.Point(0, 24);
+            this.roomManagement1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.roomManagement1.Name = "roomManagement1";
+            this.roomManagement1.Size = new System.Drawing.Size(1031, 657);
+            this.roomManagement1.TabIndex = 3;
+            // 
             // HotelManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.roomManagement1);
             this.Controls.Add(this.orderRecord1);
             this.Controls.Add(this.searchRoom1);
             this.Controls.Add(this.menuStrip1);
@@ -107,5 +153,10 @@
         private ManageHotel.SearchRoom searchRoom1;
         private System.Windows.Forms.ToolStripMenuItem orderRecordToolStripMenuItem;
         private ManageHotel.OrderRecord orderRecord1;
+        private System.Windows.Forms.ToolStripMenuItem roomManagementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hotelRepotToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guestManagementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bookTicketToolStripMenuItem;
+        private ManageHotel.RoomManagement roomManagement1;
     }
 }

@@ -223,6 +223,12 @@
     <Compile Include="Manage\ManageHotel\ReserveRoom.Designer.cs">
       <DependentUpon>ReserveRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manage\ManageHotel\RoomManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\RoomManagement.Designer.cs">
+      <DependentUpon>RoomManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manage\ManageHotel\SearchRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -380,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\ManageHotel\ReserveRoom.resx">
       <DependentUpon>ReserveRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\RoomManagement.resx">
+      <DependentUpon>RoomManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\ManageHotel\SearchRoom.resx">
       <DependentUpon>SearchRoom.cs</DependentUpon>
