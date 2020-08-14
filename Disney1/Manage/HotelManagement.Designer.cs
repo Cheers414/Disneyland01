@@ -35,9 +35,11 @@
             this.hotelRepotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guestManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guestManagement1 = new Disney1.DisneylandResort.GuestManagement();
+            this.roomManagement1 = new Disney1.Manage.ManageHotel.RoomManagement();
             this.orderRecord1 = new Disney1.Manage.ManageHotel.OrderRecord();
             this.searchRoom1 = new Disney1.Manage.ManageHotel.SearchRoom();
-            this.roomManagement1 = new Disney1.Manage.ManageHotel.RoomManagement();
+            this.hotelReport1 = new Disney1.Manage.ManageHotel.HotelReport();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,12 +92,33 @@
             this.guestManagementToolStripMenuItem.Name = "guestManagementToolStripMenuItem";
             this.guestManagementToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
             this.guestManagementToolStripMenuItem.Text = "6-3-5.Guest Management";
+            this.guestManagementToolStripMenuItem.Click += new System.EventHandler(this.guestManagementToolStripMenuItem_Click);
             // 
             // bookTicketToolStripMenuItem
             // 
             this.bookTicketToolStripMenuItem.Name = "bookTicketToolStripMenuItem";
             this.bookTicketToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
             this.bookTicketToolStripMenuItem.Text = "6-3-6.Book Ticket";
+            // 
+            // guestManagement1
+            // 
+            this.guestManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guestManagement1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guestManagement1.Location = new System.Drawing.Point(0, 24);
+            this.guestManagement1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guestManagement1.Name = "guestManagement1";
+            this.guestManagement1.Size = new System.Drawing.Size(1031, 657);
+            this.guestManagement1.TabIndex = 4;
+            // 
+            // roomManagement1
+            // 
+            this.roomManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roomManagement1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roomManagement1.Location = new System.Drawing.Point(0, 24);
+            this.roomManagement1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.roomManagement1.Name = "roomManagement1";
+            this.roomManagement1.Size = new System.Drawing.Size(1031, 657);
+            this.roomManagement1.TabIndex = 3;
             // 
             // orderRecord1
             // 
@@ -117,20 +140,22 @@
             this.searchRoom1.Size = new System.Drawing.Size(1031, 657);
             this.searchRoom1.TabIndex = 1;
             // 
-            // roomManagement1
+            // hotelReport1
             // 
-            this.roomManagement1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roomManagement1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roomManagement1.Location = new System.Drawing.Point(0, 24);
-            this.roomManagement1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.roomManagement1.Name = "roomManagement1";
-            this.roomManagement1.Size = new System.Drawing.Size(1031, 657);
-            this.roomManagement1.TabIndex = 3;
+            this.hotelReport1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hotelReport1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hotelReport1.Location = new System.Drawing.Point(0, 24);
+            this.hotelReport1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.hotelReport1.Name = "hotelReport1";
+            this.hotelReport1.Size = new System.Drawing.Size(1031, 657);
+            this.hotelReport1.TabIndex = 5;
             // 
             // HotelManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.hotelReport1);
+            this.Controls.Add(this.guestManagement1);
             this.Controls.Add(this.roomManagement1);
             this.Controls.Add(this.orderRecord1);
             this.Controls.Add(this.searchRoom1);
@@ -158,5 +183,7 @@
         private System.Windows.Forms.ToolStripMenuItem guestManagementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookTicketToolStripMenuItem;
         private ManageHotel.RoomManagement roomManagement1;
+        private DisneylandResort.GuestManagement guestManagement1;
+        private ManageHotel.HotelReport hotelReport1;
     }
 }

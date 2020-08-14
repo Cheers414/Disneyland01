@@ -51,6 +51,7 @@
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -100,6 +101,12 @@
     </Compile>
     <Compile Include="DisneylandResort\Drama.Designer.cs">
       <DependentUpon>Drama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\GuestManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\GuestManagement.Designer.cs">
+      <DependentUpon>GuestManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="DisneylandResort\IKumotoyureiUserControl.cs" />
     <Compile Include="DisneylandResort\Maintenance.cs">
@@ -193,6 +200,12 @@
     <Compile Include="Manage\ManageHotel\BookingRoom.Designer.cs">
       <DependentUpon>BookingRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manage\ManageHotel\BookTicket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\BookTicket.Designer.cs">
+      <DependentUpon>BookTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manage\ManageHotel\CheckOut.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +217,18 @@
     </Compile>
     <Compile Include="Manage\ManageHotel\GuestRecord.Designer.cs">
       <DependentUpon>GuestRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\HotelReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\HotelReport.Designer.cs">
+      <DependentUpon>HotelReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\HotelReport2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\HotelReport2.Designer.cs">
+      <DependentUpon>HotelReport2.cs</DependentUpon>
     </Compile>
     <Compile Include="Manage\ManageHotel\HotelService.cs">
       <SubType>Form</SubType>
@@ -330,6 +355,9 @@
     <EmbeddedResource Include="DisneylandResort\Drama.resx">
       <DependentUpon>Drama.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\GuestManagement.resx">
+      <DependentUpon>GuestManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DisneylandResort\Maintenance.resx">
       <DependentUpon>Maintenance.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,11 +400,20 @@
     <EmbeddedResource Include="Manage\ManageHotel\BookingRoom.resx">
       <DependentUpon>BookingRoom.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\BookTicket.resx">
+      <DependentUpon>BookTicket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manage\ManageHotel\CheckOut.resx">
       <DependentUpon>CheckOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\ManageHotel\GuestRecord.resx">
       <DependentUpon>GuestRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\HotelReport.resx">
+      <DependentUpon>HotelReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\HotelReport2.resx">
+      <DependentUpon>HotelReport2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manage\ManageHotel\HotelService.resx">
       <DependentUpon>HotelService.cs</DependentUpon>
