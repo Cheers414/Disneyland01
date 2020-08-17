@@ -51,6 +51,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkOut1 = new Disney1.Manage.ManageHotel.CheckOut();
+            this.btnTicket = new System.Windows.Forms.Button();
+            this.bookTicket1 = new Disney1.Manage.ManageHotel.BookTicket();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.gbDetail.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -166,7 +168,7 @@
             // 
             // btnCheckIn
             // 
-            this.btnCheckIn.Location = new System.Drawing.Point(716, 607);
+            this.btnCheckIn.Location = new System.Drawing.Point(712, 607);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(116, 23);
             this.btnCheckIn.TabIndex = 2;
@@ -292,11 +294,33 @@
             this.checkOut1.Size = new System.Drawing.Size(1031, 657);
             this.checkOut1.TabIndex = 31;
             // 
+            // btnTicket
+            // 
+            this.btnTicket.Location = new System.Drawing.Point(566, 607);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Size = new System.Drawing.Size(116, 23);
+            this.btnTicket.TabIndex = 2;
+            this.btnTicket.Text = "Book Ticket";
+            this.btnTicket.UseVisualStyleBackColor = true;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
+            // 
+            // bookTicket1
+            // 
+            this.bookTicket1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bookTicket1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookTicket1.Location = new System.Drawing.Point(0, 0);
+            this.bookTicket1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bookTicket1.Name = "bookTicket1";
+            this.bookTicket1.Size = new System.Drawing.Size(1031, 657);
+            this.bookTicket1.TabIndex = 32;
+            // 
             // OrderRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.checkOut1);
+            this.Controls.Add(this.bookTicket1);
+            this.Controls.Add(this.btnTicket);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCheckOut);
@@ -343,5 +367,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
         private CheckOut checkOut1;
+        private System.Windows.Forms.Button btnTicket;
+        private BookTicket bookTicket1;
     }
 }

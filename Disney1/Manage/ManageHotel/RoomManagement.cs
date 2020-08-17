@@ -24,11 +24,14 @@ namespace Disney1.Manage.ManageHotel
         {
             db = new DisneyDataDataContext();
 
+            cboStatus.DataSource = db.RoomStatus;
+            cboStatus.DisplayMember = "Status";
+
             cboHotel.DataSource = db.Hotel;
             cboHotel.DisplayMember = "HotelName";
 
-            cboStatus.DataSource = db.RoomStatus;
-            cboStatus.DisplayMember = "Status";
+
+            dgvRoom_SelectionChanged(null, null);
         }
 
         private void cboHotel_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,10 +60,6 @@ namespace Disney1.Manage.ManageHotel
             {
                 return;
             }
-            if (cboStatus.SelectedIndex == -1)
-            {
-                return;
-            }
 
             cboStatus.SelectedIndex = db.RoomStatus.ToList().FindIndex(x => x.RoomStatusNo == lstRoom[dgvRoom.SelectedRows[0].Index].RoomStatusNo);
         }
@@ -71,7 +70,7 @@ namespace Disney1.Manage.ManageHotel
             lstRoom[dgvRoom.SelectedRows[0].Index].RoomStatus = status;
             db.SubmitChanges();
             MessageBox.Show("Save successfully", "Disneyladn", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            dgvRoom_SelectionChanged(null, null);
+            cboHotel_SelectedIndexChanged(null, null);
         }
     }
 }

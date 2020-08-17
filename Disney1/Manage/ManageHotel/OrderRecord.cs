@@ -26,6 +26,7 @@ namespace Disney1.Manage.ManageHotel
         public void DataRefresh()
         {
             checkOut1.Visible = false;
+            bookTicket1.Visible = false;
             db = new DisneyDataDataContext();
             lstRoomId.DataSource = null;
             dgvOrder.DataSource = db.RoomOrder.ToList()
@@ -35,16 +36,18 @@ namespace Disney1.Manage.ManageHotel
                     x.Guest.Name,
                     OrderTime = x.OrderDateTime.ToString("yyyy/MM/dd"),
                 }).ToList();
+            dgvOrder_SelectionChanged(null, null);
         }
 
         private void dgvOrder_SelectionChanged(object sender, EventArgs e)
         {
+            order = null;
             if (dgvOrder.SelectedRows.Count != 1)
-            {
+            {              
                 return;
             }
             int index = dgvOrder.SelectedRows[0].Index;
-
+            
             order = db.RoomOrder.ToList().Where(x => x.PaymentMethodNo == null).ToList().ElementAt(index);
             lstOrderDetail = db.RoomOrderDetail.ToList().Where(x => x.RoomOrderNo == order.RoomOrderNo).ToList();
             lstRooms = lstOrderDetail.Select(x => x.Room).ToList();
@@ -87,11 +90,19 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnService_Click(object sender, EventArgs e)
         {
+            if(order == null)
+            {
+                return;
+            }
             new HotelService().ShowDialog();
         }
 
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
+            if (order == null)
+            {
+                return;
+            }
             db.CheckInRecord.InsertOnSubmit(new CheckInRecord
             {
                 RoomOrderNo = order.RoomOrderNo,
@@ -115,12 +126,20 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
+            if(order == null)
+            {
+                return;
+            }
             checkOut1.Visible = true;
             checkOut1.DataRefresh();
         }
 
         private void btnCheckTicket_Click(object sender, EventArgs e)
         {
+            if (order == null)
+            {
+                return;
+            }
             if (txtTicket.Text != "")
             {
                 var t = db.Ticket.ToList().SingleOrDefault(x => x.TicketId == txtTicket.Text);
@@ -139,6 +158,14 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnCancel1_Click(object sender, EventArgs e)
         {
+            if(order == null)
+            {
+                return;
+            }
+            if (order.TicketId == null)
+            {
+                return;
+            }
             order.Ticket = null;
             db.SubmitChanges();
             MessageBox.Show("Delete successfully", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -147,6 +174,10 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnCheckCoupon_Click(object sender, EventArgs e)
         {
+            if(order == null)
+            {
+                return;
+            }
             if (txtCoupon.Text != "")
             {
                 var c = db.Coupon.ToList().SingleOrDefault(x => x.CouponId == txtCoupon.Text && x.isEnable);
@@ -166,11 +197,29 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnCancel2_Click(object sender, EventArgs e)
         {
+            if(order == null)
+            {
+                return;
+            }
+            if(order.CouponId == null)
+            {
+                return;
+            }
             db.Coupon.Single(x => x.CouponId == order.CouponId).isEnable = true;
             order.Coupon = null;
             db.SubmitChanges();
             MessageBox.Show("Delete successfully", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
             dgvOrder_SelectionChanged(null, null);
+        }
+
+        private void btnTicket_Click(object sender, EventArgs e)
+        {
+            if(order == null)
+            {
+                return;
+            }
+            bookTicket1.Visible = true;
+            bookTicket1.DataRefresh(order);
         }
     }
 }

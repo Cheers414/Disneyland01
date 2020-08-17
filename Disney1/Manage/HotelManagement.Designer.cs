@@ -28,77 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.hotelReport1 = new Disney1.Manage.ManageHotel.HotelReport();
+            this.guestManagement1 = new Disney1.DisneylandResort.GuestManagement();
+            this.roomManagement1 = new Disney1.Manage.ManageHotel.RoomManagement();
+            this.orderRecord1 = new Disney1.Manage.ManageHotel.OrderRecord();
+            this.searchRoom1 = new Disney1.Manage.ManageHotel.SearchRoom();
             this.searchRoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hotelRepotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guestManagementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookTicketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.guestManagement1 = new Disney1.DisneylandResort.GuestManagement();
-            this.roomManagement1 = new Disney1.Manage.ManageHotel.RoomManagement();
-            this.orderRecord1 = new Disney1.Manage.ManageHotel.OrderRecord();
-            this.searchRoom1 = new Disney1.Manage.ManageHotel.SearchRoom();
-            this.hotelReport1 = new Disney1.Manage.ManageHotel.HotelReport();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // hotelReport1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.searchRoomToolStripMenuItem,
-            this.orderRecordToolStripMenuItem,
-            this.roomManagementToolStripMenuItem,
-            this.hotelRepotToolStripMenuItem,
-            this.guestManagementToolStripMenuItem,
-            this.bookTicketToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1031, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // searchRoomToolStripMenuItem
-            // 
-            this.searchRoomToolStripMenuItem.Name = "searchRoomToolStripMenuItem";
-            this.searchRoomToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
-            this.searchRoomToolStripMenuItem.Text = "6-3-1.Reserve Room";
-            this.searchRoomToolStripMenuItem.Click += new System.EventHandler(this.searchRoomToolStripMenuItem_Click);
-            // 
-            // orderRecordToolStripMenuItem
-            // 
-            this.orderRecordToolStripMenuItem.Name = "orderRecordToolStripMenuItem";
-            this.orderRecordToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
-            this.orderRecordToolStripMenuItem.Text = "6-3-2.Order Record";
-            this.orderRecordToolStripMenuItem.Click += new System.EventHandler(this.orderRecordToolStripMenuItem_Click);
-            // 
-            // roomManagementToolStripMenuItem
-            // 
-            this.roomManagementToolStripMenuItem.Name = "roomManagementToolStripMenuItem";
-            this.roomManagementToolStripMenuItem.Size = new System.Drawing.Size(156, 20);
-            this.roomManagementToolStripMenuItem.Text = "6-3-3.Room Management";
-            this.roomManagementToolStripMenuItem.Click += new System.EventHandler(this.roomManagementToolStripMenuItem_Click);
-            // 
-            // hotelRepotToolStripMenuItem
-            // 
-            this.hotelRepotToolStripMenuItem.Name = "hotelRepotToolStripMenuItem";
-            this.hotelRepotToolStripMenuItem.Size = new System.Drawing.Size(117, 20);
-            this.hotelRepotToolStripMenuItem.Text = "6-3-4.Hotel Report";
-            this.hotelRepotToolStripMenuItem.Click += new System.EventHandler(this.hotelRepotToolStripMenuItem_Click);
-            // 
-            // guestManagementToolStripMenuItem
-            // 
-            this.guestManagementToolStripMenuItem.Name = "guestManagementToolStripMenuItem";
-            this.guestManagementToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
-            this.guestManagementToolStripMenuItem.Text = "6-3-5.Guest Management";
-            this.guestManagementToolStripMenuItem.Click += new System.EventHandler(this.guestManagementToolStripMenuItem_Click);
-            // 
-            // bookTicketToolStripMenuItem
-            // 
-            this.bookTicketToolStripMenuItem.Name = "bookTicketToolStripMenuItem";
-            this.bookTicketToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
-            this.bookTicketToolStripMenuItem.Text = "6-3-6.Book Ticket";
+            this.hotelReport1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hotelReport1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hotelReport1.Location = new System.Drawing.Point(0, 24);
+            this.hotelReport1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.hotelReport1.Name = "hotelReport1";
+            this.hotelReport1.Size = new System.Drawing.Size(1031, 657);
+            this.hotelReport1.TabIndex = 5;
             // 
             // guestManagement1
             // 
@@ -140,15 +92,55 @@
             this.searchRoom1.Size = new System.Drawing.Size(1031, 657);
             this.searchRoom1.TabIndex = 1;
             // 
-            // hotelReport1
+            // searchRoomToolStripMenuItem
             // 
-            this.hotelReport1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hotelReport1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hotelReport1.Location = new System.Drawing.Point(0, 24);
-            this.hotelReport1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.hotelReport1.Name = "hotelReport1";
-            this.hotelReport1.Size = new System.Drawing.Size(1031, 657);
-            this.hotelReport1.TabIndex = 5;
+            this.searchRoomToolStripMenuItem.Name = "searchRoomToolStripMenuItem";
+            this.searchRoomToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
+            this.searchRoomToolStripMenuItem.Text = "6-3-1.Reserve Room";
+            this.searchRoomToolStripMenuItem.Click += new System.EventHandler(this.searchRoomToolStripMenuItem_Click);
+            // 
+            // orderRecordToolStripMenuItem
+            // 
+            this.orderRecordToolStripMenuItem.Name = "orderRecordToolStripMenuItem";
+            this.orderRecordToolStripMenuItem.Size = new System.Drawing.Size(120, 20);
+            this.orderRecordToolStripMenuItem.Text = "6-3-2.Order Record";
+            this.orderRecordToolStripMenuItem.Click += new System.EventHandler(this.orderRecordToolStripMenuItem_Click);
+            // 
+            // roomManagementToolStripMenuItem
+            // 
+            this.roomManagementToolStripMenuItem.Name = "roomManagementToolStripMenuItem";
+            this.roomManagementToolStripMenuItem.Size = new System.Drawing.Size(156, 20);
+            this.roomManagementToolStripMenuItem.Text = "6-3-3.Room Management";
+            this.roomManagementToolStripMenuItem.Click += new System.EventHandler(this.roomManagementToolStripMenuItem_Click);
+            // 
+            // hotelRepotToolStripMenuItem
+            // 
+            this.hotelRepotToolStripMenuItem.Name = "hotelRepotToolStripMenuItem";
+            this.hotelRepotToolStripMenuItem.Size = new System.Drawing.Size(117, 20);
+            this.hotelRepotToolStripMenuItem.Text = "6-3-4.Hotel Report";
+            this.hotelRepotToolStripMenuItem.Click += new System.EventHandler(this.hotelRepotToolStripMenuItem_Click);
+            // 
+            // guestManagementToolStripMenuItem
+            // 
+            this.guestManagementToolStripMenuItem.Name = "guestManagementToolStripMenuItem";
+            this.guestManagementToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
+            this.guestManagementToolStripMenuItem.Text = "6-3-5.Guest Management";
+            this.guestManagementToolStripMenuItem.Click += new System.EventHandler(this.guestManagementToolStripMenuItem_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.searchRoomToolStripMenuItem,
+            this.orderRecordToolStripMenuItem,
+            this.roomManagementToolStripMenuItem,
+            this.hotelRepotToolStripMenuItem,
+            this.guestManagementToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1031, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // HotelManagement
             // 
@@ -172,18 +164,16 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem searchRoomToolStripMenuItem;
         private ManageHotel.SearchRoom searchRoom1;
-        private System.Windows.Forms.ToolStripMenuItem orderRecordToolStripMenuItem;
         private ManageHotel.OrderRecord orderRecord1;
-        private System.Windows.Forms.ToolStripMenuItem roomManagementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hotelRepotToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem guestManagementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bookTicketToolStripMenuItem;
         private ManageHotel.RoomManagement roomManagement1;
         private DisneylandResort.GuestManagement guestManagement1;
         private ManageHotel.HotelReport hotelReport1;
+        private System.Windows.Forms.ToolStripMenuItem searchRoomToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem orderRecordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem roomManagementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hotelRepotToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guestManagementToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
