@@ -51,5 +51,11 @@ namespace Disney1.Manage
             guestManagement1.DataRefresh();
             guestManagement1.BringToFront();
         }
+
+        private void generateTicketToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            generateTicket1.DataRefresh();
+            generateTicket1.BringToFront();
+        }
     }
 }
