@@ -20,7 +20,7 @@ namespace Disney1.Manage.ManageHotel
 
         public void DataRefresh()
         {
-
+            
         }
     }
 }

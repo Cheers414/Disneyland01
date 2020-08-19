@@ -36,8 +36,8 @@ namespace Disney1.Manage
 
         private void hotelRepotToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            hotelReport1.DataRefresh();
-            hotelReport1.BringToFront();
+            hotelReport21.DataRefresh();
+            hotelReport21.BringToFront();
         }
 
         private void roomManagementToolStripMenuItem_Click(object sender, EventArgs e)
