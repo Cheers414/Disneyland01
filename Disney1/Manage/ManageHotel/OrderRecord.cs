@@ -16,25 +16,25 @@ namespace Disney1.Manage.ManageHotel
         public OrderRecord()
         {
             InitializeComponent();
-            //checkOut1.CkeckOutSuccessfully += CheckOut1_CkeckOutSuccessfully;
+            checkOut1.CkeckOutSuccessfully += CheckOut1_CkeckOutSuccessfully;
 
-            int k = this.DoSomething((x, y) => x + y);
-            this.Ohhh = new Action(() =>
-            {
-                lblChildrenNum.Text = "1025";
-            });
+            //int k = this.DoSomething((x, y) => x + y);
+            //this.Ohhh = new Action(() =>
+            //{
+            //    lblChildrenNum.Text = "1025";
+            //});
         }
-        public int DoSomething(Func<int, int, int> func)
-        {
-            return func.Invoke(5, 8);
-        }
+        //public int DoSomething(Func<int, int, int> func)
+        //{
+        //    return func.Invoke(5, 8);
+        //}
 
-        public Action Ohhh;
+        //public Action Ohhh;
 
         private void CheckOut1_CkeckOutSuccessfully(object sender, EventArgs e)
         {
             DataRefresh();
-            this.Ohhh?.Invoke();
+            //this.Ohhh?.Invoke();
         }
 
         DisneyDataDataContext db;
