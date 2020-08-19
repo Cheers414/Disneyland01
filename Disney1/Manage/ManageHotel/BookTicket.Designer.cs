@@ -58,17 +58,17 @@
             this.dgv = new System.Windows.Forms.DataGridView();
             this.txtName = new System.Windows.Forms.TextBox();
             this.gbOrderDetail = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.dgvDetail = new System.Windows.Forms.DataGridView();
             this.gbTicketDetail = new System.Windows.Forms.GroupBox();
-            this.dgvTicket = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.dgvTicket = new System.Windows.Forms.DataGridView();
             this.gbPayMethod = new System.Windows.Forms.GroupBox();
-            this.cboPayMethod = new System.Windows.Forms.ComboBox();
             this.panelCredit = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
             this.txtCredit = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cboPayMethod = new System.Windows.Forms.ComboBox();
             this.gbTicket.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDisability)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSenior)).BeginInit();
@@ -102,7 +102,7 @@
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(208, 55);
             this.btnConfirm.TabIndex = 1;
-            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.Text = "Next";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -397,6 +397,15 @@
             this.gbOrderDetail.TabStop = false;
             this.gbOrderDetail.Text = "Order Detail";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(40, 34);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(115, 19);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Order Ticket List";
+            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
@@ -435,6 +444,15 @@
             this.gbTicketDetail.TabStop = false;
             this.gbTicketDetail.Text = "Ticket Detail";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(40, 43);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(126, 19);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Ticket Information";
+            // 
             // dgvTicket
             // 
             this.dgvTicket.AllowUserToAddRows = false;
@@ -453,24 +471,6 @@
             this.dgvTicket.Size = new System.Drawing.Size(814, 378);
             this.dgvTicket.TabIndex = 0;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(40, 43);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(126, 19);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Ticket Information";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(40, 34);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(115, 19);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Order Ticket List";
-            // 
             // gbPayMethod
             // 
             this.gbPayMethod.Controls.Add(this.panelCredit);
@@ -482,16 +482,6 @@
             this.gbPayMethod.TabStop = false;
             this.gbPayMethod.Text = "Payment Method";
             // 
-            // cboPayMethod
-            // 
-            this.cboPayMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboPayMethod.FormattingEnabled = true;
-            this.cboPayMethod.Location = new System.Drawing.Point(77, 59);
-            this.cboPayMethod.Name = "cboPayMethod";
-            this.cboPayMethod.Size = new System.Drawing.Size(231, 27);
-            this.cboPayMethod.TabIndex = 0;
-            this.cboPayMethod.SelectedIndexChanged += new System.EventHandler(this.cboPayMethod_SelectedIndexChanged);
-            // 
             // panelCredit
             // 
             this.panelCredit.Controls.Add(this.txtCredit);
@@ -500,6 +490,13 @@
             this.panelCredit.Name = "panelCredit";
             this.panelCredit.Size = new System.Drawing.Size(348, 152);
             this.panelCredit.TabIndex = 1;
+            // 
+            // txtCredit
+            // 
+            this.txtCredit.Location = new System.Drawing.Point(84, 9);
+            this.txtCredit.Name = "txtCredit";
+            this.txtCredit.Size = new System.Drawing.Size(222, 27);
+            this.txtCredit.TabIndex = 1;
             // 
             // label12
             // 
@@ -510,12 +507,15 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Credit Card";
             // 
-            // txtCredit
+            // cboPayMethod
             // 
-            this.txtCredit.Location = new System.Drawing.Point(84, 9);
-            this.txtCredit.Name = "txtCredit";
-            this.txtCredit.Size = new System.Drawing.Size(222, 27);
-            this.txtCredit.TabIndex = 1;
+            this.cboPayMethod.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPayMethod.FormattingEnabled = true;
+            this.cboPayMethod.Location = new System.Drawing.Point(77, 59);
+            this.cboPayMethod.Name = "cboPayMethod";
+            this.cboPayMethod.Size = new System.Drawing.Size(231, 27);
+            this.cboPayMethod.TabIndex = 0;
+            this.cboPayMethod.SelectedIndexChanged += new System.EventHandler(this.cboPayMethod_SelectedIndexChanged);
             // 
             // BookTicket
             // 

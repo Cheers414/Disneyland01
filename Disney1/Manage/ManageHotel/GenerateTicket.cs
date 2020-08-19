@@ -116,7 +116,8 @@ namespace Disney1.Manage.ManageHotel
 
                 if (i == lstFile.Length - 1 || i % 5 == 4)
                 {
-                    mainDoc.SaveAs2(tempPath + $@"\{(int)(i/5) + 1}.pdf", Word.WdSaveFormat.wdFormatPDF);
+                    //mainDoc.SaveAs2(tempPath + $@"\{(int)(i / 5) + 1}.pdf", Word.WdSaveFormat.wdFormatPDF);
+                    mainDoc.PrintOut(false);
                     mainDoc.Close(false);
                 }
             }

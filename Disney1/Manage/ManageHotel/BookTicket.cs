@@ -279,9 +279,9 @@ namespace Disney1.Manage.ManageHotel
 
         private void Book()
         {
-            if(cboPayMethod.SelectedIndex == 1)
+            if (cboPayMethod.SelectedIndex == 1)
             {
-                if(txtCredit.Text == "")
+                if (txtCredit.Text == "")
                 {
                     MessageBox.Show("Please enter the credit card number", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -334,7 +334,7 @@ namespace Disney1.Manage.ManageHotel
             {
                 Directory.CreateDirectory(path);
             }
-            doc.SaveAs2(path + $@"\{order.OrderId}.pdf",Word.WdSaveFormat.wdFormatPDF);
+            doc.SaveAs2(path + $@"\{order.OrderId}.pdf", Word.WdSaveFormat.wdFormatPDF);
             doc.Close(false);
             wapp.Quit(false);
             System.Diagnostics.Process.Start(path + $@"\{order.OrderId}.pdf");
@@ -380,6 +380,14 @@ namespace Disney1.Manage.ManageHotel
             }
             step += 1;
             lstGroup[step].BringToFront();
+            if (step == lstGroup.Count - 1)
+            {
+                btnConfirm.Text = "Confirm";
+            }
+            else
+            {
+                btnConfirm.Text = "Next";
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -391,6 +399,14 @@ namespace Disney1.Manage.ManageHotel
             }
             step -= 1;
             lstGroup[step].BringToFront();
+            if (step == lstGroup.Count - 1)
+            {
+                btnConfirm.Text = "Confirm";
+            }
+            else
+            {
+                btnConfirm.Text = "Next";
+            }
         }
 
         private void rbDay_CheckedChanged(object sender, EventArgs e)

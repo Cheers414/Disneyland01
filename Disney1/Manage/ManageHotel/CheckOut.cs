@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml;
 using Word = Microsoft.Office.Interop.Word;
 using System.Security.Cryptography;
+using System.Threading;
 
 namespace Disney1.Manage.ManageHotel
 {
@@ -34,6 +35,8 @@ namespace Disney1.Manage.ManageHotel
 
             cboPayment.DataSource = db.PaymentMethod;
             cboPayment.DisplayMember = "Method";
+
+            btnPay.Enabled = true;
 
             order = db.RoomOrder.ToList().SingleOrDefault(x => x.RoomOrderNo == Global.OrderRecord.RoomOrderNo);
             lstPay = new List<PayItem>();
@@ -174,7 +177,12 @@ namespace Disney1.Manage.ManageHotel
             MessageBox.Show("Bill successfully", "Disneyland", MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnPay.Enabled = false;
             PrintInvoice();
+
+            CkeckOutSuccessfully?.Invoke(sender, e);
+
         }
+
+        public event EventHandler CkeckOutSuccessfully;
 
         private void btnBack_Click(object sender, EventArgs e)
         {

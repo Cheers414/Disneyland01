@@ -16,6 +16,25 @@ namespace Disney1.Manage.ManageHotel
         public OrderRecord()
         {
             InitializeComponent();
+            //checkOut1.CkeckOutSuccessfully += CheckOut1_CkeckOutSuccessfully;
+
+            int k = this.DoSomething((x, y) => x + y);
+            this.Ohhh = new Action(() =>
+            {
+                lblChildrenNum.Text = "1025";
+            });
+        }
+        public int DoSomething(Func<int, int, int> func)
+        {
+            return func.Invoke(5, 8);
+        }
+
+        public Action Ohhh;
+
+        private void CheckOut1_CkeckOutSuccessfully(object sender, EventArgs e)
+        {
+            DataRefresh();
+            this.Ohhh?.Invoke();
         }
 
         DisneyDataDataContext db;
@@ -43,11 +62,11 @@ namespace Disney1.Manage.ManageHotel
         {
             order = null;
             if (dgvOrder.SelectedRows.Count != 1)
-            {              
+            {
                 return;
             }
             int index = dgvOrder.SelectedRows[0].Index;
-            
+
             order = db.RoomOrder.ToList().Where(x => x.PaymentMethodNo == null).ToList().ElementAt(index);
             lstOrderDetail = db.RoomOrderDetail.ToList().Where(x => x.RoomOrderNo == order.RoomOrderNo).ToList();
             lstRooms = lstOrderDetail.Select(x => x.Room).ToList();
@@ -74,7 +93,7 @@ namespace Disney1.Manage.ManageHotel
 
         private void lstRoomId_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(lstRoomId.SelectedIndex == -1)
+            if (lstRoomId.SelectedIndex == -1)
             {
                 return;
             }
@@ -90,7 +109,7 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnService_Click(object sender, EventArgs e)
         {
-            if(order == null)
+            if (order == null)
             {
                 return;
             }
@@ -126,7 +145,7 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            if(order == null)
+            if (order == null)
             {
                 return;
             }
@@ -158,7 +177,7 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnCancel1_Click(object sender, EventArgs e)
         {
-            if(order == null)
+            if (order == null)
             {
                 return;
             }
@@ -174,7 +193,7 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnCheckCoupon_Click(object sender, EventArgs e)
         {
-            if(order == null)
+            if (order == null)
             {
                 return;
             }
@@ -197,11 +216,11 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnCancel2_Click(object sender, EventArgs e)
         {
-            if(order == null)
+            if (order == null)
             {
                 return;
             }
-            if(order.CouponId == null)
+            if (order.CouponId == null)
             {
                 return;
             }
@@ -214,7 +233,7 @@ namespace Disney1.Manage.ManageHotel
 
         private void btnTicket_Click(object sender, EventArgs e)
         {
-            if(order == null)
+            if (order == null)
             {
                 return;
             }
