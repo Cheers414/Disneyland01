@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F1BA939C-D687-4E88-A769-15F47EB2412F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Disney1</RootNamespace>
+    <AssemblyName>Disney1</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarcodeService">
+      <HintPath>..\..\..\..\50分區賽\Software Design\Data\Tools\net472\BarcodeService.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ActiveRecord.Designer.cs">
+      <DependentUpon>ActiveRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comparer\RoomComparer.cs" />
+    <Compile Include="DisneyData.cs">
+      <DependentUpon>DisneyData.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DisneyData.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DisneyData.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\AttractionsInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\AttractionsInfo.Designer.cs">
+      <DependentUpon>AttractionsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\AttractionsSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\AttractionsSchedule.Designer.cs">
+      <DependentUpon>AttractionsSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\DisneylandResort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\DisneylandResort.Designer.cs">
+      <DependentUpon>DisneylandResort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\Drama.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\Drama.Designer.cs">
+      <DependentUpon>Drama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\GuestManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\GuestManagement.Designer.cs">
+      <DependentUpon>GuestManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\IKumotoyureiUserControl.cs" />
+    <Compile Include="DisneylandResort\Maintenance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\Maintenance.Designer.cs">
+      <DependentUpon>Maintenance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\News.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\News.Designer.cs">
+      <DependentUpon>News.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\TicketInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\TicketInfo.Designer.cs">
+      <DependentUpon>TicketInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\Tourist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\Tourist.Designer.cs">
+      <DependentUpon>Tourist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\TrafficInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\TrafficInfo.Designer.cs">
+      <DependentUpon>TrafficInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DisneylandResort\Weather.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DisneylandResort\Weather.Designer.cs">
+      <DependentUpon>Weather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmChangePwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChangePwd.Designer.cs">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenu.Designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralResort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GeneralResort.Designer.cs">
+      <DependentUpon>GeneralResort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="Manage\Administrator.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Administrator.Designer.cs">
+      <DependentUpon>Administrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Admin\ManageAuthority.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Admin\ManageAuthority.Designer.cs">
+      <DependentUpon>ManageAuthority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Admin\ManageUserGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Admin\ManageUserGroup.Designer.cs">
+      <DependentUpon>ManageUserGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\HotelManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\HotelManagement.Designer.cs">
+      <DependentUpon>HotelManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageAccount.Designer.cs">
+      <DependentUpon>ManageAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\BookingRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\BookingRoom.Designer.cs">
+      <DependentUpon>BookingRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\BookTicket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\BookTicket.Designer.cs">
+      <DependentUpon>BookTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\CheckOut.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\CheckOut.Designer.cs">
+      <DependentUpon>CheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\GenerateTicket.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\GenerateTicket.Designer.cs">
+      <DependentUpon>GenerateTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\GuestRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\GuestRecord.Designer.cs">
+      <DependentUpon>GuestRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\HotelReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\HotelReport.Designer.cs">
+      <DependentUpon>HotelReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\HotelReport2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\HotelReport2.Designer.cs">
+      <DependentUpon>HotelReport2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\HotelService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\HotelService.Designer.cs">
+      <DependentUpon>HotelService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\OrderRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\OrderRecord.Designer.cs">
+      <DependentUpon>OrderRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\ReserveRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\ReserveRoom.Designer.cs">
+      <DependentUpon>ReserveRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\RoomManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\RoomManagement.Designer.cs">
+      <DependentUpon>RoomManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\SearchRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ManageHotel\SearchRoom.Designer.cs">
+      <DependentUpon>SearchRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Manager\AttractionsStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\AttractionsStatistics.Designer.cs">
+      <DependentUpon>AttractionsStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Manager\MaintenanceStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\MaintenanceStatistics.Designer.cs">
+      <DependentUpon>MaintenanceStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Manager\QueueTimeStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\QueueTimeStatistics.Designer.cs">
+      <DependentUpon>QueueTimeStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Manager\SetNews.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\SetNews.Designer.cs">
+      <DependentUpon>SetNews.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Manager\SetTourist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\SetTourist.Designer.cs">
+      <DependentUpon>SetTourist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Manager\SetWeather.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\SetWeather.Designer.cs">
+      <DependentUpon>SetWeather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\Manager\ShowMode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\Manager\ShowMode.Designer.cs">
+      <DependentUpon>ShowMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ResortManager.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ResortManager.Designer.cs">
+      <DependentUpon>ResortManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manage\ResortMember.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manage\ResortMember.Designer.cs">
+      <DependentUpon>ResortMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewsData.cs" />
+    <Compile Include="Profile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CarouselResort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CarouselResort.Designer.cs">
+      <DependentUpon>CarouselResort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SignUp.Designer.cs">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TouristData.cs" />
+    <Compile Include="WeatherData.cs" />
+    <None Include="DisneyData.dbml.layout">
+      <DependentUpon>DisneyData.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="ActiveRecord.resx">
+      <DependentUpon>ActiveRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\AttractionsInfo.resx">
+      <DependentUpon>AttractionsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\AttractionsSchedule.resx">
+      <DependentUpon>AttractionsSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\DisneylandResort.resx">
+      <DependentUpon>DisneylandResort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\Drama.resx">
+      <DependentUpon>Drama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\GuestManagement.resx">
+      <DependentUpon>GuestManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\Maintenance.resx">
+      <DependentUpon>Maintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\News.resx">
+      <DependentUpon>News.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\TicketInfo.resx">
+      <DependentUpon>TicketInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\Tourist.resx">
+      <DependentUpon>Tourist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\TrafficInfo.resx">
+      <DependentUpon>TrafficInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisneylandResort\Weather.resx">
+      <DependentUpon>Weather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmChangePwd.resx">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralResort.resx">
+      <DependentUpon>GeneralResort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Administrator.resx">
+      <DependentUpon>Administrator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Admin\ManageAuthority.resx">
+      <DependentUpon>ManageAuthority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Admin\ManageUserGroup.resx">
+      <DependentUpon>ManageUserGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\HotelManagement.resx">
+      <DependentUpon>HotelManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageAccount.resx">
+      <DependentUpon>ManageAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\BookingRoom.resx">
+      <DependentUpon>BookingRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\BookTicket.resx">
+      <DependentUpon>BookTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\CheckOut.resx">
+      <DependentUpon>CheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\GenerateTicket.resx">
+      <DependentUpon>GenerateTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\GuestRecord.resx">
+      <DependentUpon>GuestRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\HotelReport.resx">
+      <DependentUpon>HotelReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\HotelReport2.resx">
+      <DependentUpon>HotelReport2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\HotelService.resx">
+      <DependentUpon>HotelService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\OrderRecord.resx">
+      <DependentUpon>OrderRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\ReserveRoom.resx">
+      <DependentUpon>ReserveRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\RoomManagement.resx">
+      <DependentUpon>RoomManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ManageHotel\SearchRoom.resx">
+      <DependentUpon>SearchRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\AttractionsStatistics.resx">
+      <DependentUpon>AttractionsStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\MaintenanceStatistics.resx">
+      <DependentUpon>MaintenanceStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\QueueTimeStatistics.resx">
+      <DependentUpon>QueueTimeStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\SetNews.resx">
+      <DependentUpon>SetNews.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\SetTourist.resx">
+      <DependentUpon>SetTourist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\SetWeather.resx">
+      <DependentUpon>SetWeather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\Manager\ShowMode.resx">
+      <DependentUpon>ShowMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ResortManager.resx">
+      <DependentUpon>ResortManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manage\ResortMember.resx">
+      <DependentUpon>ResortMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarouselResort.resx">
+      <DependentUpon>CarouselResort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUp.resx">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="DisneyData.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DisneyData.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Manage\Member\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
